@@ -42,7 +42,7 @@ const findFocusableDescendant = (
   if (!element) return null;
 
   const focusableElements = Array.from(
-    element.querySelectorAll('[tabindex][role="button"], [tabindex][role="link"]')
+    element.querySelectorAll('[tabindex][role="button"], [tabindex][role="link"], [tabindex][role="slider"]')
   ) as HTMLElement[];
 
   if (focusableElements.length === 0) return null;

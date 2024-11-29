@@ -20,6 +20,7 @@ import DefaultActionBar from '@components/page/DefaultActionBar';
 import DefaultLayout from '@components/page/DefaultLayout';
 import Grid from '@components/Grid';
 import Indent from '@components/Indent';
+import NumberRangeSlider from '@components/NumberRangeSlider';
 import Package from '@root/package.json';
 import Row from '@components/Row';
 import Script from 'next/script';
@@ -222,7 +223,7 @@ export default async function Page(props) {
           <br />
         </Accordion>
 
-        <Accordion defaultValue={true} title="BAR LOADER">
+        <Accordion defaultValue={false} title="BAR LOADER">
           A long loader is a visual element that signals ongoing activity or progress, reassuring users that a task is being processed. Commonly used during actions like data fetching or file uploads, it provides feedback to reduce uncertainty.
           <br />
           <br />
@@ -233,7 +234,7 @@ export default async function Page(props) {
           <br />
         </Accordion>
 
-        <Accordion defaultValue={true} title="BLOCK LOADER">
+        <Accordion defaultValue={false} title="BLOCK LOADER">
           A block loader is a visual indicator that signals ongoing activity or progress while occupying only a single character of space. It reassures users that a task is being processed or that activity is occurring.
           <br />
           <br />
@@ -544,11 +545,17 @@ export default async function Page(props) {
           WORK IN PROGRESS
         </Accordion>
 
-        <Accordion defaultValue={false} title="SLIDER">
+        <Accordion defaultValue={true} title="SLIDER">
           Sliders are interactive UI elements that let users select a single value or range from a continuum. Designed as a horizontal track with a draggable handle, they are ideal for adjusting settings like volume, brightness, or color saturation.
           <br />
           <br />
-          WORK IN PROGRESS
+          <NumberRangeSlider defaultValue={0} min={0} max={5000} step={1} />
+          <NumberRangeSlider defaultValue={0} min={0} max={10000} step={1} />
+          <NumberRangeSlider defaultValue={0} min={0} max={15000} step={1} />
+          <NumberRangeSlider defaultValue={0} min={0} max={20000} step={1} />
+          <NumberRangeSlider defaultValue={0} min={0} max={100000} step={1} />
+          <br />
+          <br />
         </Accordion>
 
         <Accordion defaultValue={false} title="SNACKBAR">
