@@ -1,7 +1,6 @@
 'use client';
 
 import styles from '@components/page/DefaultActionBar.module.scss';
-
 import * as React from 'react';
 import * as Utilities from '@common/utilities';
 
@@ -18,58 +17,10 @@ function isHTMLElement(target: EventTarget | null): target is HTMLElement {
   return target instanceof HTMLElement;
 }
 
-const isFocusableElement = (element: Element | null): boolean => {
-  if (!element) return false;
-
-  const focusableSelectors = [
-    'a[href]',
-    'button',
-    'input',
-    'select',
-    'textarea',
-    '[tabindex]:not([tabindex="-1"])',
-    '[contenteditable="true"]',
-  ];
-
-  return element.matches(focusableSelectors.join(', '));
-};
-
-const findFocusableDescendant = (
-  element: Element | null,
-  currentFocused: Element | null = null,
-  direction: 'next' | 'previous' = 'next'
-): HTMLElement | null => {
-  if (!element) return null;
-
-  const focusableElements = Array.from(
-    element.querySelectorAll('[tabindex][role="button"], [tabindex][role="link"], [tabindex][role="slider"]')
-  ) as HTMLElement[];
-
-  if (focusableElements.length === 0) return null;
-
-  let index: number;
-  if (currentFocused) {
-    const currentIndex = focusableElements.indexOf(currentFocused as HTMLElement);
-    if (currentIndex !== -1) {
-      index = currentIndex + (direction === 'next' ? 1 : -1);
-    } else {
-      index = direction === 'next' ? 0 : focusableElements.length - 1;
-    }
-  } else {
-    index = direction === 'next' ? 0 : focusableElements.length - 1;
-  }
-
-  if (index >= 0 && index < focusableElements.length) {
-    return focusableElements[index];
-  } else {
-    return null;
-  }
-};
-
 const findFocusableParent = (element: Element | null): Element | null => {
   while (element) {
     element = element.parentElement;
-    if (element && isFocusableElement(element)) {
+    if (element && Utilities.isFocusableElement(element)) {
       return element;
     }
   }
@@ -84,11 +35,15 @@ const findNextFocusableSibling = (
     direction === 'next' ? element.nextElementSibling : element.previousElementSibling;
 
   while (sibling) {
-    if (isFocusableElement(sibling)) {
+    if (Utilities.isFocusableElement(sibling)) {
       return sibling as HTMLElement;
     }
 
-    const focusableDescendant = findFocusableDescendant(sibling, null, direction);
+    const focusableDescendant = Utilities.findFocusableDescendant(
+      sibling,
+      null,
+      direction
+    );
     if (focusableDescendant) {
       return focusableDescendant;
     }
@@ -120,30 +75,19 @@ const findNextFocusableAncestor = (
 const useGlobalNavigationHotkeys = () => {
   const onHandleSubmit = (event: KeyboardEvent) => {
     const target = event.target;
-    if (isHTMLElement(target) && isFocusableElement(target)) {
+    if (Utilities.isFocusableElement(target)) {
       event.preventDefault();
-      target.click();
+      (target as HTMLElement).click();
     }
   };
 
   const onHandleNextFocus = (event: KeyboardEvent) => {
     const target = event.target;
-    if (isElement(target) && isFocusableElement(target)) {
+
+    if (Utilities.isFocusableElement(target)) {
       event.preventDefault();
 
-      let nextFocusable = findFocusableDescendant(target, target, 'next');
-      if (nextFocusable) {
-        nextFocusable.focus();
-        return;
-      }
-
-      nextFocusable = findNextFocusableSibling(target, 'next');
-      if (nextFocusable) {
-        nextFocusable.focus();
-        return;
-      }
-
-      nextFocusable = findNextFocusableAncestor(target, 'next');
+      const nextFocusable = Utilities.findNextFocusable(target as Element, 'next');
       if (nextFocusable) {
         nextFocusable.focus();
       }
@@ -152,22 +96,14 @@ const useGlobalNavigationHotkeys = () => {
 
   const onHandlePreviousFocus = (event: KeyboardEvent) => {
     const target = event.target;
-    if (isElement(target) && isFocusableElement(target)) {
+
+    if (Utilities.isFocusableElement(target)) {
       event.preventDefault();
 
-      let previousFocusable = findFocusableDescendant(target, target, 'previous');
-      if (previousFocusable) {
-        previousFocusable.focus();
-        return;
-      }
-
-      previousFocusable = findNextFocusableSibling(target, 'previous');
-      if (previousFocusable) {
-        previousFocusable.focus();
-        return;
-      }
-
-      previousFocusable = findNextFocusableAncestor(target, 'previous');
+      const previousFocusable = Utilities.findNextFocusable(
+        target as Element,
+        'previous'
+      );
       if (previousFocusable) {
         previousFocusable.focus();
       }
@@ -178,8 +114,6 @@ const useGlobalNavigationHotkeys = () => {
   useHotkeys('ArrowUp', onHandlePreviousFocus);
   useHotkeys('ArrowRight', onHandleNextFocus);
   useHotkeys('ArrowLeft', onHandlePreviousFocus);
-  useHotkeys('ctrl+t', () => Utilities.onHandleThemeChange());
-  useHotkeys('ctrl+g', () => toggleDebugGrid());
   useHotkeys('Enter', onHandleSubmit);
   useHotkeys(' ', onHandleSubmit);
 };
@@ -193,6 +127,9 @@ interface DefaultActionBarProps {
 }
 
 const DefaultActionBar: React.FC<DefaultActionBarProps> = ({ items = [] }) => {
+  useHotkeys('ctrl+t', () => Utilities.onHandleThemeChange());
+  useHotkeys('ctrl+g', () => toggleDebugGrid());
+
   useGlobalNavigationHotkeys();
 
   return (

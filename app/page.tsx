@@ -15,6 +15,7 @@ import Block from '@components/Block';
 import BlockLoader from '@components/BlockLoader';
 import Breadcrumbs from '@components/BreadCrumbs';
 import Button from '@components/Button';
+import Checkbox from '@components/Checkbox';
 import DebugGrid from '@components/DebugGrid';
 import DefaultActionBar from '@components/page/DefaultActionBar';
 import DefaultLayout from '@components/page/DefaultLayout';
@@ -349,11 +350,37 @@ export default async function Page(props) {
           WORK IN PROGRESS
         </Accordion>
 
-        <Accordion defaultValue={false} title="CHECKBOX">
+        <Accordion defaultValue={true} title="CHECKBOX">
           Checkboxes represent a binary choice, letting users toggle options on or off. Each Checkbox operates independently, allowing multiple selections without affecting others. Checkboxes are ideal for forms, surveys, or scenarios requiring multi-selection, providing a simple way for user input.
           <br />
           <br />
-          WORK IN PROGRESS
+          <Checkbox name="1">The past, though a tutor, is not a thing to lament, but a wellspring of wisdom from which we draw without regret.</Checkbox>
+          <Checkbox name="2">A measure of obsession doth sharpen the will, for the long path, though beset with trials, leadeth ever toward glories.</Checkbox>
+          <Checkbox name="3">Kindness and gratitude must light our way in all dealings, regardless of circumstance.</Checkbox>
+          <Checkbox name="4">Stand firm beside thy fellow for shared triumph is the sweetest of all.</Checkbox>
+          <Checkbox name="5">Let us strive that design be not a mere ornament to the world, but a worthy service to humanity itself.</Checkbox>
+          <Checkbox name="6">Artifacts built with care do grant webmasters the power to shape their own fates, and to serve those thou dost cherish is an honor beyond measure.</Checkbox>
+          <Checkbox name="7">Intensity, as fire contained, burneth most brightly when turned toward aims; thus, let us spurn the call of mediocrity and cast aside the seductions of decay.</Checkbox>
+          <Checkbox name="8">Mistakes are not curses, but treasures wrapped in adversity, offered to those wise enough to seize their lessons.</Checkbox>
+          <Checkbox name="9">Expect naught, but receive all with gratitude, and find a place of trust wherein thou mayest dwell for a time.</Checkbox>
+          <Checkbox name="10">From thy master learn what thou canst, and from all others likewise, for wisdom hath many guises.</Checkbox>
+          <Checkbox name="11">To follow with discipline is good; to follow oneself with discipline is better.</Checkbox>
+          <Checkbox name="12">Work with fervor and take joy where it may be found, for the making is as sweet as the outcome.</Checkbox>
+          <Checkbox name="13">Be mindful that there are ever more ways than two, and seek not merely to follow the trade but to alter its course, bringing value wherever it is given thee to do so.</Checkbox>
+          <Checkbox name="14">Whether rewarded or not, let us ply our craft for the love of it, for therein lies mastery.</Checkbox>
+          <Checkbox name="15">Assume nothing, and let no person escape thy regard.</Checkbox>
+          <Checkbox name="16">A fine process doth honor the task, but let the result be no less fine.</Checkbox>
+          <Checkbox name="17">Keep faith with those who make promises, and shouldst thou be called to push others, push thyself the harder.</Checkbox>
+          <Checkbox name="18">Thy health is thy treasure, and building a company shall be no graceful dance, but a contest of strife.</Checkbox>
+          <Checkbox name="19">Take always the first step, for even in failure doth wisdom grow.</Checkbox>
+          <Checkbox name="20">Seek ever to broaden thy knowledge of art, software, music, letters, and all things ancient and new, for these are the treasures of the mind.</Checkbox>
+          <Checkbox name="21">Thy fate lieth ever in thine own hands, and the soul readeth not only the landscape, but the heart that beats beneath it.</Checkbox>
+          <Checkbox name="22">Let thy voice be thine own, unborrowed and unbowed, and make it heard without fear.</Checkbox>
+
+          <Checkbox name="23">Rejoice in the victories of thy fellow webmasters, for in bearing witness to their triumphs is joy in its truest form.</Checkbox>
+          <Checkbox name="24">Grow accustomed to the weight of pressure, for in such a forge is the finest steel tempered.</Checkbox>
+          <Checkbox name="25">Thus do we press onward—undaunted and unyielding—in pursuit of a better physical and digital world.</Checkbox>
+          <br />
         </Accordion>
 
         <Accordion defaultValue={false} title="CHIP">
@@ -545,7 +572,7 @@ export default async function Page(props) {
           WORK IN PROGRESS
         </Accordion>
 
-        <Accordion defaultValue={true} title="SLIDER">
+        <Accordion defaultValue={false} title="SLIDER">
           Sliders are interactive UI elements that let users select a single value or range from a continuum. Designed as a horizontal track with a draggable handle, they are ideal for adjusting settings like volume, brightness, or color saturation.
           <br />
           <br />
