@@ -16,6 +16,7 @@ import BlockLoader from '@components/BlockLoader';
 import Breadcrumbs from '@components/BreadCrumbs';
 import Button from '@components/Button';
 import Checkbox from '@components/Checkbox';
+import DataTable from '@components/DataTable';
 import DebugGrid from '@components/DebugGrid';
 import DefaultActionBar from '@components/page/DefaultActionBar';
 import DefaultLayout from '@components/page/DefaultLayout';
@@ -74,6 +75,30 @@ export async function generateMetadata({ params, searchParams }) {
     url,
   };
 }
+
+const SAMPLE_TABLE_DATA_CHANGE_ME = [
+  ['NAME', 'SYMBOL', 'PRICE', 'HOLDINGS'],
+  ['Fox', 'FOX', '$12.34', '100'],
+  ['Bear', 'BR', '$56.78', '200'],
+  ['Wolf', 'WLF', '$23.45', '150'],
+  ['Lion', 'LION', '$67.89', '80'],
+  ['Tiger', 'TGR', '$34.56', '120'],
+  ['Eagle', 'EGL', '$45.67', '90'],
+  ['Shark', 'SHK', '$89.01', '50'],
+  ['Snake', 'SNK', '$10.11', '300'],
+  ['Mouse', 'MSE', '$5.12', '500'],
+  ['Deer', 'DER', '$29.99', '110'],
+  ['Falcon', 'FLC', '$40.22', '85'],
+  ['Whale', 'WHL', '$123.45', '30'],
+  ['Crab', 'CRB', '$15.67', '250'],
+  ['Frog', 'FRG', '$7.89', '400'],
+  ['Horse', 'HRS', '$54.32', '70'],
+  ['Zebra', 'ZBR', '$65.43', '60'],
+  ['Panda', 'PND', '$78.90', '55'],
+  ['Rabbit', 'RBT', '$9.10', '350'],
+  ['Otter', 'OTR', '$20.21', '180'],
+  ['Lemur', 'LMR', '$11.12', '320'],
+];
 
 export default async function Page(props) {
   return (
@@ -350,7 +375,7 @@ export default async function Page(props) {
           WORK IN PROGRESS
         </Accordion>
 
-        <Accordion defaultValue={true} title="CHECKBOX">
+        <Accordion defaultValue={false} title="CHECKBOX">
           Checkboxes represent a binary choice, letting users toggle options on or off. Each Checkbox operates independently, allowing multiple selections without affecting others. Checkboxes are ideal for forms, surveys, or scenarios requiring multi-selection, providing a simple way for user input.
           <br />
           <br />
@@ -404,11 +429,13 @@ export default async function Page(props) {
           WORK IN PROGRESS
         </Accordion>
 
-        <Accordion defaultValue={false} title="DATA TABLE">
-          Data tables are for organizing large datasets into rows and columns for clear visibility and easy interpretation. It is used in scenarios like reporting systems, dashboards, and list views where data needs comparison, analysis, or manipulation. Features like sorting, filtering, pagination, and inline editing make data handling more efficient.
+        <Accordion defaultValue={true} title="DATA TABLE">
+          Data tables are for organizing large datasets into rows and columns for clear visibility and easy interpretation. It is used in scenarios like reporting systems, dashboards, and list views where data needs comparison, analysis, or manipulation. Features like sorting, filtering, pagination, and inline editing make data handling more efficient. The entire table width is limited to 64ch to fit the grid precisely.
           <br />
           <br />
-          WORK IN PROGRESS
+          <DataTable data={SAMPLE_TABLE_DATA_CHANGE_ME} />
+          <br />
+          <br />
         </Accordion>
 
         <Accordion defaultValue={false} title="DATE PICKER">
