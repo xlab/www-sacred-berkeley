@@ -16,9 +16,9 @@ interface RGBAColor {
   a: number;
 }
 
-const BASE_FOREGROUND_RGBA: RGBAColor = { r: 168, g: 168, b: 168, a: 0.4 };
-const BASE_BACKGROUND_RGBA: RGBAColor = { r: 224, g: 224, b: 224, a: 0.4 };
-const ALPHA = 0.1;
+const BASE_FOREGROUND_RGBA: RGBAColor = { r: 98, g: 98, b: 98, a: 0.5 };
+const BASE_BACKGROUND_RGBA: RGBAColor = { r: 168, g: 168, b: 168, a: 0.5 };
+const ALPHA = 0.4;
 
 function interpolateColor(color1: RGBAColor, color2: RGBAColor, factor: number): RGBAColor {
   return {

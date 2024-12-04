@@ -22,6 +22,7 @@ import DefaultActionBar from '@components/page/DefaultActionBar';
 import DefaultLayout from '@components/page/DefaultLayout';
 import Grid from '@components/Grid';
 import Indent from '@components/Indent';
+import ListItem from '@components/ListItem';
 import NumberRangeSlider from '@components/NumberRangeSlider';
 import Package from '@root/package.json';
 import Row from '@components/Row';
@@ -78,26 +79,44 @@ export async function generateMetadata({ params, searchParams }) {
 
 const SAMPLE_TABLE_DATA_CHANGE_ME = [
   ['NAME', 'SYMBOL', 'PRICE', 'HOLDINGS'],
-  ['Fox', 'FOX', '$12.34', '100'],
+  ['Bat', 'BAT', '$9.01', '400'],
   ['Bear', 'BR', '$56.78', '200'],
-  ['Wolf', 'WLF', '$23.45', '150'],
-  ['Lion', 'LION', '$67.89', '80'],
-  ['Tiger', 'TGR', '$34.56', '120'],
+  ['Camel', 'CML', '$55.67', '70'],
+  ['Cheetah', 'CHT', '$13.45', '150'],
+  ['Crab', 'CRB', '$15.67', '250'],
+  ['Deer', 'DER', '$29.99', '110'],
+  ['Dolphin', 'DLP', '$77.89', '50'],
   ['Eagle', 'EGL', '$45.67', '90'],
+  ['Falcon', 'FLC', '$40.22', '85'],
+  ['Fox', 'FOX', '$12.34', '100'],
+  ['Frog', 'FRG', '$7.89', '400'],
+  ['Giraffe', 'GRF', '$44.56', '80'],
+  ['Hedgehog', 'HDG', '$11.23', '200'],
+  ['Horse', 'HRS', '$54.32', '70'],
+  ['Kangaroo', 'KNG', '$15.67', '120'],
+  ['Koala', 'KLA', '$22.34', '150'],
+  ['Leopard', 'LPR', '$14.56', '110'],
+  ['Lemur', 'LMR', '$11.12', '320'],
+  ['Lion', 'LION', '$67.89', '80'],
+  ['Lynx', 'LNX', '$16.78', '130'],
+  ['Mouse', 'MSE', '$5.12', '500'],
+  ['Octopus', 'OCT', '$88.90', '40'],
+  ['Otter', 'OTR', '$20.21', '180'],
+  ['Owl', 'OWL', '$19.01', '160'],
+  ['Panda', 'PND', '$78.90', '55'],
+  ['Peacock', 'PCK', '$12.34', '100'],
+  ['Penguin', 'PNG', '$33.45', '90'],
+  ['Porcupine', 'PRC', '$17.89', '140'],
+  ['Rabbit', 'RBT', '$9.10', '350'],
+  ['Raccoon', 'RCC', '$18.90', '150'],
   ['Shark', 'SHK', '$89.01', '50'],
   ['Snake', 'SNK', '$10.11', '300'],
-  ['Mouse', 'MSE', '$5.12', '500'],
-  ['Deer', 'DER', '$29.99', '110'],
-  ['Falcon', 'FLC', '$40.22', '85'],
+  ['Squirrel', 'SQL', '$10.12', '250'],
+  ['Tiger', 'TGR', '$34.56', '120'],
+  ['Turtle', 'TRL', '$66.78', '60'],
   ['Whale', 'WHL', '$123.45', '30'],
-  ['Crab', 'CRB', '$15.67', '250'],
-  ['Frog', 'FRG', '$7.89', '400'],
-  ['Horse', 'HRS', '$54.32', '70'],
+  ['Wolf', 'WLF', '$23.45', '150'],
   ['Zebra', 'ZBR', '$65.43', '60'],
-  ['Panda', 'PND', '$78.90', '55'],
-  ['Rabbit', 'RBT', '$9.10', '350'],
-  ['Otter', 'OTR', '$20.21', '180'],
-  ['Lemur', 'LMR', '$11.12', '320'],
 ];
 
 export default async function Page(props) {
@@ -435,7 +454,6 @@ export default async function Page(props) {
           <br />
           <DataTable data={SAMPLE_TABLE_DATA_CHANGE_ME} />
           <br />
-          <br />
         </Accordion>
 
         <Accordion defaultValue={false} title="DATE PICKER">
@@ -522,11 +540,72 @@ export default async function Page(props) {
           WORK IN PROGRESS
         </Accordion>
 
-        <Accordion defaultValue={false} title="LIST">
+        <Accordion defaultValue={true} title="LIST">
           Lists are flexible interface elements used to display a series of items in an organized way. They are often used to present data, menu options, or search results and can be ordered or unordered, with interactive elements like checkboxes or buttons.
           <br />
           <br />
-          WORK IN PROGRESS
+          <ol>
+            <ListItem>
+              Year of the Four Emperors
+            </ListItem>
+            <ListItem>
+              Flavian dynasty
+            </ListItem>
+            <ListItem>
+              Nerva–Antonine dynasty
+            </ListItem>
+            <ol>
+              <ListItem>Marcus Cocceius Nerva</ListItem>
+              <ListItem>Marcus Ulpius Traianus</ListItem>
+              <ListItem>Publius Aelius Hadrianus</ListItem>
+              <ListItem>Titus Aelius Hadrianus Antoninus Pius</ListItem>
+              <ListItem>Marcus Aurelius Antoninus</ListItem>
+              <ol>
+                <ListItem>Hellenistic philosophy</ListItem>
+                <ListItem>Western philosophy</ListItem>
+                <ListItem>Stoicism</ListItem>
+              </ol>
+            </ol>
+            <ListItem>
+              Year of the Five Emperors
+            </ListItem>
+          </ol>
+          <br />
+          <ul>
+            <ListItem>
+              Book of Changes (The I Ching)
+            </ListItem>
+            <ListItem>
+              The Analects
+            </ListItem>
+            <ListItem>
+              Taoism
+            </ListItem>
+            <ListItem>
+              Thirty-Six Stratagems
+            </ListItem>
+            <ul>
+              <ListItem>
+                Deceive the heavens to cross the sea
+              </ListItem>
+              <ListItem>
+                Make a sound in the east, then strike in the west
+              </ListItem>
+              <ListItem>
+                Create something from nothing
+              </ListItem>
+            </ul>
+            <ListItem>
+              The Art of War
+            </ListItem>
+            <ListItem>
+              Wuzi
+            </ListItem>
+            <ListItem>
+              Six Secret Teachings
+            </ListItem>
+          </ul>
+          <br />
         </Accordion>
 
         <Accordion defaultValue={false} title="MENUS">

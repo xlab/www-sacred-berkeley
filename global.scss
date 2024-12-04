@@ -91,6 +91,39 @@ video {
   vertical-align: baseline;
 }
 
+ul {
+  list-style-position: inside;
+  list-style-type: '▪';
+  text-indent: -1ch;
+}
+
+ol {
+  list-style-type: '';
+  list-style-position: inside;
+  counter-reset: cupcake;
+  text-indent: -1ch;
+}
+
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+  padding-left: 2ch;
+}
+
+ol li {
+  padding-left: 1ch;
+  counter-increment: cupcake;
+}
+
+ul li:before {
+  content: ' ';
+}
+
+ol li:before {
+  content: counters(cupcake, ".") ". ";
+}
+
 article,
 aside,
 details,
