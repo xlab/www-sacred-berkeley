@@ -139,6 +139,7 @@ section {
 }
 
 body.theme-blue {
+  --theme-overlay: var(--color-blue-20-5);
   --theme-background: var(--color-blue-80);
   --theme-text: var(--color-blue-10);
   --theme-border: var(--color-blue-70);
@@ -158,6 +159,7 @@ body.theme-blue {
 }
 
 body.theme-light {
+  --theme-overlay: var(--color-black-100-4);
   --theme-background: var(--color-white);
   --theme-border: var(--color-gray-20);
   --theme-border-subdued: var(--color-gray-40-2);
@@ -177,6 +179,7 @@ body.theme-light {
 }
 
 body.theme-dark {
+  --theme-overlay: var(--color-white-100-4);
   --theme-background: var(--color-black-100);
   --theme-border: var(--color-gray-90);
   --theme-border-box: var(--color-gray-80);
@@ -288,6 +291,9 @@ body {
 
   --theme-text: var(--color-black-100);
   --theme-line-height-base: 1.25;
+
+  --z-index-page: 1;
+  --z-index-modals: 10;
 
   background: var(--theme-background);
   color: var(--theme-text);

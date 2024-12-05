@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 
-import { ModalProvider } from '@components/ModalContext';
+import { ModalProvider } from '@components/page/ModalContext';
 
 interface ProvidersProps {
   children: React.ReactNode;

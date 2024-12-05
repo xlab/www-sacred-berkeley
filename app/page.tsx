@@ -23,6 +23,9 @@ import DefaultLayout from '@components/page/DefaultLayout';
 import Grid from '@components/Grid';
 import Indent from '@components/Indent';
 import ListItem from '@components/ListItem';
+import ModalStack from '@components/ModalStack';
+import ModalTrigger from '@components/ModalTrigger';
+import ModalAlert from '@components/modals/ModalAlert';
 import NumberRangeSlider from '@components/NumberRangeSlider';
 import Package from '@root/package.json';
 import Row from '@components/Row';
@@ -448,7 +451,7 @@ export default async function Page(props) {
           WORK IN PROGRESS
         </Accordion>
 
-        <Accordion defaultValue={true} title="DATA TABLE">
+        <Accordion defaultValue={false} title="DATA TABLE">
           Data tables are for organizing large datasets into rows and columns for clear visibility and easy interpretation. It is used in scenarios like reporting systems, dashboards, and list views where data needs comparison, analysis, or manipulation. Features like sorting, filtering, pagination, and inline editing make data handling more efficient. The entire table width is limited to 64ch to fit the grid precisely.
           <br />
           <br />
@@ -615,11 +618,22 @@ export default async function Page(props) {
           WORK IN PROGRESS
         </Accordion>
 
-        <Accordion defaultValue={false} title="MODAL">
+        <Accordion defaultValue={true} title="MODAL">
           Modals are dialog boxes or popups that overlay the main content, requiring user interaction. They are used to capture inputs, display information, or focus on specific tasks without leaving the current context, often accompanied by an overlay to maintain focus
           <br />
           <br />
-          WORK IN PROGRESS
+          <ModalTrigger 
+            modal={ModalAlert} 
+            modalProps={{ message: 'During the 1960s, Ritchie and Ken Thompson worked on the Multics operating system at Bell Labs. Thompson then found an old PDP-7 machine and developed his own application programs and operating system from scratch, aided by Ritchie and others. In 1970, Brian Kernighan suggested the name "Unix", a pun on the name "Multics". To supplement assembly language with a system-level programming language, Thompson created B. Later, B was replaced by C, created by Ritchie, who continued to contribute to the development of Unix and C for many years.' }}>
+            <Button>Render Alert Modal A</Button>
+          </ModalTrigger>
+          <ModalTrigger 
+            modal={ModalAlert} 
+            modalProps={{ message: `Dennis Ritchie and Ken Thompson's creation of the UNIX operating system and the C programming language were pivotal developments in the progress of computer science. Today, 50 years after its beginnings, UNIX and UNIX-like systems continue to run machinery from supercomputers to smartphones.` }}>
+            <Button>Render Alert Modal B</Button>
+          </ModalTrigger>
+          <br />
+          <br />
         </Accordion>
 
         <Accordion defaultValue={false} title="NAVIGATION BAR">
@@ -760,6 +774,7 @@ export default async function Page(props) {
           <ActionListItem icon={`⭢`} href="https://internet.dev" target="_blank">Hire our studio to build your applications</ActionListItem>
           <ActionListItem icon={`⭢`} href="https://github.com/internet-development/www-sacred" target="_blank">View the SRCL source code</ActionListItem>
         </Grid>
+        <ModalStack />
     </DefaultLayout>
   );
 }
