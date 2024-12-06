@@ -23,9 +23,10 @@ import DefaultLayout from '@components/page/DefaultLayout';
 import Grid from '@components/Grid';
 import Indent from '@components/Indent';
 import ListItem from '@components/ListItem';
+import MatrixLoader from '@components/MatrixLoader';
+import ModalAlert from '@components/modals/ModalAlert';
 import ModalStack from '@components/ModalStack';
 import ModalTrigger from '@components/ModalTrigger';
-import ModalAlert from '@components/modals/ModalAlert';
 import NumberRangeSlider from '@components/NumberRangeSlider';
 import Package from '@root/package.json';
 import Row from '@components/Row';
@@ -618,19 +619,33 @@ export default async function Page(props) {
           WORK IN PROGRESS
         </Accordion>
 
-        <Accordion defaultValue={true} title="MODAL">
+        <Accordion defaultValue={true} title="MATRIX LOADER">
+          A Matrix Loader (screen) is a visual element that simulates the iconic green, cascading code streams 
+  featured in the Matrix films. These screens often serve as dynamic backdrops, thematic 
+  treatments, or stylized representations of complex digital data. This version fits SRCL's theming and monospace font usage.
+          <br />
+          <br />
+          <MatrixLoader rows={25} />
+          <br />
+          <br />
+        </Accordion>
+
+
+        <Accordion defaultValue={false} title="MODAL">
           Modals are dialog boxes or popups that overlay the main content, requiring user interaction. They are used to capture inputs, display information, or focus on specific tasks without leaving the current context, often accompanied by an overlay to maintain focus
           <br />
           <br />
           <ModalTrigger 
             modal={ModalAlert} 
-            modalProps={{ message: 'During the 1960s, Ritchie and Ken Thompson worked on the Multics operating system at Bell Labs. Thompson then found an old PDP-7 machine and developed his own application programs and operating system from scratch, aided by Ritchie and others. In 1970, Brian Kernighan suggested the name "Unix", a pun on the name "Multics". To supplement assembly language with a system-level programming language, Thompson created B. Later, B was replaced by C, created by Ritchie, who continued to contribute to the development of Unix and C for many years.' }}>
-            <Button>Render Alert Modal A</Button>
+            modalProps={{ 
+              message: 'During the 1960s, Ritchie and Ken Thompson worked on the Multics operating system at Bell Labs. Thompson then found an old PDP-7 machine and developed his own application programs and operating system from scratch, aided by Ritchie and others. In 1970, Brian Kernighan suggested the name "Unix", a pun on the name "Multics". To supplement assembly language with a system-level programming language, Thompson created B. Later, B was replaced by C, created by Ritchie, who continued to contribute to the development of Unix and C for many years.',
+              buttonText: 'Sweet, thanks.' }}>
+            <ActionButton>Render Alert Modal A</ActionButton>
           </ModalTrigger>
           <ModalTrigger 
             modal={ModalAlert} 
             modalProps={{ message: `Dennis Ritchie and Ken Thompson's creation of the UNIX operating system and the C programming language were pivotal developments in the progress of computer science. Today, 50 years after its beginnings, UNIX and UNIX-like systems continue to run machinery from supercomputers to smartphones.` }}>
-            <Button>Render Alert Modal B</Button>
+            <ActionButton>Render Alert Modal B</ActionButton>
           </ModalTrigger>
           <br />
           <br />

@@ -20,7 +20,6 @@ const ModalStack: React.FC<ModalStackProps> = () => {
 
         const offsetFromLast = totalModals - 1 - index;
         const translateY = -offsetFromLast * 40;
-        const opacity = 1 - offsetFromLast * 0.3;
         const blur = offsetFromLast * 1.1;
 
         return (
@@ -30,7 +29,6 @@ const ModalStack: React.FC<ModalStackProps> = () => {
             style={{
               zIndex: 10 + index,
               transform: `translateY(${translateY}px)`,
-              opacity: Math.max(opacity, 0.01),
               filter: `blur(${blur}px)`,
             }}
           >

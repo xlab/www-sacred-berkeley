@@ -141,14 +141,14 @@ section {
 body.theme-blue {
   --theme-overlay: var(--color-blue-20-5);
   --theme-background: var(--color-blue-80);
-  --theme-text: var(--color-blue-10);
   --theme-border: var(--color-blue-70);
   --theme-border-subdued: var(--color-blue-60-2);
+  --theme-error: var(--color-red-60);
+  --theme-error-subdued: var(--color-red-60-3);
   --theme-primary: var(--color-gold-30);
   --theme-success: var(--color-green-60);
   --theme-success-subdued: var(--color-green-60-3);
-  --theme-error: var(--color-red-60);
-  --theme-error-subdued: var(--color-red-60-3);
+  --theme-text: var(--color-blue-10);
 
   --theme-button: var(--color-blue-10);
   --theme-button-text: var(--color-blue-80);
