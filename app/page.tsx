@@ -186,7 +186,7 @@ export default async function Page(props) {
           <br />
         </Accordion>
 
-        <Accordion defaultValue={false} title="ACTION LIST">
+        <Accordion defaultValue={true} title="ACTION LIST">
           Action lists are a vertical list of interactive actions or options. It displays items in a single-column format with space for icons, descriptions, side information, and other visuals. The monospace font ensures clarity and consistency.
           <br />
           <br />
@@ -198,6 +198,7 @@ export default async function Page(props) {
               Return item example
             </ActionListItem>
             <ActionListItem icon={`⊹`}>Action item example</ActionListItem>
+            <ActionListItem icon={`⊹`} href="https://internet.dev" target="_blank">Visit the Studio website</ActionListItem>
           </div>
           <br />
         </Accordion>
@@ -537,11 +538,23 @@ export default async function Page(props) {
           WORK IN PROGRESS
         </Accordion>
 
-        <Accordion defaultValue={false} title="LINK">
+        <Accordion defaultValue={true} title="LINK">
           Links are interactive elements that enable navigation within an application or to external resources, typically styled with underlining or distinct colors to indicate clickability.
           <br />
           <br />
-          WORK IN PROGRESS
+          <ol>
+            <ListItem><a href="https://www.tumblr.com/tagged/hiroo%20isono" target="_blank">Hirō Isono</a></ListItem>
+            <ListItem><a href="https://www.tumblr.com/tagged/rebecca%20guay" target="_blank">Rebecca Guay</a></ListItem>
+            <ListItem><a href="https://www.tumblr.com/tagged/terese%20nielsen" target="_blank">Terese Nielsen</a></ListItem>
+            <ListItem><a href="https://www.tumblr.com/tagged/pablo%20uchida" target="_blank">Pablo Uchida</a></ListItem>
+            <ListItem><a href="https://www.tumblr.com/tagged/claude%20monet" target="_blank">Oscar-Claude Monet</a></ListItem>
+            <ol>
+              <ListItem><a href="https://en.wikipedia.org/wiki/Impressionism" target="_blank">Impressionism</a></ListItem>
+              <ListItem><a href="https://en.wikipedia.org/wiki/Modernism" target="_blank">Modernism</a></ListItem>
+              <ListItem><a href="https://en.wikipedia.org/wiki/En_plein_air" target="_blank">Painting Outdoors</a></ListItem>
+            </ol>
+          </ol>
+          <br />
         </Accordion>
 
         <Accordion defaultValue={true} title="LIST">

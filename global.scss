@@ -91,6 +91,22 @@ video {
   vertical-align: baseline;
 }
 
+a {
+  background: var(--theme-border-subdued);
+  color: var(--theme-text);
+
+  &:hover {
+    background: var(--theme-focused-foreground);
+    color: var(--theme-text);
+  }
+
+  &:focus {
+    background: var(--theme-focused-foreground);
+    color: var(--theme-text);
+    outline: 0;
+  }
+}
+
 ul {
   list-style-position: inside;
   list-style-type: '▪';
@@ -118,6 +134,10 @@ ol li {
 
 ul li:before {
   content: ' ';
+  display: inline-block;
+  width: 1ch;
+  height: 0;
+  visibility: hidden;
 }
 
 ol li:before {

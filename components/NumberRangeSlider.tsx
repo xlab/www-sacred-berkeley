@@ -38,15 +38,6 @@ const NumberRangeSlider = ({
     setDisplayValue(value);
   };
 
-  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>): void => {
-    /* TODO(jimmylee)
-       Support the global functionality here.
-    if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
-      event.preventDefault();
-    }
-    */
-  };
-
   return (
     <div className={styles.root}>
       <label className={styles.left}>
@@ -58,7 +49,6 @@ const NumberRangeSlider = ({
         max={max}
         min={min}
         onChange={scrub}
-        onKeyDown={handleKeyDown}
         ref={sliderRef}
         role="slider"
         step={step}

@@ -1,5 +1,6 @@
 .item {
   display: flex;
+  background: transparent;
   align-items: flex-start;
   justify-content: space-between;
   text-decoration: none;
@@ -9,10 +10,12 @@
 
   &:visited {
     color: var(--theme-text);
+    background: transparent;
   }
 
   &:hover {
     color: var(--theme-text);
+    background: transparent;
   }
 
   &:hover .icon {
