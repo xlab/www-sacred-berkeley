@@ -28,6 +28,14 @@
   padding: calc(8px * var(--theme-line-height-base)) 2ch 0px 1ch;
 }
 
+.leftCorner {
+  flex-shrink: 0;
+  box-shadow:
+    inset 1px 0 0 0 var(--theme-text),
+    inset 0 1px 0 0 var(--theme-text);
+  padding: calc(8px * var(--theme-line-height-base)) 1ch 0px 1ch;
+}
+
 .right {
   min-width: 10%;
   width: 100%;
@@ -35,6 +43,14 @@
     inset -1px 0 0 0 var(--theme-text),
     inset 0 1px 0 0 var(--theme-text);
   padding: calc(8px * var(--theme-line-height-base)) 2ch 0px 1ch;
+}
+
+.rightCorner {
+  flex-shrink: 0;
+  box-shadow:
+    inset -1px 0 0 0 var(--theme-text),
+    inset 0 1px 0 0 var(--theme-text);
+  padding: calc(8px * var(--theme-line-height-base)) 1ch 0px 1ch;
 }
 
 .title {

@@ -46,6 +46,7 @@
     border-radius: 0;
   }
 
+  /* Customizing the track */
   &::-webkit-slider-runnable-track {
     height: calc(16px * var(--theme-line-height-base));
     background: var(--theme-border-subdued);
