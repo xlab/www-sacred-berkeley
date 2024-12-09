@@ -34,14 +34,7 @@ type ActionListItemProps = LinkProps | LabelProps | DivProps;
 const ActionListItem: React.FC<ActionListItemProps> = (props) => {
   if ('href' in props) {
     return (
-      <a
-        className={styles.item}
-        href={props.href}
-        target={props.target}
-        style={props.style}
-        tabIndex={0}
-        role="link"
-      >
+      <a className={styles.item} href={props.href} target={props.target} style={props.style} tabIndex={0} role="link">
         <figure className={styles.icon}>{props.icon}</figure>
         <span className={styles.text}>{props.children}</span>
       </a>
@@ -50,11 +43,7 @@ const ActionListItem: React.FC<ActionListItemProps> = (props) => {
 
   if ('htmlFor' in props) {
     return (
-      <label
-        className={styles.item}
-        htmlFor={props.htmlFor}
-        style={props.style}
-      >
+      <label className={styles.item} htmlFor={props.htmlFor} style={props.style}>
         <figure className={styles.icon}>{props.icon}</figure>
         <span className={styles.text}>{props.children}</span>
       </label>
@@ -62,13 +51,7 @@ const ActionListItem: React.FC<ActionListItemProps> = (props) => {
   }
 
   return (
-    <div
-      className={styles.item}
-      onClick={props.onClick}
-      style={props.style}
-      tabIndex={0}
-      role="button"
-    >
+    <div className={styles.item} onClick={props.onClick} style={props.style} tabIndex={0} role="button">
       <figure className={styles.icon}>{props.icon}</figure>
       <span className={styles.text}>{props.children}</span>
     </div>

@@ -51,12 +51,8 @@ const MatrixLoader: React.FC<MatrixLoaderProps> = ({ rows = 25 }) => {
     const ypos: number[] = Array(cols).fill(0);
 
     const matrix = () => {
-      const themeTextColor = getComputedStyle(document.body)
-        .getPropertyValue('--theme-text')
-        .trim();
-      const fontFamily = getComputedStyle(document.body)
-        .getPropertyValue('--font-family-mono')
-        .trim();
+      const themeTextColor = getComputedStyle(document.body).getPropertyValue('--theme-text').trim();
+      const fontFamily = getComputedStyle(document.body).getPropertyValue('--font-family-mono').trim();
 
       ctx.globalCompositeOperation = 'destination-out';
       ctx.fillStyle = 'rgba(255, 255, 255, 0.05)';
@@ -68,11 +64,7 @@ const MatrixLoader: React.FC<MatrixLoaderProps> = ({ rows = 25 }) => {
 
       ypos.forEach((y, ind) => {
         const isUppercase = Math.random() < 0.5;
-        const text = String.fromCharCode(
-          isUppercase
-            ? 0x0391 + Math.floor(Math.random() * (0x03A9 - 0x0391 + 1)) 
-            : 0x03B1 + Math.floor(Math.random() * (0x03C9 - 0x03B1 + 1)) 
-        );
+        const text = String.fromCharCode(isUppercase ? 0x0391 + Math.floor(Math.random() * (0x03a9 - 0x0391 + 1)) : 0x03b1 + Math.floor(Math.random() * (0x03c9 - 0x03b1 + 1)));
         const x = ind * CHARACTER_WIDTH;
 
         ctx.fillStyle = themeTextColor;

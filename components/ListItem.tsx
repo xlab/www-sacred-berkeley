@@ -34,12 +34,7 @@ const ListItem = ({ children }) => {
   };
 
   return (
-    <li
-      className={styles.root}
-      tabIndex={0}
-      ref={itemRef}
-      onKeyDown={handleKeyDown}
-    >
+    <li className={styles.root} tabIndex={0} ref={itemRef} onKeyDown={handleKeyDown}>
       {children}
     </li>
   );

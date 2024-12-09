@@ -23,13 +23,7 @@ const Accordion: React.FC<AccordionProps> = ({ defaultValue = false, title, chil
 
   return (
     <>
-      <Row
-        ref={accordionRef}
-        tabIndex={0}
-        role="button"
-        onClick={toggleShow}
-        aria-expanded={show}
-      >
+      <Row ref={accordionRef} tabIndex={0} role="button" onClick={toggleShow} aria-expanded={show}>
         <div className={Utilities.classNames(styles.flex, show ? styles.active : undefined)}>
           <span className={styles.icon}>{show ? '▾' : '▸'}</span>
           <span className={styles.content}>

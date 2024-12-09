@@ -25,13 +25,7 @@ const Button: React.FC<ButtonProps> = ({ theme = 'PRIMARY', isDisabled, children
   }
 
   return (
-    <button
-      className={classNames}
-      role="button"
-      tabIndex={0}
-      disabled={isDisabled}
-      {...rest}
-    >
+    <button className={classNames} role="button" tabIndex={0} disabled={isDisabled} {...rest}>
       {children}
     </button>
   );

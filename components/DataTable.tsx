@@ -47,8 +47,7 @@ const DataTable: React.FC<TableProps> = ({ data }) => {
       case 'ArrowLeft':
       case 'ArrowRight': {
         event.preventDefault();
-        const direction =
-          event.key === 'ArrowUp' || event.key === 'ArrowLeft' ? 'previous' : 'next';
+        const direction = event.key === 'ArrowUp' || event.key === 'ArrowLeft' ? 'previous' : 'next';
         const nextFocusable = Utilities.findNextFocusable(activeElement, direction);
         nextFocusable?.focus();
         break;
@@ -62,10 +61,7 @@ const DataTable: React.FC<TableProps> = ({ data }) => {
   const targetColorData: RGBAColor = { r: 255, g: 255, b: 255, a: ALPHA };
 
   return (
-    <table
-      className={styles.root}
-      ref={tableRef}
-    >
+    <table className={styles.root} ref={tableRef}>
       <tbody className={styles.body}>
         {data.map((row, rowIndex) => (
           <tr key={rowIndex} className={styles.row} tabIndex={0} onClick={() => alert('testing')}>
@@ -74,35 +70,19 @@ const DataTable: React.FC<TableProps> = ({ data }) => {
 
               if (rowIndex === 0) {
                 const lightnessFactor = row.length > 1 ? colIndex / (row.length - 1) : 0;
-                const newColor = interpolateColor(
-                  BASE_FOREGROUND_RGBA,
-                  targetColorHeader,
-                  lightnessFactor
-                );
-                backgroundColor = `rgba(${newColor.r}, ${newColor.g}, ${newColor.b}, ${newColor.a.toFixed(
-                  2
-                )})`;
+                const newColor = interpolateColor(BASE_FOREGROUND_RGBA, targetColorHeader, lightnessFactor);
+                backgroundColor = `rgba(${newColor.r}, ${newColor.g}, ${newColor.b}, ${newColor.a.toFixed(2)})`;
               } else {
                 const numRows = data.length - 1;
-                const maxIndexSum = (numRows - 1) + (row.length - 1) || 1;
-                const indexSum = (rowIndex - 1) + colIndex;
+                const maxIndexSum = numRows - 1 + (row.length - 1) || 1;
+                const indexSum = rowIndex - 1 + colIndex;
                 const lightnessFactor = indexSum / maxIndexSum;
-                const newColor = interpolateColor(
-                  BASE_BACKGROUND_RGBA,
-                  targetColorData,
-                  lightnessFactor
-                );
-                backgroundColor = `rgba(${newColor.r}, ${newColor.g}, ${newColor.b}, ${newColor.a.toFixed(
-                  2
-                )})`;
+                const newColor = interpolateColor(BASE_BACKGROUND_RGBA, targetColorData, lightnessFactor);
+                backgroundColor = `rgba(${newColor.r}, ${newColor.g}, ${newColor.b}, ${newColor.a.toFixed(2)})`;
               }
 
               return (
-                <td
-                  key={colIndex}
-                  className={styles.column}
-                  style={{ backgroundColor }}
-                >
+                <td key={colIndex} className={styles.column} style={{ backgroundColor }}>
                   {cellContent}
                 </td>
               );
