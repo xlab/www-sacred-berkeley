@@ -11,7 +11,7 @@ npm run dev
 
 Go to `http://localhost:10000` in your browser of choice.
 
-Enjoy! The template uses `10000` as our `port` for more compatibility with [Render.com](https://render.com)
+We use [Vercel](https://vercel.com/home) for hosting.
 
 ### Scripts (Optional)
 

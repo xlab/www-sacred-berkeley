@@ -15,6 +15,7 @@ import Block from '@components/Block';
 import BlockLoader from '@components/BlockLoader';
 import Breadcrumbs from '@components/BreadCrumbs';
 import Button from '@components/Button';
+import CanvasPlatformer from '@components/CanvasPlatformer';
 import Card from '@components/Card';
 import Checkbox from '@components/Checkbox';
 import DataTable from '@components/DataTable';
@@ -129,6 +130,8 @@ export default async function Page(props) {
     <DefaultLayout previewPixelSRC="https://intdev-global.s3.us-west-2.amazonaws.com/template-app-icon.png">
       <br />
       <Grid>
+        <MatrixLoader direction="left-to-right" rows={8} mode="greek" />
+        <br />
         <Row>
           <strong>
             {Package.name} <Badge>Version {Package.version}</Badge>
@@ -146,6 +149,9 @@ export default async function Page(props) {
         </ActionListItem>
         <ActionListItem icon={`⭢`} href="https://github.com/internet-development/www-sacred" target="_blank">
           View the SRCL source code
+        </ActionListItem>
+        <ActionListItem icon={`⭢`} href="https://vercel.com/home" target="_blank">
+          Try our hosting provider Vercel
         </ActionListItem>
       </Grid>
       <Grid>
@@ -420,6 +426,16 @@ export default async function Page(props) {
           <Card title="EXAMPLE">WORK IN PROGRESS</Card>
         </Accordion>
 
+        <Accordion defaultValue={true} title="CANVAS PLATFORMER">
+          This canvas component provides a basic starting point for building a 2D platform game directly on a canvas element. It currently supports simple character jumping and rudimentary collision detection, making it easy to set up a foundational scene.
+          <br />
+          <br />
+          <Card title="EXAMPLE">
+            <CanvasPlatformer rows={12} />
+          </Card>
+        </Accordion>
+
+
         <Accordion defaultValue={true} title="CARDS">
           Cards are containers for content and actions related to a specific topic. They group information, helping users browse related items or actions. Cards provide a preview of content, encouraging further interaction for more details. They can be used for purposes like displaying introductory content, instructions, or suggestions.
           <br />
@@ -678,7 +694,7 @@ export default async function Page(props) {
           <br />
           <br />
           <Card title="EXAMPLE">
-            <MatrixLoader rows={25} />
+            <MatrixLoader rows={32} mode="katakana" />
           </Card>
         </Accordion>
 
@@ -842,6 +858,9 @@ export default async function Page(props) {
         </ActionListItem>
         <ActionListItem icon={`⭢`} href="https://github.com/internet-development/www-sacred" target="_blank">
           View the SRCL source code
+        </ActionListItem>
+        <ActionListItem icon={`⭢`} href="https://vercel.com/home" target="_blank">
+          Try our hosting provider Vercel
         </ActionListItem>
       </Grid>
       <ModalStack />
