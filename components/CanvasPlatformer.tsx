@@ -88,7 +88,7 @@ const CanvasPlatformer: React.FC<PlatformerProps> = ({ rows = 25 }) => {
       const x = Math.floor((e.clientX - rect.left) / CHARACTER_WIDTH) * CHARACTER_WIDTH;
       const y = Math.floor((e.clientY - rect.top) / LINE_HEIGHT) * LINE_HEIGHT;
       const blocks = platformBlocksRef.current;
-      const existingIndex = blocks.findIndex(b => b.x === x && b.y === y);
+      const existingIndex = blocks.findIndex((b) => b.x === x && b.y === y);
       if (existingIndex !== -1) {
         blocks.splice(existingIndex, 1);
       } else {
@@ -153,12 +153,8 @@ const CanvasPlatformer: React.FC<PlatformerProps> = ({ rows = 25 }) => {
       const keys = keysRef.current;
       const blocks = platformBlocksRef.current;
 
-      const themeBorderColor = getComputedStyle(document.body)
-        .getPropertyValue('--theme-border')
-        .trim();
-      const themeTextColor = getComputedStyle(document.body)
-        .getPropertyValue('--theme-text')
-        .trim();
+      const themeBorderColor = getComputedStyle(document.body).getPropertyValue('--theme-border').trim();
+      const themeTextColor = getComputedStyle(document.body).getPropertyValue('--theme-text').trim();
 
       ctx.fillStyle = themeBorderColor;
       for (const b of blocks) {
@@ -236,9 +232,15 @@ const CanvasPlatformer: React.FC<PlatformerProps> = ({ rows = 25 }) => {
 
   return (
     <>
-      <ActionButton hotkey="␣" onClick={handleJumpClick}>Jump</ActionButton>
-      <ActionButton hotkey="←" onClick={handleLeftClick}>Left</ActionButton>
-      <ActionButton hotkey="→" onClick={handleRightClick}>Right</ActionButton>
+      <ActionButton hotkey="␣" onClick={handleJumpClick}>
+        Jump
+      </ActionButton>
+      <ActionButton hotkey="←" onClick={handleLeftClick}>
+        Left
+      </ActionButton>
+      <ActionButton hotkey="→" onClick={handleRightClick}>
+        Right
+      </ActionButton>
       <div className={styles.container}>
         <canvas className={styles.root} ref={canvasRef} />
       </div>

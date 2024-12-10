@@ -7,7 +7,7 @@ import * as React from 'react';
 interface MatrixLoaderProps {
   rows?: number;
   direction?: undefined | 'top-to-bottom' | 'left-to-right';
-  mode?: undefined | 'greek' | 'katakana' ;
+  mode?: undefined | 'greek' | 'katakana';
 }
 
 const LINE_HEIGHT = 20;
@@ -17,35 +17,22 @@ function onTextGeneration({ mode = 'greek' }) {
   if (mode === 'greek') {
     const isUppercase = Math.random() < 0.5;
 
-    return String.fromCharCode(
-      isUppercase
-        ? 0x0391 + Math.floor(Math.random() * (0x03A9 - 0x0391 + 1))
-        : 0x03B1 + Math.floor(Math.random() * (0x03C9 - 0x03B1 + 1))
-    );
+    return String.fromCharCode(isUppercase ? 0x0391 + Math.floor(Math.random() * (0x03a9 - 0x0391 + 1)) : 0x03b1 + Math.floor(Math.random() * (0x03c9 - 0x03b1 + 1)));
   }
 
   if (mode === 'katakana') {
-    const japaneseRanges = [
-      { start: 0x30A0, end: 0x30FF }
-    ];
+    const japaneseRanges = [{ start: 0x30a0, end: 0x30ff }];
 
-    const allJapaneseCharacters = japaneseRanges.flatMap(range =>
-      Array.from({ length: range.end - range.start + 1 }, (_, i) => range.start + i)
-    );
+    const allJapaneseCharacters = japaneseRanges.flatMap((range) => Array.from({ length: range.end - range.start + 1 }, (_, i) => range.start + i));
 
-    const randomJapaneseCharacter =
-      allJapaneseCharacters[Math.floor(Math.random() * allJapaneseCharacters.length)];
+    const randomJapaneseCharacter = allJapaneseCharacters[Math.floor(Math.random() * allJapaneseCharacters.length)];
     return String.fromCharCode(randomJapaneseCharacter);
   }
 
   return '0';
 }
 
-const MatrixLoader: React.FC<MatrixLoaderProps> = ({
-  rows = 25,
-  direction = 'top-to-bottom',
-  mode = 'greek',
-}) => {
+const MatrixLoader: React.FC<MatrixLoaderProps> = ({ rows = 25, direction = 'top-to-bottom', mode = 'greek' }) => {
   const canvasRef = React.useRef<HTMLCanvasElement>(null);
 
   React.useEffect(() => {
@@ -88,12 +75,8 @@ const MatrixLoader: React.FC<MatrixLoaderProps> = ({
         const ypos: number[] = Array(cols).fill(0);
 
         const matrix = () => {
-          const themeTextColor = getComputedStyle(document.body)
-            .getPropertyValue('--theme-text')
-            .trim();
-          const fontFamily = getComputedStyle(document.body)
-            .getPropertyValue('--font-family-mono')
-            .trim();
+          const themeTextColor = getComputedStyle(document.body).getPropertyValue('--theme-text').trim();
+          const fontFamily = getComputedStyle(document.body).getPropertyValue('--font-family-mono').trim();
 
           ctx.globalCompositeOperation = 'destination-out';
           ctx.fillStyle = 'rgba(255, 255, 255, 0.05)';
@@ -124,12 +107,8 @@ const MatrixLoader: React.FC<MatrixLoaderProps> = ({
         const xpos: number[] = Array(totalRows).fill(0);
 
         const matrix = () => {
-          const themeTextColor = getComputedStyle(document.body)
-            .getPropertyValue('--theme-text')
-            .trim();
-          const fontFamily = getComputedStyle(document.body)
-            .getPropertyValue('--font-family-mono')
-            .trim();
+          const themeTextColor = getComputedStyle(document.body).getPropertyValue('--theme-text').trim();
+          const fontFamily = getComputedStyle(document.body).getPropertyValue('--font-family-mono').trim();
 
           ctx.globalCompositeOperation = 'destination-out';
           ctx.fillStyle = 'rgba(255, 255, 255, 0.05)';
