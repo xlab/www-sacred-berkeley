@@ -516,6 +516,9 @@ export default async function Page(props) {
           <br />
           <Card title="EXAMPLE">
             <DatePicker year={2012} month={12} />
+            <br />
+            <br />
+            <DatePicker year={2024} month={12} />
           </Card>
         </Accordion>
 
