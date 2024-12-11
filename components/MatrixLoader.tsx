@@ -10,6 +10,10 @@ interface MatrixLoaderProps {
   mode?: undefined | 'greek' | 'katakana';
 }
 
+// TODO(jimmylee)
+// Move these constants into a separate file
+// Dynamically compute these constants since we're going to
+// Support t-shirt sizes for the system.
 const LINE_HEIGHT = 20;
 const CHARACTER_WIDTH = 9.6;
 
@@ -44,9 +48,19 @@ const MatrixLoader: React.FC<MatrixLoaderProps> = ({ rows = 25, direction = 'top
 
     const resizeCanvas = () => {
       const parentWidth = parent.clientWidth;
-      const canvasHeight = rows * LINE_HEIGHT;
-      canvas.width = parentWidth;
-      canvas.height = canvasHeight;
+      const parentHeight = rows * LINE_HEIGHT;
+
+      const dpr = window.devicePixelRatio || 1;
+
+      canvas.style.width = parentWidth + 'px';
+      canvas.style.height = parentHeight + 'px';
+      canvas.width = Math.floor(parentWidth * dpr);
+      canvas.height = Math.floor(parentHeight * dpr);
+
+      const ctx = canvas.getContext('2d');
+      if (ctx) {
+        ctx.scale(dpr, dpr);
+      }
     };
 
     resizeCanvas();

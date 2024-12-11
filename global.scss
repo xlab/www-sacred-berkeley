@@ -327,8 +327,8 @@ body {
 
   &::-webkit-scrollbar {
     background: transparent;
-    height: 8px;
-    width: 8px;
+    height: 20px;
+    width: 1ch;
   }
   &::-webkit-scrollbar-track {
     background: var(--theme-background);

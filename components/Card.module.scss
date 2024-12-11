@@ -11,6 +11,15 @@
     0 1px 0 0 var(--theme-text);
   display: block;
   padding: calc(8px * var(--theme-line-height-base)) 2ch calc(16px * var(--theme-line-height-base)) 2ch;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  scrollbar-width: none;
 }
 
 .action {

@@ -10,6 +10,10 @@ interface PlatformerProps {
   rows?: number;
 }
 
+// TODO(jimmylee)
+// Move these constants into a separate file
+// Dynamically compute these constants since we're going to
+// Support t-shirt sizes for the system.
 const LINE_HEIGHT = 20;
 const CHARACTER_WIDTH = 9.6;
 const GRAVITY = 0.3;

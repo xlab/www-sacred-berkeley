@@ -19,6 +19,7 @@ import CanvasPlatformer from '@components/CanvasPlatformer';
 import Card from '@components/Card';
 import Checkbox from '@components/Checkbox';
 import DataTable from '@components/DataTable';
+import DatePicker from '@components/DatePicker';
 import DebugGrid from '@components/DebugGrid';
 import DefaultActionBar from '@components/page/DefaultActionBar';
 import DefaultLayout from '@components/page/DefaultLayout';
@@ -509,11 +510,13 @@ export default async function Page(props) {
           </Card>
         </Accordion>
 
-        <Accordion defaultValue={false} title="DATE PICKER">
-          A date picker is a UI control for selecting dates, and sometimes time, through a visual calendar interface. It ensures accurate date input and avoids formatting errors. Commonly used in forms, scheduling, or date-related tasks, Date Picker offers features like day, month, year, and time selection.
+        <Accordion defaultValue={true} title="DATE PICKER">
+          A date picker is a UI control for selecting dates, and sometimes time, through a visual calendar interface inspired by MS-DOS. It ensures accurate date input and avoids formatting errors. Commonly used in forms, scheduling, or date-related tasks.
           <br />
           <br />
-          <Card title="EXAMPLE">WORK IN PROGRESS</Card>
+          <Card title="EXAMPLE">
+            <DatePicker year={2012} month={12} />
+          </Card>
         </Accordion>
 
         <Accordion defaultValue={false} title="DIALOG">
