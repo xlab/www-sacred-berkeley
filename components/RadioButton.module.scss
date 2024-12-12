@@ -1,0 +1,55 @@
+.section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.selected {
+  .figure {
+    color: var(--theme-selected-text);
+  }
+}
+
+.focused {
+  .figure {
+    background: var(--theme-focused-foreground);
+  }
+}
+
+.relative {
+  position: relative;
+  flex-shrink: 0;
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+.figure {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  color: var(--theme-text);
+  background: var(--theme-button-foreground);
+  align-self: stretch;
+  display: inline-block;
+  padding: 0 1ch 0 1ch;
+}
+
+.right {
+  background: var(--theme-button-background);
+  min-width: 10%;
+  width: 100%;
+  align-self: stretch;
+}
+
+.input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+  white-space: nowrap;
+}

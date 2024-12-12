@@ -34,6 +34,7 @@ import ModalStack from '@components/ModalStack';
 import ModalTrigger from '@components/ModalTrigger';
 import NumberRangeSlider from '@components/NumberRangeSlider';
 import Package from '@root/package.json';
+import RadioButtonGroup from '@components/RadioButtonGroup';
 import Row from '@components/Row';
 import Script from 'next/script';
 import Text from '@components/Text';
@@ -567,7 +568,7 @@ export default async function Page(props) {
         </Accordion>
 
         <Accordion defaultValue={false} title="FORM">
-          A form is a key interface element for collecting user inputs. It includes fields like text boxes, dropdowns, checkboxes, radio buttons, or date pickers, designed for the required data.
+          A form is a key interface element for collecting user inputs.
           <br />
           <br />
           <Card title="EXAMPLE">WORK IN PROGRESS</Card>
@@ -772,11 +773,49 @@ export default async function Page(props) {
           <Card title="EXAMPLE">WORK IN PROGRESS</Card>
         </Accordion>
 
-        <Accordion defaultValue={false} title="RADIO BUTTON">
+        <Accordion defaultValue={true} title="RADIO BUTTON">
           Radio buttons are visual controls that let users make a single selection from a predefined set of mutually exclusive options. Represented as small circles that fill when selected, they are used when all options need to be visible and only one can be chosen.
           <br />
           <br />
-          <Card title="EXAMPLE">WORK IN PROGRESS</Card>
+          <Card title="METHOD">
+            You’re at the very beginning of designing your operating system. How do you choose to start?
+            <br />
+            <br />
+            <RadioButtonGroup
+              defaultValue="one"
+              options={[
+                { value: 'one', label: 'Custom Linux Kernel Derivative: Start with a minimal Linux kernel (e.g., a stripped-down mainline LTS release), integrate essential device drivers, and build out a tailored init process.' },
+                { value: 'two', label: 'AOSP Base: Leverage an AOSP-derived HAL and system services, using BSP integration and existing frameworks as a foundation for rapid device bring-up.' },
+                { value: 'three', label: 'Microkernel Approach: Implement a microkernel (e.g., seL4) to strictly separate core services, relying on IPC mechanisms and user-space servers to manage drivers, file systems, and device I/O.' },
+              ]}
+            />
+          </Card>
+          <Card title="INTERFACE">
+            How will you implement your interface layer?
+            <br />
+            <br />
+            <RadioButtonGroup
+              defaultValue="four"
+              options={[
+                { value: 'four', label: 'Native GUI Shell + EGL/Wayland: Use a lean, native toolkit with hardware-accelerated rendering (EGL), compositing via Wayland, and minimal shell protocols.' },
+                { value: 'five', label: 'Adapted Android Framework: Employ the Android UI stack (SurfaceFlinger, View hierarchy), integrating Material Components as baseline UI elements, and build custom system apps via Jetpack.' },
+                { value: 'six', label: 'Custom-Compositor + Custom Widgets: Implement a dedicated compositor (e.g., custom Weston derivative) and write your own widget toolkit in C++/Rust, managing input events and layouts directly.' },
+              ]}
+            />
+          </Card>
+          <Card title="SECURITY">
+            How will you handle security and lifecycle management?
+            <br />
+            <br />
+            <RadioButtonGroup
+              defaultValue="seven"
+              options={[
+                { value: 'seven', label: 'Signed Kernel/OS Updates + Verified Boot: Use a secure bootloader chain (e.g., U-Boot with verified boot), sign OTA payloads, and apply delta updates with rollback support.' },
+                { value: 'eight', label: 'TEE Integration + SELinux Policies: Embed a Trusted Execution Environment (e.g., ARM TrustZone), enforce SELinux policies system-wide, and apply monthly patch-level updates from upstream code sources.' },
+                { value: 'nine', label: 'Containerized Services + Granular Permissions: Run system services and third-party apps in containerized sandboxes (LXC, cgroups, seccomp), enforce capability-based permissions, and manage rolling updates at a container or microservice level.' },
+              ]}
+            />
+          </Card>
         </Accordion>
 
         <Accordion defaultValue={false} title="SELECT">
