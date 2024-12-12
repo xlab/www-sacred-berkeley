@@ -27,6 +27,8 @@ import Grid from '@components/Grid';
 import Indent from '@components/Indent';
 import ListItem from '@components/ListItem';
 import MatrixLoader from '@components/MatrixLoader';
+import Message from '@components/Message';
+import MessageViewer from '@components/MessageViewer';
 import ModalAlert from '@components/modals/ModalAlert';
 import ModalStack from '@components/ModalStack';
 import ModalTrigger from '@components/ModalTrigger';
@@ -690,6 +692,20 @@ export default async function Page(props) {
           <br />
           <br />
           <Card title="EXAMPLE">WORK IN PROGRESS</Card>
+        </Accordion>
+
+        <Accordion defaultValue={true} title="MESSAGES">
+          Messages in this library present a modern messaging experience through an MS-DOS–inspired aesthetic. Instead of rounded speech bubbles, messages appear in simple rectangular boxes, evoking a nostalgic, classic PC feel.
+          <br />
+          <br />
+          <Card title="EXAMPLE">
+            <Message>You create the world of the dream, you bring the subject into that dream, and they fill it with their subconscious.</Message>
+            <MessageViewer>How could I ever acquire enough detail to make them think that its reality?</MessageViewer>
+            <Message>Well dreams, they feel real while we're in them, right? It's only when we wake up that we realize how things are actually strange.</Message>
+            <Message>Let me ask you a question, you, you never really remember the beginning of a dream do you? You always wind up right in the middle of what's going on.</Message>
+            <MessageViewer>I guess, yeah.</MessageViewer>
+            <Message>So how did we end up here?</Message>
+          </Card>
         </Accordion>
 
         <Accordion defaultValue={true} title="MATRIX LOADER">

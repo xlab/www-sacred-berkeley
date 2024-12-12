@@ -141,7 +141,7 @@ ul li:before {
 }
 
 ol li:before {
-  content: counters(cupcake, ".") ". ";
+  content: counters(cupcake, '.') '. ';
 }
 
 article,
@@ -176,6 +176,7 @@ body.theme-blue {
   --theme-button-foreground: var(--color-blue-60);
   --theme-button-background: var(--color-blue-70);
   --theme-focused-foreground: var(--color-blue-50);
+  --theme-focused-foreground-subdued: var(--color-blue-50-5);
 }
 
 body.theme-light {
@@ -196,6 +197,7 @@ body.theme-light {
   --theme-button-foreground: var(--color-gray-30);
   --theme-button-background: var(--color-gray-20);
   --theme-focused-foreground: var(--color-neon-green-50);
+  --theme-focused-foreground-subdued: var(--color-neon-green-50-5);
 }
 
 body.theme-dark {
@@ -217,6 +219,7 @@ body.theme-dark {
   --theme-button-foreground: var(--color-gray-90);
   --theme-button-background: var(--color-gray-80);
   --theme-focused-foreground: var(--color-daybreak-10);
+  --theme-focused-foreground-subdued: var(--color-daybreak-10-5);
 }
 
 #__next {
@@ -250,6 +253,7 @@ body {
   --color-daybreak: rgba(255, 108, 4, 1);
   --color-daybreak-1: rgba(255, 108, 4, 0.1);
   --color-daybreak-10: rgba(239, 99, 0, 1);
+  --color-daybreak-10-5: rgba(239, 99, 0, 0.5);
   --color-daybreak-2: rgba(255, 108, 4, 0.2);
   --color-daybreak-20: rgba(220, 91, 0, 1);
   --color-daybreak-30: rgba(200, 83, 0, 1);
@@ -290,6 +294,7 @@ body {
   --color-neon-green-30: rgba(178, 255, 148, 1);
   --color-neon-green-40: rgba(138, 255, 104, 1);
   --color-neon-green-50: rgba(92, 255, 59, 1);
+  --color-neon-green-50-5: rgba(92, 255, 59, 0.5);
   --color-neon-green-70: rgba(0, 207, 0, 1);
   --color-neon-green-70-3: rgba(0, 207, 0, 0.3);
   --color-neon-green-70-7: rgba(0, 207, 0, 0.7);
