@@ -440,7 +440,7 @@ export default async function Page(props) {
         </Accordion>
 
         <Accordion defaultValue={true} title="CARDS">
-          Cards are containers for content and actions related to a specific topic. They group information, helping users browse related items or actions. Cards provide a preview of content, encouraging further interaction for more details. They can be used for purposes like displaying introductory content, instructions, or suggestions.
+          Cards are MS-DOS–inspired sections designed to group related content and actions. They can serve as standalone features or function as part of a larger application. Each card clearly outlines key information, making it easier for users to identify and interact with important details.
           <br />
           <br />
           <Card title="Left-A" mode="left">
