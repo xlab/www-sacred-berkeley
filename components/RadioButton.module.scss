@@ -2,6 +2,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  position: relative;
 }
 
 .selected {
@@ -17,7 +18,6 @@
 }
 
 .relative {
-  position: relative;
   flex-shrink: 0;
   display: inline-block;
   vertical-align: baseline;
@@ -43,13 +43,12 @@
 
 .input {
   position: absolute;
-  opacity: 0;
-  width: 1px;
   height: 1px;
-  margin: -1px;
-  padding: 0;
+  width: 1px;
+  opacity: 0;
+  background: transparent;
   border: 0;
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-  white-space: nowrap;
+  outline: 0;
+  margin: 0;
+  padding: 0;
 }

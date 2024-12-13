@@ -26,9 +26,7 @@ const Accordion: React.FC<AccordionProps> = ({ defaultValue = false, title, chil
       <Row ref={accordionRef} tabIndex={0} role="button" onClick={toggleShow} aria-expanded={show}>
         <div className={Utilities.classNames(styles.flex, show ? styles.active : undefined)}>
           <span className={styles.icon}>{show ? '▾' : '▸'}</span>
-          <span className={styles.content}>
-            <strong>{title}</strong>
-          </span>
+          <span className={styles.content}>{title}</span>
         </div>
       </Row>
       {show && <Row style={{ paddingLeft: '1ch' }}>{children}</Row>}

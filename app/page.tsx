@@ -11,12 +11,14 @@ import AlertBanner from '@components/AlertBanner';
 import Avatar from '@components/Avatar';
 import Badge from '@components/Badge';
 import BarLoader from '@components/BarLoader';
+import BarProgress from '@components/BarProgress';
 import Block from '@components/Block';
 import BlockLoader from '@components/BlockLoader';
 import Breadcrumbs from '@components/BreadCrumbs';
 import Button from '@components/Button';
 import CanvasPlatformer from '@components/CanvasPlatformer';
 import Card from '@components/Card';
+import CardDouble from '@components/CardDouble';
 import Checkbox from '@components/Checkbox';
 import DataTable from '@components/DataTable';
 import DatePicker from '@components/DatePicker';
@@ -137,9 +139,7 @@ export default async function Page(props) {
         <MatrixLoader direction="left-to-right" rows={8} mode="greek" />
         <br />
         <Row>
-          <strong>
-            {Package.name} <Badge>Version {Package.version}</Badge>
-          </strong>
+          {Package.name.toUpperCase()} <Badge>Version {Package.version}</Badge>
         </Row>
         <Row>{Package.description}</Row>
       </Grid>
@@ -194,7 +194,7 @@ export default async function Page(props) {
           </Card>
         </Accordion>
 
-        <Accordion defaultValue={true} title="ACTION BUTTON">
+        <Accordion defaultValue={true} title="ACTION BUTTONS">
           Action buttons let users perform actions. They are used for task-based options within a workflow and work well in interfaces where buttons need to stay understated.
           <br />
           <br />
@@ -232,7 +232,7 @@ export default async function Page(props) {
           </Card>
         </Accordion>
 
-        <Accordion defaultValue={true} title="AVATAR">
+        <Accordion defaultValue={true} title="AVATARS">
           Avatars identify users or entities in the interface. It can display an image, initials, or an icon, offering a visual connection to the user. Avatars appear in headers, comments, profiles, and messages. They provide quick recognition and add a personal touch to the digital experience.
           <br />
           <br />
@@ -247,42 +247,42 @@ export default async function Page(props) {
             <br />
             <Avatar src="https://pbs.twimg.com/profile_images/1818030201051430918/M6kSNje3_400x400.jpg" href="https://internet.dev" target="_blank">
               <Indent>
-                <strong>Andy Alimbuyuguen</strong>
+                ANDREW ALIMBUYUGUEN
                 <br />
                 Webmaster
               </Indent>
             </Avatar>
             <Avatar src="https://pbs.twimg.com/profile_images/1768438338841890816/taF_Uvqu_400x400.jpg" href="https://internet.dev" target="_blank">
               <Indent>
-                <strong>Jimmy Lee</strong>
+                JIMMY LEE
                 <br />
                 Janitor
               </Indent>
             </Avatar>
             <Avatar src="https://pbs.twimg.com/profile_images/1748647089633169408/B7vd7ito_400x400.jpg" href="https://internet.dev" target="_blank">
               <Indent>
-                <strong>Anastasiya Uraleva</strong>
+                ANASTASIYA URALEVA
                 <br />
                 Webmaster
               </Indent>
             </Avatar>
             <Avatar src="https://pbs.twimg.com/profile_images/1778697935544627200/1LvOcE-F_400x400.jpg" href="https://internet.dev" target="_blank">
               <Indent>
-                <strong>Elijah Seed Arita</strong>
+                ELIJAH SEED ARITA
                 <br />
                 Webmaster
               </Indent>
             </Avatar>
             <Avatar src="https://pbs.twimg.com/profile_images/1841883108305731585/3rhRm7aY_400x400.jpg" href="https://internet.dev" target="_blank">
               <Indent>
-                <strong>Xiangan He</strong>
+                XIANGAN HE
                 <br />
                 Webmaster
               </Indent>
             </Avatar>
             <Avatar src="https://avatars.githubusercontent.com/u/10610892?v=4" href="https://internet.dev" target="_blank">
               <Indent>
-                <strong>Chenyu Huang</strong>
+                CHENYU HUANG
                 <br />
                 Webmaster
               </Indent>
@@ -410,7 +410,7 @@ export default async function Page(props) {
           </Card>
         </Accordion>
 
-        <Accordion defaultValue={true} title="BUTTON">
+        <Accordion defaultValue={true} title="BUTTONS">
           Button components are essential interactive elements within SCL, facilitating actions like navigation, form submission, and command execution.
           <br />
           <br />
@@ -448,6 +448,11 @@ export default async function Page(props) {
               <Card title="C">Hello friend!</Card>
             </Card>
           </Card>
+          <CardDouble title="Left-A" mode="left">
+            <CardDouble title="Right-B" mode="right">
+              <CardDouble title="C">Hello friend!</CardDouble>
+            </CardDouble>
+          </CardDouble>
         </Accordion>
 
         <Accordion defaultValue={true} title="CHECKBOX">
@@ -766,18 +771,38 @@ export default async function Page(props) {
           <Card title="EXAMPLE">WORK IN PROGRESS</Card>
         </Accordion>
 
-        <Accordion defaultValue={false} title="PROGRESS BAR">
-          Progress bars are visual indicators that show the completion status of tasks or processes, such as form completion or system operations. They can be determinate, displaying a specific percentage, or indeterminate, for tasks with unknown durations.
+        <Accordion defaultValue={true} title="PROGRESS BARS">
+          Progress bars are visual indicators that show the completion status of tasks or processes, such as form completion or system operations. In SRCL our progress bar is just a variant of the Bar Loader component using characters.
           <br />
           <br />
-          <Card title="EXAMPLE">WORK IN PROGRESS</Card>
+          <Card title="EXAMPLE">
+            <Card mode="left" title="0%">
+              <BarProgress progress={0} />
+            </Card>
+
+            <Card mode="left" title="25%">
+              <BarProgress progress={25} />
+            </Card>
+
+            <Card mode="left" title="50%">
+              <BarProgress progress={50} />
+            </Card>
+
+            <Card mode="left" title="75%">
+              <BarProgress progress={75} />
+            </Card>
+
+            <Card mode="left" title="100%">
+              <BarProgress progress={100} />
+            </Card>
+          </Card>
         </Accordion>
 
-        <Accordion defaultValue={true} title="RADIO BUTTON">
+        <Accordion defaultValue={true} title="RADIO BUTTONS">
           Radio buttons are visual controls that let users make a single selection from a predefined set of mutually exclusive options. Represented as small circles that fill when selected, they are used when all options need to be visible and only one can be chosen.
           <br />
           <br />
-          <Card title="METHOD">
+          <CardDouble title="METHOD">
             You’re at the very beginning of designing your operating system. How do you choose to start?
             <br />
             <br />
@@ -789,8 +814,8 @@ export default async function Page(props) {
                 { value: 'three', label: 'Microkernel Approach: Implement a microkernel (e.g., seL4) to strictly separate core services, relying on IPC mechanisms and user-space servers to manage drivers, file systems, and device I/O.' },
               ]}
             />
-          </Card>
-          <Card title="INTERFACE">
+          </CardDouble>
+          <CardDouble title="INTERFACE">
             How will you implement your interface layer?
             <br />
             <br />
@@ -802,8 +827,8 @@ export default async function Page(props) {
                 { value: 'six', label: 'Custom-Compositor + Custom Widgets: Implement a dedicated compositor (e.g., custom Weston derivative) and write your own widget toolkit in C++/Rust, managing input events and layouts directly.' },
               ]}
             />
-          </Card>
-          <Card title="SECURITY">
+          </CardDouble>
+          <CardDouble title="SECURITY">
             How will you handle security and lifecycle management?
             <br />
             <br />
@@ -815,7 +840,7 @@ export default async function Page(props) {
                 { value: 'nine', label: 'Containerized Services + Granular Permissions: Run system services and third-party apps in containerized sandboxes (LXC, cgroups, seccomp), enforce capability-based permissions, and manage rolling updates at a container or microservice level.' },
               ]}
             />
-          </Card>
+          </CardDouble>
         </Accordion>
 
         <Accordion defaultValue={false} title="SELECT">

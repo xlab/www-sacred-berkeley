@@ -23,7 +23,7 @@ const BreadCrumbs: React.FC<BreadCrumbsProps> = ({ items }) => {
 
         return (
           <span className={styles.line} key={index}>
-            {index === items.length - 1 ? <strong>{linkElement}</strong> : linkElement}
+            {index === items.length - 1 ? <span>{linkElement}</span> : linkElement}
             {index < items.length - 1 && <span className={styles.symbol}> ❯ </span>}
           </span>
         );

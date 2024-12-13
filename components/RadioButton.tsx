@@ -35,6 +35,9 @@ const RadioButton: React.FC<RadioButtonProps> = ({ style, name, value, selected 
         previousFocusable?.focus();
         break;
       }
+      // TODO(jimmylee)
+      // I do not want to add Tab here, but I had to.
+      case 'Tab':
       case 'ArrowDown':
       case 'ArrowRight': {
         event.preventDefault();
@@ -54,8 +57,8 @@ const RadioButton: React.FC<RadioButtonProps> = ({ style, name, value, selected 
       })}
       style={style}
     >
+      <input className={styles.input} id={radioId} type="radio" name={name} value={value} checked={selected} onFocus={handleFocus} onBlur={handleBlur} onKeyDown={handleKeyDown} />
       <div className={styles.relative}>
-        <input className={styles.input} id={radioId} type="radio" name={name} value={value} checked={selected} onFocus={handleFocus} onBlur={handleBlur} onKeyDown={handleKeyDown} />
         <label className={styles.figure} htmlFor={radioId}>
           <span aria-hidden="true">{selected ? '◉' : '◯'}</span>
         </label>
