@@ -14,7 +14,6 @@ interface RadioButtonProps {
 
 const RadioButton: React.FC<RadioButtonProps> = ({ style, name, value, selected = false, onSelect, children }) => {
   const radioId = `${name}-${value}-radio`;
-
   const [isFocused, setIsFocused] = React.useState(false);
 
   const handleFocus = () => setIsFocused(true);
@@ -24,43 +23,40 @@ const RadioButton: React.FC<RadioButtonProps> = ({ style, name, value, selected 
     switch (event.key) {
       case 'Enter':
         event.preventDefault();
-        if (onSelect) {
-          onSelect(value);
-        }
+        onSelect?.(value);
         break;
       case 'ArrowUp':
-      case 'ArrowLeft': {
+      case 'ArrowLeft':
         event.preventDefault();
-        const previousFocusable = Utilities.findNextFocusable(document.activeElement, 'previous');
-        previousFocusable?.focus();
+        Utilities.findNextFocusable(document.activeElement, 'previous')?.focus();
         break;
-      }
-      // TODO(jimmylee)
-      // I do not want to add Tab here, but I had to.
       case 'Tab':
       case 'ArrowDown':
-      case 'ArrowRight': {
+      case 'ArrowRight':
         event.preventDefault();
-        const nextFocusable = Utilities.findNextFocusable(document.activeElement, 'next');
-        nextFocusable?.focus();
+        Utilities.findNextFocusable(document.activeElement, 'next')?.focus();
         break;
-      }
       default:
         break;
     }
+  };
+
+  const handleChange = () => {
+    onSelect?.(value);
   };
 
   return (
     <div
       className={Utilities.classNames(styles.section, {
         [styles.focused]: isFocused,
+        [styles.selected]: selected,
       })}
       style={style}
     >
-      <input className={styles.input} id={radioId} type="radio" name={name} value={value} checked={selected} onFocus={handleFocus} onBlur={handleBlur} onKeyDown={handleKeyDown} />
+      <input className={styles.input} id={radioId} type="radio" name={name} value={value} checked={selected} onFocus={handleFocus} onBlur={handleBlur} onKeyDown={handleKeyDown} onChange={handleChange} />
       <div className={styles.relative}>
         <label className={styles.figure} htmlFor={radioId}>
-          <span aria-hidden="true">{selected ? '◉' : '◯'}</span>
+          {selected ? <span aria-hidden="true" className={styles.dot} /> : null}
         </label>
       </div>
       <div className={styles.right}>{children}</div>
