@@ -40,6 +40,7 @@ import RadioButtonGroup from '@components/RadioButtonGroup';
 import Row from '@components/Row';
 import Script from 'next/script';
 import Text from '@components/Text';
+import TextArea from '@components/TextArea';
 
 export const dynamic = 'force-static';
 
@@ -898,11 +899,19 @@ export default async function Page(props) {
           <Card title="EXAMPLE">WORK IN PROGRESS</Card>
         </Accordion>
 
-        <Accordion defaultValue={false} title="TEXT AREA">
-          Text areas are UI elements that allow users to input multiple lines of text, supporting line breaks for content like comments, reviews, or descriptions. Ours includes a scrollbar for larger text and is resizable.
+        <Accordion defaultValue={true} title="TEXT AREA">
+          Text areas are UI elements that allow users to input multiple lines of text, ideal for content like comments, reviews, or descriptions. Our text areas feature arrow key support, and a visible caret to track the cursor position. There is also an auto play feature for rendering text on the screen in sequence.
           <br />
           <br />
-          <Card title="EXAMPLE">WORK IN PROGRESS</Card>
+          <Card title="EXAMPLE">
+            <TextArea />
+          </Card>
+          <Card title="PLACEHOLDER">
+            <TextArea placeholder="There he took up again his great Ring in Barad-dur." />
+          </Card>
+          <Card title="AUTO PLAY">
+            <TextArea autoPlay="The doom of the Elves is to be immortal, to love the beauty of the world, to bring it to full flower with their gifts of delicacy and perfection, to last while it lasts, never leaving it even when ‘slain’, but returning – and yet, when the Followers come, to teach them, and make way for them, to ‘fade’ as the Followers grow and absorb the life from which both proceed. The Doom (or the Gift) of Men is mortality, freedom from the circles of the world." />
+          </Card>
         </Accordion>
 
         <Accordion defaultValue={false} title="TOOLTIP">
