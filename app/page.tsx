@@ -773,7 +773,7 @@ export default async function Page(props) {
         </Accordion>
 
         <Accordion defaultValue={true} title="PROGRESS BARS">
-          Progress bars are visual indicators that show the completion status of tasks or processes, such as form completion or system operations. In SRCL our progress bar is just a variant of the Bar Loader component using characters.
+          Progress bars are visual indicators that display the completion status of tasks or processes. Ours allow for custom fill characters.
           <br />
           <br />
           <Card title="EXAMPLE">
@@ -787,6 +787,10 @@ export default async function Page(props) {
 
             <Card mode="left" title="50%">
               <BarProgress progress={50} />
+            </Card>
+
+            <Card mode="left" title="75%">
+              <BarProgress progress={75} fillChar={`(✿﹏●)`} />
             </Card>
 
             <Card mode="left" title="75%">
