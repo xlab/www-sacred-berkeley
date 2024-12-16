@@ -7,9 +7,10 @@ import * as Utilities from '@common/utilities';
 
 type TextAreaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
   autoPlay?: string;
+  autoPlaySpeedMS?: number;
+  isBlink?: boolean;
 };
-
-function TextArea({ autoPlay, placeholder, onChange, ...rest }: TextAreaProps) {
+function TextArea({ autoPlay, autoPlaySpeedMS = 40, isBlink, placeholder, onChange, ...rest }: TextAreaProps) {
   const textAreaRef = React.useRef<HTMLTextAreaElement | null>(null);
   const measurementRef = React.useRef<HTMLDivElement | null>(null);
 
@@ -23,6 +24,12 @@ function TextArea({ autoPlay, placeholder, onChange, ...rest }: TextAreaProps) {
 
   const [currentLineIndex, setCurrentLineIndex] = React.useState<number>(0);
   const [totalLines, setTotalLines] = React.useState<number>(0);
+
+  React.useEffect(() => {
+    if (textAreaRef.current && isFocused) {
+      textAreaRef.current.setSelectionRange(selectionStart, selectionStart);
+    }
+  }, [selectionStart, isFocused]);
 
   React.useEffect(() => {
     if (rest.value !== undefined) {
@@ -54,7 +61,7 @@ function TextArea({ autoPlay, placeholder, onChange, ...rest }: TextAreaProps) {
         const newText = autoPlay.slice(0, autoPlayIndexRef.current);
         setText(newText);
         setSelectionStart(newText.length);
-      }, 10);
+      }, autoPlaySpeedMS);
     }
 
     return () => {
@@ -75,7 +82,8 @@ function TextArea({ autoPlay, placeholder, onChange, ...rest }: TextAreaProps) {
   }, [resizeTextArea]);
 
   const onHandleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setText(e.target.value);
+    const value = e.target.value;
+    setText(value);
     setIsAutoPlaying(false);
     if (autoPlayIntervalRef.current) {
       clearInterval(autoPlayIntervalRef.current);
@@ -87,10 +95,9 @@ function TextArea({ autoPlay, placeholder, onChange, ...rest }: TextAreaProps) {
     setSelectionStart(e.target.selectionStart ?? 0);
   };
 
-  const onHandleSelect = () => {
-    if (textAreaRef.current) {
-      setSelectionStart(textAreaRef.current.selectionStart);
-    }
+  const onHandleSelect = (e: React.SyntheticEvent<HTMLTextAreaElement>) => {
+    const textarea = e.currentTarget as HTMLTextAreaElement;
+    setSelectionStart(textarea.selectionStart);
   };
 
   const onHandleFocus = () => {
@@ -102,6 +109,12 @@ function TextArea({ autoPlay, placeholder, onChange, ...rest }: TextAreaProps) {
 
   const onHandleBlur = () => {
     setIsFocused(false);
+  };
+
+  const onHandleClick = (e: React.MouseEvent<HTMLTextAreaElement>) => {
+    const textarea = e.currentTarget as HTMLTextAreaElement;
+    textarea.focus();
+    setSelectionStart(textarea.selectionStart);
   };
 
   React.useLayoutEffect(() => {
@@ -123,13 +136,8 @@ function TextArea({ autoPlay, placeholder, onChange, ...rest }: TextAreaProps) {
 
     const displayString = text || placeholder || '';
 
-    let textBeforeCaret = text.substring(0, selectionStart);
-    let textAfterCaret = text.substring(selectionStart);
-
-    if (!text && placeholder) {
-      textBeforeCaret = placeholder;
-      textAfterCaret = '';
-    }
+    const textBeforeCaret = text.substring(0, selectionStart);
+    const textAfterCaret = text.substring(selectionStart);
 
     const total = countLines(displayString);
     setTotalLines(total > 0 ? total - 1 : 0);
@@ -150,34 +158,21 @@ function TextArea({ autoPlay, placeholder, onChange, ...rest }: TextAreaProps) {
     }
   };
 
-  const displayString = text || placeholder || '';
-  let textBeforeCaret = text.substring(0, selectionStart);
-  let textAfterCaret = text.substring(selectionStart);
-
   const isPlaceholderVisible = !text && placeholder;
-
-  // TODO(jimmylee)
-  // There is a known bug if you are focused on placeholder
-  // and the placeholder is multiline, since the caret won't move
-  // you also can't use up arrow.
-  if (isPlaceholderVisible) {
-    textBeforeCaret = placeholder!;
-    textAfterCaret = '';
-  }
 
   const containerClasses = Utilities.classNames(styles.root, isFocused && styles.focused);
 
   return (
     <div className={containerClasses}>
       <div className={Utilities.classNames(styles.displayed, isPlaceholderVisible && styles.placeholder)}>
-        {textBeforeCaret}
-        <span className={styles.block}></span>
-        {textAfterCaret}
+        {isPlaceholderVisible ? placeholder : text.substring(0, selectionStart)}
+        {!isPlaceholderVisible && <span className={Utilities.classNames(styles.block, isBlink && styles.blink)}></span>}
+        {!isPlaceholderVisible && text.substring(selectionStart)}
       </div>
 
       <div ref={measurementRef} className={styles.hidden}></div>
 
-      <textarea className={styles.hiddenElement} ref={textAreaRef} value={text} aria-placeholder={placeholder} onFocus={onHandleFocus} onBlur={onHandleBlur} onKeyDown={onHandleKeyDown} onChange={onHandleChange} onSelect={onHandleSelect} {...rest} />
+      <textarea className={styles.hiddenElement} ref={textAreaRef} value={text} aria-placeholder={placeholder} onFocus={onHandleFocus} onBlur={onHandleBlur} onKeyDown={onHandleKeyDown} onChange={onHandleChange} onSelect={onHandleSelect} onClick={onHandleClick} {...rest} />
     </div>
   );
 }

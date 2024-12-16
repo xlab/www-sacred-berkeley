@@ -29,6 +29,20 @@
   .block {
     background: var(--theme-focused-foreground);
   }
+
+  .placeholder {
+    background: var(--theme-focused-foreground);
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.blink {
+  animation: blink 1s step-start 0s infinite;
 }
 
 .block {

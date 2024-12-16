@@ -900,17 +900,23 @@ export default async function Page(props) {
         </Accordion>
 
         <Accordion defaultValue={true} title="TEXT AREA">
-          Text areas are UI elements that allow users to input multiple lines of text, ideal for content like comments, reviews, or descriptions. Our text areas feature arrow key support, and a visible caret to track the cursor position. There is also an auto play feature for rendering text on the screen in sequence.
+          Text areas are UI elements that allow users to input multiple lines of text, ideal for content like comments, reviews, or descriptions. Our text areas feature arrow key support, and a visible caret to track the cursor position. There is also an auto play feature for rendering text on the screen in sequence that you can interupt at anytime.
           <br />
           <br />
           <Card title="EXAMPLE">
             <TextArea />
           </Card>
+          <Card title="BLINK">
+            <TextArea isBlink />
+          </Card>
           <Card title="PLACEHOLDER">
             <TextArea placeholder="There he took up again his great Ring in Barad-dur." />
           </Card>
           <Card title="AUTO PLAY">
-            <TextArea autoPlay="The doom of the Elves is to be immortal, to love the beauty of the world, to bring it to full flower with their gifts of delicacy and perfection, to last while it lasts, never leaving it even when ‘slain’, but returning – and yet, when the Followers come, to teach them, and make way for them, to ‘fade’ as the Followers grow and absorb the life from which both proceed. The Doom (or the Gift) of Men is mortality, freedom from the circles of the world." />
+            <TextArea autoPlay="The doom of the Elves is to be immortal, to love the beauty of the world, to bring it to full flower with their gifts of delicacy and perfection, to last while it lasts, never leaving it even when ‘slain’, but returning – and yet, when the Followers come, to teach them, and make way for them, to ‘fade’ as the Followers grow and absorb the life from which both proceed. The Doom (or the Gift) of Men is mortality, freedom from the circles of the world." autoPlaySpeedMS={50} />
+          </Card>
+          <Card title="AUTO PLAY SLOW">
+            <TextArea autoPlay="Nobody tells this to people who are beginners, I wish someone told me. All of us who do creative work, we get into it because we have good taste. But there is this gap. For the first couple years you make stuff, it’s just not that good. It’s trying to be good, it has potential, but it’s not. But your taste, the thing that got you into the game, is still killer. And your taste is why your work disappoints you. A lot of people never get past this phase, they quit. Most people I know who do interesting, creative work went through years of this. We know our work doesn’t have this special thing that we want it to have. We all go through this. And if you are just starting out or you are still in this phase, you gotta know its normal and the most important thing you can do is do a lot of work. Put yourself on a deadline so that every week you will finish one story. It is only by going through a volume of work that you will close that gap, and your work will be as good as your ambitions. And I took longer to figure out how to do this than anyone I’ve ever met. It’s gonna take awhile. It’s normal to take awhile. You’ve just gotta fight your way through." autoPlaySpeedMS={100} isBlink />
           </Card>
         </Accordion>
 
