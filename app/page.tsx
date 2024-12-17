@@ -28,6 +28,7 @@ import DefaultActionBar from '@components/page/DefaultActionBar';
 import DefaultLayout from '@components/page/DefaultLayout';
 import Grid from '@components/Grid';
 import Indent from '@components/Indent';
+import Input from '@components/Input';
 import ListItem from '@components/ListItem';
 import MatrixLoader from '@components/MatrixLoader';
 import Message from '@components/Message';
@@ -576,11 +577,13 @@ export default async function Page(props) {
           <Card title="EXAMPLE">WORK IN PROGRESS</Card>
         </Accordion>
 
-        <Accordion defaultValue={false} title="INPUT">
+        <Accordion defaultValue={true} title="INPUT">
           An input field is a fundamental UI component that allows users to enter and edit text or numerical data. It is commonly used in forms, search bars, and other interfaces requiring user input.
           <br />
           <br />
-          <Card title="EXAMPLE">WORK IN PROGRESS</Card>
+          <Card title="EXAMPLE">
+            <Input label="SACRED" placeholder="COMPUTER" />
+          </Card>
         </Accordion>
 
         <Accordion defaultValue={false} title="FORM">
