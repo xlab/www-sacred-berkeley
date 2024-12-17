@@ -17,6 +17,7 @@ import BlockLoader from '@components/BlockLoader';
 import Breadcrumbs from '@components/BreadCrumbs';
 import Button from '@components/Button';
 import CanvasPlatformer from '@components/CanvasPlatformer';
+import CanvasSnake from '@components/CanvasSnake';
 import Card from '@components/Card';
 import CardDouble from '@components/CardDouble';
 import Checkbox from '@components/Checkbox';
@@ -437,6 +438,15 @@ export default async function Page(props) {
           <br />
           <Card title="EXAMPLE">
             <CanvasPlatformer rows={12} />
+          </Card>
+        </Accordion>
+
+        <Accordion defaultValue={true} title="CANVAS SNAKE">
+          This canvas component provides a simple demo of the classic Snake game. It includes basic mechanics like movement and growth, while also demonstrating how to freeze the game state when the canvas loses focus, ensuring a smooth user experience.
+          <br />
+          <br />
+          <Card title="EXAMPLE">
+            <CanvasSnake rows={12} />
           </Card>
         </Accordion>
 
