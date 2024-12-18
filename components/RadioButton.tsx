@@ -59,7 +59,7 @@ const RadioButton: React.FC<RadioButtonProps> = ({ style, name, value, selected 
           {selected ? <span aria-hidden="true" className={styles.dot} /> : null}
         </label>
       </div>
-      <div className={styles.right}>{children}</div>
+      <div className={styles.right}>&nbsp;&nbsp;{children}</div>
     </div>
   );
 };

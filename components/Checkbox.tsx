@@ -71,7 +71,7 @@ const Checkbox: React.FC<CheckboxProps> = ({ style, name, defaultChecked = false
           {isChecked ? '╳' : '\u00A0'}
         </label>
       </div>
-      <div className={styles.right}>{children}</div>
+      <div className={styles.right}>&nbsp;&nbsp;{children}</div>
     </div>
   );
 };

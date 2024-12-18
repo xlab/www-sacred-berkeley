@@ -161,6 +161,8 @@ section {
 body.theme-blue {
   --theme-overlay: var(--color-blue-20-5);
   --theme-background: var(--color-blue-80);
+  --theme-background-modal: var(--color-blue-70);
+  --theme-background-input: var(--color-blue-60);
   --theme-border: var(--color-blue-70);
   --theme-border-subdued: var(--color-blue-60-2);
   --theme-error: var(--color-red-60);
@@ -182,6 +184,8 @@ body.theme-blue {
 body.theme-light {
   --theme-overlay: var(--color-black-100-4);
   --theme-background: var(--color-white);
+  --theme-background-modal: var(--color-gray-20);
+  --theme-background-input: var(--color-gray-10);
   --theme-border: var(--color-gray-20);
   --theme-border-subdued: var(--color-gray-40-2);
   --theme-error: var(--color-red-60);
@@ -201,10 +205,11 @@ body.theme-light {
 }
 
 body.theme-dark {
-  --theme-overlay: var(--color-white-100-4);
+  --theme-overlay: var(--color-black-100-4);
   --theme-background: var(--color-black-100);
-  --theme-border: var(--color-gray-90);
-  --theme-border-box: var(--color-gray-80);
+  --theme-background-modal: var(--color-gray-80);
+  --theme-background-input: var(--color-gray-60);
+  --theme-border: var(--color-gray-80);
   --theme-border-subdued: var(--color-gray-70-3);
   --theme-error: var(--color-red-60);
   --theme-error-subdued: var(--color-red-60-3);

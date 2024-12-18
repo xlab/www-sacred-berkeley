@@ -1,45 +1,111 @@
 'use client';
 
-import styles from '@components/Input.module.scss';
-
 import * as React from 'react';
 import * as Utilities from '@common/utilities';
 
-interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  label?: string;
-  error?: string;
-}
+import styles from '@components/Input.module.scss';
 
-const Input: React.FC<InputProps> = ({ label, error, className, ...rest }) => {
-  const [isFocused, setIsFocused] = React.useState(false);
+type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
+  caretChars?: string | any;
+  label?: string | any;
+  isBlink?: boolean;
+};
 
-  const handleFocus = (e: React.FocusEvent<HTMLInputElement>) => {
+function Input({ caretChars, isBlink = true, label, placeholder, onChange, type, id, ...rest }: InputProps) {
+  const generatedId = React.useId();
+  const inputId = id || generatedId;
+
+  const inputRef = React.useRef<HTMLInputElement | null>(null);
+  const [text, setText] = React.useState<string>(rest.defaultValue?.toString() || rest.value?.toString() || '');
+  const [isFocused, setIsFocused] = React.useState<boolean>(false);
+  const [selectionStart, setSelectionStart] = React.useState<number>(text.length);
+
+  const lastFocusDirectionRef = React.useRef<'up' | 'down' | null>(null);
+
+  React.useEffect(() => {
+    if (rest.value !== undefined) {
+      const val = rest.value.toString();
+      setText(val);
+      setSelectionStart(val.length);
+    }
+  }, [rest.value]);
+
+  const onHandleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setText(value);
+    if (onChange) {
+      onChange(e);
+    }
+    setSelectionStart(e.target.selectionStart ?? value.length);
+  };
+
+  const onHandleFocus = () => {
     setIsFocused(true);
-    if (rest.onFocus) {
-      rest.onFocus(e);
+    if (!inputRef.current) return;
+
+    if (lastFocusDirectionRef.current === 'down') {
+      setSelectionStart(text.length);
+      inputRef.current.setSelectionRange(text.length, text.length);
+    } else if (lastFocusDirectionRef.current === 'up') {
+      setSelectionStart(0);
+      inputRef.current.setSelectionRange(0, 0);
     }
   };
 
-  const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+  const onHandleBlur = () => {
     setIsFocused(false);
-    if (rest.onBlur) {
-      rest.onBlur(e);
+  };
+
+  const onHandleSelect = (e: React.SyntheticEvent<HTMLInputElement>) => {
+    const inputEl = e.currentTarget as HTMLInputElement;
+    setSelectionStart(inputEl.selectionStart ?? text.length);
+  };
+
+  const onHandleClick = (e: React.MouseEvent<HTMLInputElement>) => {
+    const inputEl = e.currentTarget as HTMLInputElement;
+    inputEl.focus();
+    setSelectionStart(inputEl.selectionStart ?? text.length);
+  };
+
+  const onHandleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      lastFocusDirectionRef.current = 'up';
+      const previousFocusable = Utilities.findNextFocusable(document.activeElement, 'previous');
+      previousFocusable?.focus();
+    } else if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      lastFocusDirectionRef.current = 'down';
+      const nextFocusable = Utilities.findNextFocusable(document.activeElement, 'next');
+      nextFocusable?.focus();
     }
   };
+
+  const isPlaceholderVisible = !text && placeholder;
+  const containerClasses = Utilities.classNames(styles.root, isFocused && styles.focused);
+
+  const maskText = (t: string) => (type === 'password' ? '•'.repeat(t.length) : t);
+
+  const beforeCaretText = isPlaceholderVisible ? placeholder ?? '' : maskText(text.substring(0, selectionStart));
+  const afterCaretText = isPlaceholderVisible ? '' : maskText(text.substring(selectionStart));
 
   return (
-    <div className={Utilities.classNames(styles.container, { [styles.focused]: isFocused }, { [styles.error]: error })}>
+    <div className={containerClasses}>
       {label && (
-        <div className={styles.label}>
-          <span className={styles.labelText}>{label}</span>
-        </div>
+        <label htmlFor={inputId} className={styles.label}>
+          {label}
+        </label>
       )}
-      <div className={styles.inputWrapper}>
-        <input className={Utilities.classNames(styles.input, className)} onFocus={handleFocus} onBlur={handleBlur} {...rest} />
+      <div className={styles.inputContainer}>
+        <div className={Utilities.classNames(styles.displayed, isPlaceholderVisible && styles.placeholder)}>
+          {beforeCaretText}
+          {!isPlaceholderVisible && <span className={Utilities.classNames(styles.block, isBlink && styles.blink)}>{caretChars || ''}</span>}
+          {!isPlaceholderVisible && afterCaretText}
+        </div>
+        <input id={inputId} ref={inputRef} className={styles.hidden} value={text} aria-placeholder={placeholder} type={type} onFocus={onHandleFocus} onBlur={onHandleBlur} onChange={onHandleChange} onSelect={onHandleSelect} onClick={onHandleClick} onKeyDown={onHandleKeyDown} {...rest} />
       </div>
-      {error && <div className={styles.errorMessage}>{error}</div>}
     </div>
   );
-};
+}
 
 export default Input;

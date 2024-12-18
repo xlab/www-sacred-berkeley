@@ -34,6 +34,7 @@ import MatrixLoader from '@components/MatrixLoader';
 import Message from '@components/Message';
 import MessageViewer from '@components/MessageViewer';
 import ModalAlert from '@components/modals/ModalAlert';
+import ModalCreateAccount from '@components/modals/ModalCreateAccount';
 import ModalStack from '@components/ModalStack';
 import ModalTrigger from '@components/ModalTrigger';
 import NumberRangeSlider from '@components/NumberRangeSlider';
@@ -582,15 +583,46 @@ export default async function Page(props) {
           <br />
           <br />
           <Card title="EXAMPLE">
-            <Input label="SACRED" placeholder="COMPUTER" />
+            <Input autoComplete="off" isBlink={false} name="input_test_empty" />
+            <br />
+            <Input autoComplete="off" isBlink={false} label="EMPTY CASE" name="input_test_one" />
+            <Input autoComplete="off" isBlink={false} placeholder="All the world is a stage" label="PLACEHOLDER" name="input_test_two" />
+            <Input autoComplete="off" isBlink={false} label="PASSWORD" value="dogdogdog" type="password" name="input_test_password" />
+            <Input autoComplete="off" isBlink={false} label="PREFILLED" value="I did my best, I have no regrets!" name="input_test_prefilled" />
+            <Input autoComplete="off" isBlink={true} label="BLINK" value="I did my best, so I've no regrets." name="input_test_blink" />
+            <Input autoComplete="off" caretChars="(✿﹏●)" isBlink={true} label="CARET TEXT" value="Keep moving ahead." name="input_test_caret" />
+            <Input autoComplete="off" caretChars="⌫ ERROR" isBlink={false} label="CARET TEXT" value="There was a mistake." name="input_test_single_caret" />
+
+            <Input autoComplete="off" caretChars={<BlockLoader mode={6} />} isBlink={false} label="BLOCK LOADER CARET" value="Keep your face always toward the sunshine." name="input_test_single_caret" />
           </Card>
         </Accordion>
 
-        <Accordion defaultValue={false} title="FORM">
+        <Accordion defaultValue={true} title="FORM">
           A form is a key interface element for collecting user inputs.
           <br />
           <br />
-          <Card title="EXAMPLE">WORK IN PROGRESS</Card>
+          <CardDouble title="NEW ACCOUNT">
+            Create a new MakeBelieve™ account, where anything is possible at your command line in the browser.
+            <br />
+            <br />
+            <RadioButtonGroup
+              defaultValue="test_individual"
+              options={[
+                { value: 'test_individual', label: 'I’m using this for personal use.' },
+                { value: 'test_developer', label: 'I’m building or creating something for work.' },
+                { value: 'test_company', label: 'We’re using this as a team or organization.' },
+              ]}
+            />
+            <br />
+            <Input autoComplete="off" label="USERNAME" placeholder="Choose a username (e.g., SurfGirl29)" name="test_username" />
+            <Input autoComplete="off" label="PASSWORD" placeholder="Create a password (8+ characters)" type="password" name="test_password" />
+            <Input autoComplete="off" label="CONFIRM" placeholder="Type it again" type="password" name="test_confirm" />
+            <br />
+            <Checkbox name="test_terms">I agree to the Terms of Service, Data Privacy Policy, and Acceptable Use Guidelines.</Checkbox>
+            <Checkbox name="test_goodwill">I agree not to use this service for unlawful purposes.</Checkbox>
+            <br />
+            <Button>Create an account</Button>
+          </CardDouble>
         </Accordion>
 
         <Accordion defaultValue={false} title="HELP TEXT">
@@ -753,6 +785,9 @@ export default async function Page(props) {
             </ModalTrigger>
             <ModalTrigger modal={ModalAlert} modalProps={{ message: `Dennis Ritchie and Ken Thompson's creation of the UNIX operating system and the C programming language were pivotal developments in the progress of computer science. Today, 50 years after its beginnings, UNIX and UNIX-like systems continue to run machinery from supercomputers to smartphones.` }}>
               <ActionButton>Render Alert Modal B</ActionButton>
+            </ModalTrigger>
+            <ModalTrigger modal={ModalCreateAccount}>
+              <ActionButton>Render Create Account Modal</ActionButton>
             </ModalTrigger>
           </Card>
         </Accordion>
