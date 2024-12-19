@@ -29,6 +29,7 @@ import DefaultLayout from '@components/page/DefaultLayout';
 import Grid from '@components/Grid';
 import Indent from '@components/Indent';
 import Input from '@components/Input';
+import IntDevLogo from '@components/svg/IntDevLogo';
 import ListItem from '@components/ListItem';
 import MatrixLoader from '@components/MatrixLoader';
 import Message from '@components/Message';
@@ -44,6 +45,7 @@ import Row from '@components/Row';
 import Script from 'next/script';
 import Text from '@components/Text';
 import TextArea from '@components/TextArea';
+import UpdatingDataTable from '@components/examples/UpdatingDataTable';
 
 export const dynamic = 'force-static';
 
@@ -140,8 +142,6 @@ export default async function Page(props) {
     <DefaultLayout previewPixelSRC="https://intdev-global.s3.us-west-2.amazonaws.com/template-app-icon.png">
       <br />
       <Grid>
-        <MatrixLoader direction="left-to-right" rows={8} mode="greek" />
-        <br />
         <Row>
           {Package.name.toUpperCase()} <Badge>Version {Package.version}</Badge>
         </Row>
@@ -526,8 +526,11 @@ export default async function Page(props) {
           Data tables are for organizing large datasets into rows and columns for clear visibility and easy interpretation. It is used in scenarios like reporting systems, dashboards, and list views where data needs comparison, analysis, or manipulation. Features like sorting, filtering, pagination, and inline editing make data handling more efficient. The entire table width is limited to 64ch to fit the grid precisely.
           <br />
           <br />
-          <Card title="EXAMPLE">
+          <Card title="STATIC">
             <DataTable data={SAMPLE_TABLE_DATA_CHANGE_ME} />
+          </Card>
+          <Card title="UPDATING">
+            <UpdatingDataTable data={SAMPLE_TABLE_DATA_CHANGE_ME} />
           </Card>
         </Accordion>
 
@@ -763,8 +766,11 @@ export default async function Page(props) {
           A Matrix Loader (screen) is a visual element that simulates the iconic green, cascading code streams featured in the Matrix films. These screens often serve as dynamic backdrops, thematic treatments, or stylized representations of complex digital data. This version fits SRCL's theming and monospace font usage.
           <br />
           <br />
-          <Card title="EXAMPLE">
+          <Card title="KATAKANA DEFAULT">
             <MatrixLoader rows={32} mode="katakana" />
+          </Card>
+          <Card title="GREEK LTR">
+            <MatrixLoader direction="left-to-right" rows={8} mode="greek" />
           </Card>
         </Accordion>
 
