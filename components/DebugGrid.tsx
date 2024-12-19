@@ -8,7 +8,7 @@ const DebugGrid: React.FC = () => {
     let isVisible = false;
 
     const setGridHeight = () => {
-      debugGrid.style.height = `${document.body.scrollHeight}px`;
+      debugGrid.style.height = `${document.documentElement.scrollHeight}px`;
     };
 
     Object.assign(debugGrid.style, {
@@ -37,6 +37,11 @@ const DebugGrid: React.FC = () => {
 
     const handleDebugGridToggle = () => toggleDebugGrid();
 
+    const observer = new ResizeObserver(() => {
+      setGridHeight();
+    });
+    observer.observe(document.documentElement);
+
     window.addEventListener('debugGridToggle', handleDebugGridToggle);
     window.addEventListener('resize', setGridHeight);
 
@@ -44,6 +49,7 @@ const DebugGrid: React.FC = () => {
       document.body.removeChild(debugGrid);
       window.removeEventListener('resize', setGridHeight);
       window.removeEventListener('debugGridToggle', handleDebugGridToggle);
+      observer.disconnect();
     };
   }, []);
 

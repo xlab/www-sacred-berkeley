@@ -583,17 +583,16 @@ export default async function Page(props) {
           <br />
           <br />
           <Card title="EXAMPLE">
+            <Input label="MULTIPLE INPUTS" autoComplete="off" isBlink={false} name="input_test_empty" />
             <Input autoComplete="off" isBlink={false} name="input_test_empty" />
-            <br />
+            <Input autoComplete="off" isBlink={false} name="input_test_empty" />
             <Input autoComplete="off" isBlink={false} label="EMPTY CASE" name="input_test_one" />
             <Input autoComplete="off" isBlink={false} placeholder="All the world is a stage" label="PLACEHOLDER" name="input_test_two" />
-            <Input autoComplete="off" isBlink={false} label="PASSWORD" value="dogdogdog" type="password" name="input_test_password" />
-            <Input autoComplete="off" isBlink={false} label="PREFILLED" value="I did my best, I have no regrets!" name="input_test_prefilled" />
-            <Input autoComplete="off" isBlink={true} label="BLINK" value="I did my best, so I've no regrets." name="input_test_blink" />
-            <Input autoComplete="off" caretChars="(✿﹏●)" isBlink={true} label="CARET TEXT" value="Keep moving ahead." name="input_test_caret" />
-            <Input autoComplete="off" caretChars="⌫ ERROR" isBlink={false} label="CARET TEXT" value="There was a mistake." name="input_test_single_caret" />
-
-            <Input autoComplete="off" caretChars={<BlockLoader mode={6} />} isBlink={false} label="BLOCK LOADER CARET" value="Keep your face always toward the sunshine." name="input_test_single_caret" />
+            <Input autoComplete="off" isBlink={false} label="PASSWORD" type="password" name="input_test_password" />
+            <Input autoComplete="off" isBlink={true} label="CARET BLINK" name="input_test_blink" />
+            <Input autoComplete="off" caretChars="(✿﹏●)" isBlink={true} label="CUSTOM CARET TEXT" name="input_test_caret" />
+            <Input autoComplete="off" caretChars="⌫ ERROR" isBlink={false} label="CUSTOM CARET TEXT" name="input_test_single_caret" />
+            <Input autoComplete="off" caretChars={<BlockLoader mode={6} />} isBlink={false} label="CUSTOM CARET LOADER" name="input_test_single_caret" />
           </Card>
         </Accordion>
 

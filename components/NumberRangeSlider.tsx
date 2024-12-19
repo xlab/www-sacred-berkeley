@@ -11,7 +11,7 @@ interface RangerProps {
   step?: number;
 }
 
-const NumberRangeSlider = ({ defaultValue = 0, max = 5000, min = 0, step = 1 }: RangerProps): JSX.Element => {
+const NumberRangeSlider: React.FC<RangerProps> = ({ defaultValue = 0, max = 5000, min = 0, step = 1 }) => {
   const sliderRef = React.useRef<HTMLInputElement>(null);
   const [displayValue, setDisplayValue] = React.useState<number>(defaultValue);
 
@@ -21,7 +21,7 @@ const NumberRangeSlider = ({ defaultValue = 0, max = 5000, min = 0, step = 1 }: 
     return value.toString().padStart(maxDigits, '0');
   };
 
-  React.useEffect((): void => {
+  React.useEffect(() => {
     if (sliderRef.current) {
       sliderRef.current.value = String(defaultValue);
     }

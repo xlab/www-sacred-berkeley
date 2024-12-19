@@ -5,7 +5,7 @@ import * as React from 'react';
 import { useModals } from '@components/page/ModalContext';
 
 interface ModalTriggerProps {
-  children: React.ReactElement;
+  children: React.ReactElement<{ onClick?: React.MouseEventHandler }>;
   modal: React.ComponentType<any>;
   modalProps?: Record<string, any>;
 }
