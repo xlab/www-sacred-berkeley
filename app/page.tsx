@@ -462,14 +462,19 @@ export default async function Page(props) {
           <br />
           <Card title="Left-A" mode="left">
             <Card title="Right-B" mode="right">
-              <Card title="C">Hello friend!</Card>
+              <Card title="C">To seek the timeless way we must first know the quality without a name. There is a central quality which is the root criterion of life and spirit in a man, a town, a building, or a wilderness. This quality is objective and precise, but it cannot be named.</Card>
             </Card>
           </Card>
           <CardDouble title="Left-A" mode="left">
             <CardDouble title="Right-B" mode="right">
-              <CardDouble title="C">Hello friend!</CardDouble>
+              <CardDouble title="C">The structure of life I have described in buildings - the structure which I believe to be objective - is deeply and inextricably connected with the human person, and with the innermost nature of human feeling.</CardDouble>
             </CardDouble>
           </CardDouble>
+          <Card title="Left-A" mode="left">
+            <CardDouble title="Right-B" mode="right">
+              <Card title="C">We are searching for some kind of harmony between two intangibles: a form which we have not yet designed and a context which we cannot properly describe.</Card>
+            </CardDouble>
+          </Card>
         </Accordion>
 
         <Accordion defaultValue={true} title="CHECKBOX">
@@ -795,6 +800,11 @@ export default async function Page(props) {
             <ModalTrigger modal={ModalAlert} modalProps={{ message: `Dennis Ritchie and Ken Thompson's creation of the UNIX operating system and the C programming language were pivotal developments in the progress of computer science. Today, 50 years after its beginnings, UNIX and UNIX-like systems continue to run machinery from supercomputers to smartphones.` }}>
               <ActionButton>Render Alert Modal B</ActionButton>
             </ModalTrigger>
+
+            <ModalTrigger modal={ModalAlert} modalProps={{ message: `In short, no pattern is an isolated entity. Each pattern can exist in the world only to the extent that is supported by other patterns: the larger patterns in which it is embedded, the patterns of the same size that surround it, and the smaller patterns which are embedded in it.` }}>
+              <ActionButton>Render Alert Modal C</ActionButton>
+            </ModalTrigger>
+
             <ModalTrigger modal={ModalCreateAccount}>
               <ActionButton>Render Create Account Modal</ActionButton>
             </ModalTrigger>

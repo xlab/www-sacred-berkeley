@@ -227,11 +227,6 @@ body.theme-dark {
   --theme-focused-foreground-subdued: var(--color-daybreak-10-5);
 }
 
-body.font-2x {
-  --font-size: 32px;
-  line-height: calc(var(--theme-line-height-base) * 1rem);
-}
-
 #__next {
 }
 
