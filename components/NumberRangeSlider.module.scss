@@ -39,9 +39,9 @@
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    font-size: 16px;
+    font-size: var(--font-size);
     width: 1ch;
-    height: calc(16px * var(--theme-line-height-base));
+    height: calc(var(--font-size) * var(--theme-line-height-base));
     background: var(--theme-button-foreground);
     vertical-align: bottom;
     cursor: pointer;
@@ -50,7 +50,7 @@
 
   /* Customizing the track */
   &::-webkit-slider-runnable-track {
-    height: calc(16px * var(--theme-line-height-base));
+    height: calc(var(--font-size) * var(--theme-line-height-base));
     background: var(--theme-border-subdued);
     border-radius: 0;
   }
@@ -58,9 +58,9 @@
   &::-moz-range-thumb {
     -moz-appearance: none;
     appearance: none;
-    font-size: 16px;
+    font-size: var(--font-size);
     width: 1ch;
-    height: calc(16px * var(--theme-line-height-base));
+    height: calc(var(--font-size) * var(--theme-line-height-base));
     background: var(--theme-button-foreground);
     vertical-align: bottom;
     cursor: pointer;
@@ -69,16 +69,16 @@
   }
 
   &::-moz-range-track {
-    height: calc(16px * var(--theme-line-height-base));
+    height: calc(var(--font-size) * var(--theme-line-height-base));
     background: var(--theme-border-subdued);
     border-radius: 0;
   }
 
   &::-ms-thumb {
     appearance: none;
-    font-size: 16px;
+    font-size: var(--font-size);
     width: 1ch;
-    height: calc(16px * var(--theme-line-height-base));
+    height: calc(var(--font-size) * var(--theme-line-height-base));
     background: var(--theme-button-foreground);
     vertical-align: bottom;
     cursor: pointer;
@@ -87,7 +87,7 @@
   }
 
   &::-ms-track {
-    height: calc(16px * var(--theme-line-height-base));
+    height: calc(var(--font-size) * var(--theme-line-height-base));
     background: transparent;
     border-color: transparent;
     color: transparent;

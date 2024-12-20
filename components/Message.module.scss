@@ -2,7 +2,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: calc(16px * var(--theme-line-height-base));
+  margin-bottom: calc(var(--font-size) * var(--theme-line-height-base));
 
   &:last-child {
     margin-bottom: 0px;
@@ -21,10 +21,10 @@
   display: inline-block;
   width: 0;
   height: 0;
-  border-top: calc((16px * var(--theme-line-height-base)) / 2) solid transparent;
-  border-bottom: calc((16px * var(--theme-line-height-base)) / 2) solid transparent;
+  border-top: calc((var(--font-size) * var(--theme-line-height-base)) / 2) solid transparent;
+  border-bottom: calc((var(--font-size) * var(--theme-line-height-base)) / 2) solid transparent;
   border-right: 1ch solid var(--theme-border);
-  margin-bottom: calc((16px * var(--theme-line-height-base)) / 2);
+  margin-bottom: calc((var(--font-size) * var(--theme-line-height-base)) / 2);
 }
 
 .right {

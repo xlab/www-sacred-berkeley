@@ -7,13 +7,17 @@ interface ActionButtonProps {
   onClick?: () => void;
   hotkey?: any;
   children?: React.ReactNode;
+  style?: any;
+  isSelected?: boolean;
 }
 
-const ActionButton: React.FC<ActionButtonProps> = ({ onClick, hotkey, children }) => {
+const ActionButton: React.FC<ActionButtonProps> = ({ onClick, hotkey, children, style, isSelected }) => {
   return (
-    <div className={styles.root} onClick={onClick} tabIndex={0} role="button">
+    <div className={Utilities.classNames(styles.root, isSelected ? styles.selected : null)} onClick={onClick} tabIndex={0} role="button">
       {Utilities.isEmpty(hotkey) ? null : <span className={styles.hotkey}>{hotkey}</span>}
-      <span className={styles.content}>{children}</span>
+      <span className={styles.content} style={style}>
+        {children}
+      </span>
     </div>
   );
 };

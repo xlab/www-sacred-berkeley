@@ -18,7 +18,7 @@
 
 .figure {
   display: inline-flex;
-  height: calc(16px * var(--theme-line-height-base));
+  height: calc(var(--font-size) * var(--theme-line-height-base));
   cursor: pointer;
   color: var(--theme-text);
   background: var(--theme-button-foreground);

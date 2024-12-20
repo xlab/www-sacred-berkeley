@@ -34,7 +34,7 @@
   justify-content: center;
   width: 3ch;
   flex-shrink: 0;
-  height: calc(16px * var(--theme-line-height-base));
+  height: calc(var(--font-size) * var(--theme-line-height-base));
 }
 
 .text {

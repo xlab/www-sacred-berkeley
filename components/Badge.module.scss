@@ -8,7 +8,7 @@
   border: 0;
   font-family: var(--font-family-mono);
   font-size: 10px;
-  min-height: calc(var(--theme-line-height-base) * 16px);
+  min-height: calc(var(--theme-line-height-base) * var(--font-size));
   text-transform: uppercase;
   transition: 200ms ease all;
   background: var(--theme-border);

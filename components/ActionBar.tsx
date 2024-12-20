@@ -3,12 +3,12 @@ import styles from '@components/ActionBar.module.scss';
 import * as React from 'react';
 import * as Utilities from '@common/utilities';
 
-import ActionButton from '@components/ActionButton';
-import Row from '@components/Row';
+import ButtonGroup from '@components/ButtonGroup';
 
 interface ActionBarItem {
   hotkey: string;
   onClick?: () => void;
+  selected?: boolean;
   body: React.ReactNode;
 }
 
@@ -19,11 +19,7 @@ interface ActionBarProps {
 const ActionBar: React.FC<ActionBarProps> = ({ items }) => {
   return (
     <div className={styles.root}>
-      {items.map((each) => (
-        <ActionButton key={each.hotkey} hotkey={each.hotkey} onClick={each.onClick}>
-          {each.body}
-        </ActionButton>
-      ))}
+      <ButtonGroup items={items} />
     </div>
   );
 };

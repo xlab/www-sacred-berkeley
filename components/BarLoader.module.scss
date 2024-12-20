@@ -1,6 +1,6 @@
 .root {
   background: var(--theme-border);
-  height: calc(16px * var(--theme-line-height-base));
+  height: calc(var(--font-size) * var(--theme-line-height-base));
   white-space: nowrap;
   text-align: left;
   vertical-align: bottom;

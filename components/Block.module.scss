@@ -2,6 +2,6 @@
   display: inline-block;
   width: 1ch;
   background: var(--theme-text);
-  height: calc(16px * var(--theme-line-height-base));
+  height: calc(var(--font-size) * var(--theme-line-height-base));
   vertical-align: bottom;
 }

@@ -49,7 +49,7 @@
   display: inline-block;
   min-width: 1ch;
   background: var(--theme-text);
-  height: calc(16px * var(--theme-line-height-base));
+  height: calc(var(--font-size) * var(--theme-line-height-base));
   vertical-align: bottom;
 }
 
@@ -69,6 +69,6 @@
   padding: 0;
   margin: 0;
   line-height: var(--theme-line-height-base);
-  font-size: 16px;
+  font-size: var(--font-size);
   font-family: inherit;
 }

@@ -2,7 +2,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: calc(16px * var(--theme-line-height-base));
+  margin-bottom: calc(var(--font-size) * var(--theme-line-height-base));
 }
 
 .bubble {
@@ -28,8 +28,8 @@
   display: inline-block;
   width: 0;
   height: 0;
-  border-top: calc((16px * var(--theme-line-height-base)) / 2) solid transparent;
-  border-bottom: calc((16px * var(--theme-line-height-base)) / 2) solid transparent;
+  border-top: calc((var(--font-size) * var(--theme-line-height-base)) / 2) solid transparent;
+  border-bottom: calc((var(--font-size) * var(--theme-line-height-base)) / 2) solid transparent;
   border-left: 1ch solid var(--theme-focused-foreground);
-  margin-bottom: calc((16px * var(--theme-line-height-base)) / 2);
+  margin-bottom: calc((var(--font-size) * var(--theme-line-height-base)) / 2);
 }

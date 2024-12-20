@@ -23,7 +23,7 @@ export function deepEqual(x: any, y: any): boolean {
     ? Object.keys(x).length === Object.keys(y).length &&
         //@ts-ignore
         Object.keys(x).reduce((isEqual, key) => isEqual && deepEqual(x[key], y[key]), true)
-    : x === y
+    : x === y;
 }
 
 export function getDomainFromEmailWithoutAnySubdomain(email: string): string {
@@ -320,46 +320,22 @@ export const isFocusableElement = (element: EventTarget | null): element is HTML
     return false;
   }
 
-  const focusableSelectors = [
-    'a[href]',
-    'button',
-    'input',
-    'select',
-    'textarea',
-    '[tabindex]:not([tabindex="-1"])',
-    '[contenteditable="true"]',
-  ];
+  const focusableSelectors = ['a[href]', 'button', 'input', 'select', 'textarea', '[tabindex]:not([tabindex="-1"])', '[contenteditable="true"]'];
 
   return element.matches(focusableSelectors.join(', '));
 };
 
-export const findNextFocusable = (
-  element: Element | null,
-  direction: 'next' | 'previous' = 'next'
-): HTMLElement | null => {
+export const findNextFocusable = (element: Element | null, direction: 'next' | 'previous' = 'next'): HTMLElement | null => {
   if (!element) return null;
 
-  const focusableSelectors = [
-    'a[href]',
-    'button',
-    'input',
-    'select',
-    'textarea',
-    '[tabindex]:not([tabindex="-1"])',
-    '[contenteditable="true"]',
-  ];
+  const focusableSelectors = ['a[href]', 'button', 'input', 'select', 'textarea', '[tabindex]:not([tabindex="-1"])', '[contenteditable="true"]'];
 
-  const focusableElements = Array.from(
-    document.querySelectorAll<HTMLElement>(focusableSelectors.join(', '))
-  );
+  const focusableElements = Array.from(document.querySelectorAll<HTMLElement>(focusableSelectors.join(', ')));
 
   const currentIndex = focusableElements.indexOf(element as HTMLElement);
 
   if (currentIndex !== -1) {
-    const nextIndex =
-      direction === 'next'
-        ? (currentIndex + 1) % focusableElements.length
-        : (currentIndex - 1 + focusableElements.length) % focusableElements.length;
+    const nextIndex = direction === 'next' ? (currentIndex + 1) % focusableElements.length : (currentIndex - 1 + focusableElements.length) % focusableElements.length;
 
     return focusableElements[nextIndex];
   }
@@ -367,18 +343,10 @@ export const findNextFocusable = (
   return null;
 };
 
-export const findFocusableDescendant = (
-  container: Element | null,
-  currentFocused: Element | null = null,
-  direction: 'next' | 'previous' = 'next'
-): HTMLElement | null => {
+export const findFocusableDescendant = (container: Element | null, currentFocused: Element | null = null, direction: 'next' | 'previous' = 'next'): HTMLElement | null => {
   if (!container) return null;
 
-  const focusableElements = Array.from(
-    container.querySelectorAll<HTMLElement>(
-      'a[href], button, input, select, textarea, [tabindex]:not([tabindex="-1"]), [contenteditable="true"]'
-    )
-  );
+  const focusableElements = Array.from(container.querySelectorAll<HTMLElement>('a[href], button, input, select, textarea, [tabindex]:not([tabindex="-1"]), [contenteditable="true"]'));
 
   if (focusableElements.length === 0) return null;
 
