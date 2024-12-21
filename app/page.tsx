@@ -41,8 +41,10 @@ import ModalStack from '@components/ModalStack';
 import ModalTrigger from '@components/ModalTrigger';
 import NumberRangeSlider from '@components/NumberRangeSlider';
 import Package from '@root/package.json';
+import PopoverTrigger from '@components/PopoverTrigger';
 import RadioButtonGroup from '@components/RadioButtonGroup';
 import Row from '@components/Row';
+import RowSpaceBetween from '@components/RowSpaceBetween';
 import Script from 'next/script';
 import Text from '@components/Text';
 import TextArea from '@components/TextArea';
@@ -832,11 +834,36 @@ export default async function Page(props) {
           <Card title="EXAMPLE">WORK IN PROGRESS</Card>
         </Accordion>
 
-        <Accordion defaultValue={false} title="POPOVER">
+        <Accordion defaultValue={true} title="POPOVER">
           Popovers are transient views that appear above content when users interact with an associated element, offering relevant information, details, or interactive content like actions or form elements.
           <br />
           <br />
-          <Card title="EXAMPLE">WORK IN PROGRESS</Card>
+          <Card title="EXAMPLE">
+            <RowSpaceBetween>
+              <PopoverTrigger text="An old silent pond">
+                <ActionButton>TOP LEFT</ActionButton>
+              </PopoverTrigger>
+              <PopoverTrigger text="A world of dew">
+                <ActionButton>TOP RIGHT</ActionButton>
+              </PopoverTrigger>
+            </RowSpaceBetween>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <RowSpaceBetween>
+              <PopoverTrigger text="The light of a candle">
+                <ActionButton>BOTTOM LEFT</ActionButton>
+              </PopoverTrigger>
+              <PopoverTrigger text="I write, erase, rewrite">
+                <ActionButton>BOTTOM RIGHT</ActionButton>
+              </PopoverTrigger>
+            </RowSpaceBetween>
+          </Card>
         </Accordion>
 
         <Accordion defaultValue={true} title="PROGRESS BARS">
