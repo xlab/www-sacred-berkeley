@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
+
   &:hover {
     background: var(--theme-focused-foreground);
   }
@@ -25,7 +25,6 @@
 }
 
 .active {
-
   .content {
     padding-left: 1ch;
   }

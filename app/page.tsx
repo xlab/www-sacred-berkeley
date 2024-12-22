@@ -48,6 +48,8 @@ import RowSpaceBetween from '@components/RowSpaceBetween';
 import Script from 'next/script';
 import Text from '@components/Text';
 import TextArea from '@components/TextArea';
+import TooltipTrigger from '@components/TooltipTrigger';
+import TreeView from '@components/TreeView';
 import UpdatingDataTable from '@components/examples/UpdatingDataTable';
 
 export const dynamic = 'force-static';
@@ -1018,18 +1020,105 @@ export default async function Page(props) {
           </Card>
         </Accordion>
 
-        <Accordion defaultValue={false} title="TOOLTIP">
+        <Accordion defaultValue={true} title="TOOLTIP">
           Tooltips are text labels that provide additional context or explanations for user interface elements, appearing on hover, focus, or touch. They are used to communicate brief, supplementary information or clarify unlabeled controls.
           <br />
           <br />
-          <Card title="EXAMPLE">WORK IN PROGRESS</Card>
+          <Card title="EXAMPLE">
+            <RowSpaceBetween>
+              <TooltipTrigger text="The future depends on what we do in the present.">
+                <ActionButton>TOP LEFT</ActionButton>
+              </TooltipTrigger>
+              <TooltipTrigger text="An eye for an eye only ends up making the whole world blind.">
+                <ActionButton>TOP RIGHT</ActionButton>
+              </TooltipTrigger>
+            </RowSpaceBetween>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <RowSpaceBetween>
+              <TooltipTrigger text="Live as if you were to die tomorrow">
+                <ActionButton>BOTTOM LEFT</ActionButton>
+              </TooltipTrigger>
+              <TooltipTrigger text="The best way to find yourself is to lose yourself in the service of others.">
+                <ActionButton>BOTTOM RIGHT</ActionButton>
+              </TooltipTrigger>
+            </RowSpaceBetween>
+          </Card>
         </Accordion>
 
-        <Accordion defaultValue={false} title="TREEVIEW">
+        <Accordion defaultValue={true} title="TREEVIEW">
           Tree Views are hierarchical list structures that allow users to navigate nested information or functionalities, commonly used for parent-child relationships like file directories or menus.
           <br />
           <br />
-          <Card title="EXAMPLE">WORK IN PROGRESS</Card>
+          <Card title="FILE SYSTEM">
+            <TreeView defaultValue={true} isRoot title="Animal Kingdom">
+              <TreeView defaultValue={true} title="Chordata">
+                <TreeView defaultValue={true} title="Mammalia">
+                  <TreeView defaultValue={true} title="Primates">
+                    <TreeView title="Hominidae.csv" isFile />
+                    <TreeView title="Cercopithecidae.csv" isFile />
+                  </TreeView>
+                  <TreeView defaultValue={true} title="Carnivora">
+                    <TreeView title="Felidae.csv" isFile />
+                    <TreeView title="Canidae.csv" isFile />
+                  </TreeView>
+                  <TreeView defaultValue={true} title="Cetacea">
+                    <TreeView title="Delphinidae.csv" isFile />
+                    <TreeView title="Balaenidae.csv" isFile />
+                  </TreeView>
+                </TreeView>
+                <TreeView defaultValue={true} title="Mammalia Rejects"></TreeView>
+                <TreeView defaultValue={true} title="Aves">
+                  <TreeView defaultValue={true} title="Passeriformes">
+                    <TreeView title="Corvidae.csv" isFile />
+                    <TreeView title="Fringillidae.csv" isFile />
+                  </TreeView>
+                  <TreeView defaultValue={true} title="Accipitriformes">
+                    <TreeView title="Accipitridae.csv" isFile />
+                    <TreeView title="Pandionidae.csv" isFile />
+                  </TreeView>
+                </TreeView>
+                <TreeView defaultValue={true} title="Reptilia">
+                  <TreeView defaultValue={true} title="Squamata">
+                    <TreeView title="Viperidae.csv" isFile />
+                    <TreeView title="Iguanidae.csv" isFile />
+                  </TreeView>
+                  <TreeView defaultValue={true} title="Testudines">
+                    <TreeView title="Cheloniidae.csv" isFile />
+                    <TreeView title="Testudinidae.csv" isFile />
+                  </TreeView>
+                </TreeView>
+              </TreeView>
+              <TreeView defaultValue={true} title="Arthropoda">
+                <TreeView defaultValue={true} title="Insecta">
+                  <TreeView defaultValue={true} title="Coleoptera">
+                    <TreeView title="Coccinellidae.csv" isFile />
+                    <TreeView title="Scarabaeidae.csv" isFile />
+                  </TreeView>
+                  <TreeView defaultValue={true} title="Diptera">
+                    <TreeView title="Culicidae.csv" isFile />
+                    <TreeView title="Syrphidae.csv" isFile />
+                  </TreeView>
+                </TreeView>
+                <TreeView defaultValue={true} title="Arachnida">
+                  <TreeView defaultValue={true} title="Araneae">
+                    <TreeView title="Salticidae.csv" isFile />
+                    <TreeView title="Theraphosidae.csv" isFile />
+                  </TreeView>
+                  <TreeView defaultValue={true} title="Scorpiones">
+                    <TreeView title="Buthidae.csv" isFile />
+                    <TreeView title="Scorpionidae.csv" isFile />
+                  </TreeView>
+                </TreeView>
+              </TreeView>
+            </TreeView>
+          </Card>
         </Accordion>
       </Grid>
 
