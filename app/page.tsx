@@ -37,6 +37,7 @@ import Message from '@components/Message';
 import MessageViewer from '@components/MessageViewer';
 import ModalAlert from '@components/modals/ModalAlert';
 import ModalCreateAccount from '@components/modals/ModalCreateAccount';
+import ModalError from '@components/modals/ModalError';
 import ModalStack from '@components/ModalStack';
 import ModalTrigger from '@components/ModalTrigger';
 import NumberRangeSlider from '@components/NumberRangeSlider';
@@ -812,6 +813,53 @@ export default async function Page(props) {
             <ModalTrigger modal={ModalCreateAccount}>
               <ActionButton>Render Create Account Modal</ActionButton>
             </ModalTrigger>
+
+            <ModalTrigger modal={ModalError} modalProps={{ message: <>Non-fatal error detected: error FOOLISH (Please contact Sacred Computer support.)</>, title: `SETUP` }}>
+              <ActionButton>Error A</ActionButton>
+            </ModalTrigger>
+
+            <ModalTrigger
+              modal={ModalError}
+              modalProps={{
+                message: (
+                  <>
+                    Boot Manager has experienced a problem.
+                    <br />
+                    <br />
+                    Status: 0xc000000f
+                    <br />
+                    <br />
+                    Info: An error occured transferring excecution.
+                    <br />
+                    <br />
+                    You can try to recover the system with the Recovery Tools.
+                    <br />
+                    <br />
+                    If the problem continues, please contact your system administrator or computer manufacturer.
+                  </>
+                ),
+                title: `BOOT DRIVER`,
+              }}
+            >
+              <ActionButton>Error B</ActionButton>
+            </ModalTrigger>
+
+            <ModalTrigger
+              modal={ModalError}
+              modalProps={{
+                message: (
+                  <>
+                    Although you can't use CTRL+ALT+DEL to quit an application that has stopped responding in this context, there is no reason to in this state.
+                    <br />
+                    <br />
+                    To quit this website, follow the options below or kill your browser, or choose to give up and go do something else.
+                  </>
+                ),
+                title: `SACRED`,
+              }}
+            >
+              <ActionButton>Error C</ActionButton>
+            </ModalTrigger>
           </Card>
         </Accordion>
 
@@ -1016,7 +1064,7 @@ export default async function Page(props) {
             <TextArea autoPlay="The doom of the Elves is to be immortal, to love the beauty of the world, to bring it to full flower with their gifts of delicacy and perfection, to last while it lasts, never leaving it even when ‘slain’, but returning – and yet, when the Followers come, to teach them, and make way for them, to ‘fade’ as the Followers grow and absorb the life from which both proceed. The Doom (or the Gift) of Men is mortality, freedom from the circles of the world." autoPlaySpeedMS={50} />
           </Card>
           <Card title="AUTO PLAY SLOW">
-            <TextArea autoPlay="Nobody tells this to people who are beginners, I wish someone told me. All of us who do creative work, we get into it because we have good taste. But there is this gap. For the first couple years you make stuff, it’s just not that good. It’s trying to be good, it has potential, but it’s not. But your taste, the thing that got you into the game, is still killer. And your taste is why your work disappoints you. A lot of people never get past this phase, they quit. Most people I know who do interesting, creative work went through years of this. We know our work doesn’t have this special thing that we want it to have. We all go through this. And if you are just starting out or you are still in this phase, you gotta know its normal and the most important thing you can do is do a lot of work. Put yourself on a deadline so that every week you will finish one story. It is only by going through a volume of work that you will close that gap, and your work will be as good as your ambitions. And I took longer to figure out how to do this than anyone I’ve ever met. It’s gonna take awhile. It’s normal to take awhile. You’ve just gotta fight your way through." autoPlaySpeedMS={100} isBlink />
+            <TextArea autoPlay="All of us who do creative work, we get into it because we have good taste. But there is this gap. For the first couple years you make stuff, it’s just not that good. It’s trying to be good, it has potential, but it’s not. But your taste, the thing that got you into the game, is still killer. And your taste is why your work disappoints you." autoPlaySpeedMS={100} isBlink />
           </Card>
         </Accordion>
 
