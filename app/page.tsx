@@ -27,6 +27,7 @@ import DatePicker from '@components/DatePicker';
 import DebugGrid from '@components/DebugGrid';
 import DefaultActionBar from '@components/page/DefaultActionBar';
 import DefaultLayout from '@components/page/DefaultLayout';
+import Divider from '@components/Divider';
 import Grid from '@components/Grid';
 import Indent from '@components/Indent';
 import Input from '@components/Input';
@@ -567,11 +568,37 @@ export default async function Page(props) {
           <Card title="EXAMPLE">WORK IN PROGRESS</Card>
         </Accordion>
 
-        <Accordion defaultValue={false} title="DIVIDER">
+        <Accordion defaultValue={true} title="DIVIDER">
           A divider separates sections of content, creating clear distinctions between related groups. It is typically a line or space, oriented horizontally or vertically based on the layout. Divider helps organize information, improve readability, and enhance the interface’s clarity and structure.
           <br />
           <br />
-          <Card title="EXAMPLE">WORK IN PROGRESS</Card>
+          <CardDouble title="ENTROPY">
+            Any sense of order or stability inevitably crumbles. The entire universe follows a dismal trek toward a dull state of ultimate turmoil.
+            <br />
+            <br />
+            <Divider />
+            <br />
+            To keep track of this cosmic decay, physicists employ a concept called entropy. Entropy is a measure of disorderliness, and the declaration that entropy is always on the rise — known as the second law of thermodynamics — is among nature’s most inescapable commandments.
+            <br />
+            <br />
+            <Divider type="DOUBLE" />
+            <br />
+            I have long felt haunted by the universal tendency toward messiness. Order is fragile. It takes months of careful planning and artistry to craft a vase but an instant to demolish it with a soccer ball. We spend our lives struggling to make sense of a chaotic and unpredictable world, where any attempt to establish control seems only to backfire.
+            <br />
+            <br />
+            <Divider type="GRADIENT" />
+            <br />
+            The second law demands that machines can never be perfectly efficient, which implies that whenever structure arises in the universe, it ultimately serves only to dissipate energy further — be it a star that eventually explodes or a living organism converting food into heat. We are, despite our best intentions, agents of entropy.
+            <br />
+            <br />
+            <Divider type="GRADIENT" />
+            <br />
+            “Nothing in life is certain except death, taxes and the second law of thermodynamics,” wrote Seth Lloyd, a physicist at the Massachusetts Institute of Technology. There’s no sidestepping this directive. The growth of entropy is deeply entwined with our most basic experiences, accounting for why time runs forward and why the world appears deterministic rather than quantum mechanically uncertain.
+            <br />
+            <br />
+            <Divider type="GRADIENT" />
+            <br />— Zack Savitzky
+          </CardDouble>
         </Accordion>
 
         <Accordion defaultValue={false} title="DRAWER">
