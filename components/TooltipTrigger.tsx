@@ -104,7 +104,7 @@ function TooltipTrigger({ children, text }: TooltipTriggerProps) {
               position: 'absolute',
               top: `${position.top}px`,
               left: `${position.left}px`,
-              zIndex: `var(--z-index-page-tooltip)`,
+              zIndex: `var(--z-index-page-tooltips)`,
             }}
             role="dialog"
             aria-modal="true"

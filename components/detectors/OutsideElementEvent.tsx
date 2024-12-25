@@ -10,23 +10,20 @@ interface OutsideElementEventProps {
 const OutsideElementEvent: React.FC<OutsideElementEventProps> = ({ className, children, onOutsideEvent, style }) => {
   const ref = React.useRef<HTMLDivElement>(null);
 
-  const [isReady, setIsReady] = React.useState(false);
-  React.useEffect(() => {
-    setIsReady(true);
-  }, []);
+  const handleOutsideEvent = React.useCallback(
+    (event: MouseEvent | TouchEvent) => {
+      if (!(event.target instanceof Element)) return;
 
-  const handleOutsideEvent = (event) => {
-    if (!isReady) return;
+      if (event.target.hasAttribute('data-detector-ignore')) {
+        return;
+      }
 
-    if (event.target.hasAttribute('data-detector-ignore')) {
-      return;
-    }
-
-    if (ref.current && !ref.current.contains(event.target)) {
-      onOutsideEvent(event);
-      return;
-    }
-  };
+      if (ref.current && !ref.current.contains(event.target as Node)) {
+        onOutsideEvent(event);
+      }
+    },
+    [onOutsideEvent]
+  );
 
   React.useEffect(() => {
     document.addEventListener('mousedown', handleOutsideEvent);
@@ -36,7 +33,7 @@ const OutsideElementEvent: React.FC<OutsideElementEventProps> = ({ className, ch
       document.removeEventListener('mousedown', handleOutsideEvent);
       document.removeEventListener('touchstart', handleOutsideEvent);
     };
-  }, [isReady]);
+  }, [handleOutsideEvent]);
 
   return (
     <div ref={ref} className={className} style={style}>

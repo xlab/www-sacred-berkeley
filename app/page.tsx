@@ -28,6 +28,7 @@ import DebugGrid from '@components/DebugGrid';
 import DefaultActionBar from '@components/page/DefaultActionBar';
 import DefaultLayout from '@components/page/DefaultLayout';
 import Divider from '@components/Divider';
+import DropdownMenuTrigger from '@components/DropdownMenuTrigger';
 import Grid from '@components/Grid';
 import Indent from '@components/Indent';
 import Input from '@components/Input';
@@ -608,11 +609,90 @@ export default async function Page(props) {
           <Card title="EXAMPLE">WORK IN PROGRESS</Card>
         </Accordion>
 
-        <Accordion defaultValue={false} title="DROPDOWN">
-          A dropdown is an interactive element that lets users select an option from a collapsible menu, saving space by hiding options until needed. Commonly used in forms, action menus, or filters, Dropdowns support single or multi-selection and sometimes search.
+        <Accordion defaultValue={true} title="DROPDOWN MENU">
+          A dropdown menu is an interactive element that lets users select an option from a collapsible menu, saving space by hiding options until needed.
           <br />
           <br />
-          <Card title="EXAMPLE">WORK IN PROGRESS</Card>
+          <Card title="EXAMPLE">
+            <RowSpaceBetween>
+              <DropdownMenuTrigger
+                items={[
+                  { icon: '⊹', children: 'F1 - Help' },
+                  { icon: '⊹', children: 'F2 - Custom Help' },
+                  { icon: '⊹', children: 'F3 - Directory' },
+                  { icon: '⊹', children: 'F4 - Locate File' },
+                  { icon: '⊹', children: 'F5 - Change Drive' },
+                  { icon: '⊹', children: 'F6 - Change Directory' },
+                  { icon: '⊹', children: `F7 - DOS Command` },
+                  { icon: '⊹', children: 'F8 - Set Time/Date' },
+                  { icon: '⊹', children: 'F9 - Disk Space' },
+                  { icon: '⊹', children: 'F10 - Copy Files' },
+                ]}
+              >
+                <ActionButton>TOP LEFT</ActionButton>
+              </DropdownMenuTrigger>
+              <DropdownMenuTrigger
+                items={[
+                  { icon: '⭡', children: 'Restore from Time Machine' },
+                  { icon: '⭢', children: 'Reinstall macOS Ventura' },
+                  { icon: '⭣', children: 'Safari' },
+                  { icon: '⭠', children: 'Disk Utility' },
+                  { icon: '⊹', children: 'Visit Search System', href: 'https://searchsystem.co/', target: '_blank' },
+                ]}
+              >
+                <ActionButton>TOP RIGHT</ActionButton>
+              </DropdownMenuTrigger>
+            </RowSpaceBetween>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <RowSpaceBetween>
+              <DropdownMenuTrigger
+                items={[
+                  { icon: '⊹', children: 'Safe mode' },
+                  { icon: '⊹', children: 'Safe mode with Networking' },
+                  { icon: '⊹', children: 'Safe Mode with Command Prompt' },
+                  { icon: '⊹', children: 'Enable Boot Logging' },
+                  { icon: '⊹', children: 'Enable low-resolution video (640x480)' },
+                  { icon: '⊹', children: 'Last Known Good Configuration (advanced)' },
+                  { icon: '⊹', children: `Direcotry Services Restore Node` },
+                  { icon: '⊹', children: 'Debugging Mode' },
+                  { icon: '⊹', children: 'Disable automatic restart on system failure' },
+                  { icon: '⊹', children: 'Disable Driver Signature Enforcement' },
+                ]}
+              >
+                <ActionButton>BOTTOM LEFT</ActionButton>
+              </DropdownMenuTrigger>
+              <DropdownMenuTrigger
+                items={[
+                  { icon: '⊹', children: 'Create New Menu' },
+                  { icon: '⊹', children: 'Edit a Menu' },
+                  { icon: '⊹', children: 'Remove A Menu' },
+                  { icon: '⊹', children: 'DOS Password' },
+                  { icon: '⊹', children: 'Screen Saver' },
+                  { icon: '⊹', children: 'Company Name' },
+                  { icon: '⊹', children: `Set Swap Drive` },
+                  { icon: '⊹', children: 'Select Colors' },
+                  { icon: '⊹', children: 'Sound On/Off' },
+                  { icon: '⊹', children: 'Save all Menus' },
+                  { icon: '⊹', children: 'Leave Setup' },
+                ]}
+              >
+                <ActionButton>BOTTOM RIGHT</ActionButton>
+              </DropdownMenuTrigger>
+            </RowSpaceBetween>
+          </Card>
         </Accordion>
 
         <Accordion defaultValue={false} title="EMPTY STATE">

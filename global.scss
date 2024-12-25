@@ -162,6 +162,7 @@ body.theme-blue {
   --theme-overlay: var(--color-blue-20-5);
   --theme-background: var(--color-blue-80);
   --theme-background-modal: var(--color-blue-70);
+  --theme-background-modal-footer: var(--color-blue-90);
   --theme-background-input: var(--color-blue-60);
   --theme-border: var(--color-blue-70);
   --theme-border-subdued: var(--color-blue-60-2);
@@ -185,6 +186,7 @@ body.theme-light {
   --theme-overlay: var(--color-black-100-4);
   --theme-background: var(--color-white);
   --theme-background-modal: var(--color-gray-20);
+  --theme-background-modal-footer: var(--color-gray-40);
   --theme-background-input: var(--color-gray-10);
   --theme-border: var(--color-gray-20);
   --theme-border-subdued: var(--color-gray-40-2);
@@ -208,6 +210,7 @@ body.theme-dark {
   --theme-overlay: var(--color-black-100-4);
   --theme-background: var(--color-black-100);
   --theme-background-modal: var(--color-gray-80);
+  --theme-background-modal-footer: var(--color-gray-70);
   --theme-background-input: var(--color-gray-60);
   --theme-border: var(--color-gray-80);
   --theme-border-subdued: var(--color-gray-70-3);
@@ -325,7 +328,9 @@ body {
   --font-size: 16px;
 
   --z-index-page: 1;
+  --z-index-page-tooltips: 4;
   --z-index-page-popover: 5;
+  --z-index-page-dropdown-menus: 6;
   --z-index-modals: 10;
 
   background: var(--theme-background);
