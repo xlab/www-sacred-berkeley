@@ -22,12 +22,14 @@ import CanvasSnake from '@components/CanvasSnake';
 import Card from '@components/Card';
 import CardDouble from '@components/CardDouble';
 import Checkbox from '@components/Checkbox';
+import ContentFluid from '@components/ContentFluid';
 import DataTable from '@components/DataTable';
 import DatePicker from '@components/DatePicker';
 import DebugGrid from '@components/DebugGrid';
 import DefaultActionBar from '@components/page/DefaultActionBar';
 import DefaultLayout from '@components/page/DefaultLayout';
 import Divider from '@components/Divider';
+import Drawer from '@components/Drawer';
 import DropdownMenuTrigger from '@components/DropdownMenuTrigger';
 import Grid from '@components/Grid';
 import Indent from '@components/Indent';
@@ -602,11 +604,32 @@ export default async function Page(props) {
           </CardDouble>
         </Accordion>
 
-        <Accordion defaultValue={false} title="DRAWER">
-          A drawer is a panel that slides in from the screen edge, providing space for secondary content, actions, or navigation links while keeping the main content uninterrupted. Triggered by user actions like clicking or swiping, Drawers can be dismissed by interacting with the main content, closing manually, or selecting an item.
+        <Accordion defaultValue={true} title="DRAWER">
+          A drawer is a panel that slides in from the screen edge, providing space for secondary content, actions, or navigation links while keeping the main content uninterrupted.
           <br />
           <br />
-          <Card title="EXAMPLE">WORK IN PROGRESS</Card>
+          <CardDouble title="INTRO(1)">
+            <RowSpaceBetween>
+              <Drawer>
+                <ActionListItem icon={`⊹`}>User Commands</ActionListItem>
+                <ActionListItem icon={`⊹`}>System Calls</ActionListItem>
+                <ActionListItem icon={`⊹`}>C Library Functions</ActionListItem>
+                <ActionListItem icon={`⊹`}>Devices and Special Files</ActionListItem>
+                <ActionListItem icon={`⊹`}>File Formats and Conventions</ActionListItem>
+                <ActionListItem icon={`⊹`}>Games et. Al.</ActionListItem>
+                <ActionListItem icon={`⊹`}>Miscellanea</ActionListItem>
+                <ActionListItem icon={`⊹`}>System Administration</ActionListItem>
+                <ActionListItem icon={`⊹`}>Tools</ActionListItem>
+                <ActionListItem icon={`⊹`}>Daemons</ActionListItem>
+              </Drawer>
+              <ContentFluid>
+                INTRODUCTION
+                <br />
+                <br />
+                Section 1 of the manual describes user commands and tools, for example, file manipulation tools, shells, compilers, web browsers, file and image viewers and editors, and so on. All commands yield a status value on termination. This value can be tested (e.g., in most shells the variable $? contains the status of the last executed command) to see whether the command completed successfully. A zero exit status is conventionally used to indicate success, and a nonzero status means that the command was unsuccessful. (Details of the exit status can be found in wait(2).) A nonzero exit status can be in the range 1 to 255, and some commands use different nonzero status values to indicate the reason why the command failed.
+              </ContentFluid>
+            </RowSpaceBetween>
+          </CardDouble>
         </Accordion>
 
         <Accordion defaultValue={true} title="DROPDOWN MENU">
