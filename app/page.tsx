@@ -52,6 +52,7 @@ import RadioButtonGroup from '@components/RadioButtonGroup';
 import Row from '@components/Row';
 import RowSpaceBetween from '@components/RowSpaceBetween';
 import Script from 'next/script';
+import SidebarLayout from '@components/SidebarLayout';
 import Text from '@components/Text';
 import TextArea from '@components/TextArea';
 import TooltipTrigger from '@components/TooltipTrigger';
@@ -1187,11 +1188,25 @@ export default async function Page(props) {
           <Card title="EXAMPLE">WORK IN PROGRESS</Card>
         </Accordion>
 
-        <Accordion defaultValue={false} title="SIDEBAR">
-          Sidebars are navigational panels that provide seamless access to secondary actions, additional information, or sub-navigation menus related to the current page or section. They can be static or collapsible, adapting to design needs and screen sizes.
+        <Accordion defaultValue={true} title="SIDEBAR LAYOUT">
+          Sidebars are navigational panels that provide access to secondary actions or additional information. They can be static, collapsible, or resizable, adapting to design needs and screen sizes.
           <br />
           <br />
-          <Card title="EXAMPLE">WORK IN PROGRESS</Card>
+          <CardDouble title="QUOTES">
+            <SidebarLayout
+              sidebar={
+                <>
+                  “I want each of you to go through life making the most of your individuality. Like it or not, you will go out into the real world and be treated as an adult. Adults show each other no mercy. If you fail to cultivate within yourself a fight-back mentality, society will end up controlling you.” <br />
+                  <br /> “Travel changes you. As you move through this life and this world you change things slightly, you leave marks behind, however small. And in return, life - and travel - leaves marks on you. Most of the time, those marks - on your body or on your heart - are beautiful. Often, though, they hurt.”
+                </>
+              }
+            >
+              “Never give up. Discover your own options, never count on others and have faith in the paths you discover for yourself. If someone else approves of this new way of life, all the better.”
+              <br />
+              <br />
+              “I do think the idea that basic cooking skills are a virtue, that the ability to feed yourself and a few others with proficiency should be taught to every young man and woman as a fundamental skill, should become as vital to growing up as learning to wipe one’s own ass, cross the street by oneself, or be trusted with money.”
+            </SidebarLayout>
+          </CardDouble>
         </Accordion>
 
         <Accordion defaultValue={true} title="SLIDER">
