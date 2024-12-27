@@ -39,6 +39,7 @@ import ListItem from '@components/ListItem';
 import MatrixLoader from '@components/MatrixLoader';
 import Message from '@components/Message';
 import MessageViewer from '@components/MessageViewer';
+import MessagesInterface from '@components/examples/MessagesInterface';
 import ModalAlert from '@components/modals/ModalAlert';
 import ModalCreateAccount from '@components/modals/ModalCreateAccount';
 import ModalError from '@components/modals/ModalError';
@@ -268,13 +269,6 @@ export default async function Page(props) {
                 Webmaster
               </Indent>
             </Avatar>
-            <Avatar src="https://pbs.twimg.com/profile_images/1768438338841890816/taF_Uvqu_400x400.jpg" href="https://internet.dev" target="_blank">
-              <Indent>
-                JIMMY LEE
-                <br />
-                Janitor
-              </Indent>
-            </Avatar>
             <Avatar src="https://pbs.twimg.com/profile_images/1748647089633169408/B7vd7ito_400x400.jpg" href="https://internet.dev" target="_blank">
               <Indent>
                 ANASTASIYA URALEVA
@@ -301,6 +295,13 @@ export default async function Page(props) {
                 CHENYU HUANG
                 <br />
                 Webmaster
+              </Indent>
+            </Avatar>
+            <Avatar src="https://pbs.twimg.com/profile_images/1768438338841890816/taF_Uvqu_400x400.jpg" href="https://internet.dev" target="_blank">
+              <Indent>
+                JIMMY LEE
+                <br />
+                Janitor
               </Indent>
             </Avatar>
           </Card>
@@ -905,6 +906,15 @@ export default async function Page(props) {
             <Message>Let me ask you a question, you, you never really remember the beginning of a dream do you? You always wind up right in the middle of what's going on.</Message>
             <MessageViewer>I guess, yeah.</MessageViewer>
             <Message>So how did we end up here?</Message>
+          </Card>
+        </Accordion>
+
+        <Accordion defaultValue={true} title="MESSAGES INTERFACE">
+          This example combines the aesthetics of iMessage and IRSSI with a terminal-inspired design. It shows how easy it is to embed a simple web application into your website.
+          <br />
+          <br />
+          <Card title="MESSAGES">
+            <MessagesInterface />
           </Card>
         </Accordion>
 

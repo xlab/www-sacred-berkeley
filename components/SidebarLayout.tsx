@@ -7,6 +7,7 @@ import * as React from 'react';
 interface SidebarLayoutProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'defaultValue'> {
   children?: React.ReactNode;
   sidebar?: React.ReactNode;
+  defaultSidebarWidth?: number;
 }
 
 const LINE_HEIGHT = 20;
@@ -14,8 +15,8 @@ const CHARACTER_WIDTH = 9.6;
 
 // TODO(jimmylee)
 // We need to figure out how to do ArrowLeft and ArrowRight to resize
-const SidebarLayout: React.FC<SidebarLayoutProps> = ({ children, sidebar }) => {
-  const [sidebarWidth, setSidebarWidth] = React.useState(20);
+const SidebarLayout: React.FC<SidebarLayoutProps> = ({ defaultSidebarWidth = 20, children, sidebar }) => {
+  const [sidebarWidth, setSidebarWidth] = React.useState(defaultSidebarWidth);
   const handleRef = React.useRef<HTMLDivElement>(null);
 
   const handleMouseDown = (event: React.MouseEvent<HTMLDivElement>) => {
