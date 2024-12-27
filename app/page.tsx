@@ -44,6 +44,7 @@ import ModalCreateAccount from '@components/modals/ModalCreateAccount';
 import ModalError from '@components/modals/ModalError';
 import ModalStack from '@components/ModalStack';
 import ModalTrigger from '@components/ModalTrigger';
+import Navigation from '@components/Navigation';
 import NumberRangeSlider from '@components/NumberRangeSlider';
 import Package from '@root/package.json';
 import PopoverTrigger from '@components/PopoverTrigger';
@@ -993,11 +994,68 @@ export default async function Page(props) {
           </Card>
         </Accordion>
 
-        <Accordion defaultValue={false} title="NAVIGATION BAR">
+        <Accordion defaultValue={true} title="NAVIGATION BAR">
           Navigation bars enable smooth transitions between top-level destinations in an app, using icons and text labels to represent sections.
           <br />
           <br />
-          <Card title="EXAMPLE">WORK IN PROGRESS</Card>
+          <Card title="EXAMPLE">
+            <Navigation
+              logo="✶"
+              left={
+                <ModalTrigger modal={ModalError} modalProps={{ message: <>Non-fatal error detected: error FOOLISH (Please contact Sacred Computer support.)</>, title: `SETUP` }}>
+                  <ActionButton>NAVIGATION ITEM A</ActionButton>
+                </ModalTrigger>
+              }
+              right={
+                <>
+                  <ModalTrigger modal={ModalCreateAccount}>
+                    <ActionButton>SIGN IN</ActionButton>
+                  </ModalTrigger>
+                </>
+              }
+            >
+              <ModalTrigger
+                modal={ModalError}
+                modalProps={{
+                  message: (
+                    <>
+                      Boot Manager has experienced a problem.
+                      <br />
+                      <br />
+                      Status: 0xc000000f
+                      <br />
+                      <br />
+                      Info: An error occured transferring excecution.
+                      <br />
+                      <br />
+                      You can try to recover the system with the Recovery Tools.
+                      <br />
+                      <br />
+                      If the problem continues, please contact your system administrator or computer manufacturer.
+                    </>
+                  ),
+                  title: `BOOT DRIVER`,
+                }}
+              >
+                <ActionButton>NAVIGATION ITEM B</ActionButton>
+              </ModalTrigger>
+            </Navigation>
+            <Accordion defaultValue={true} title="KENYA HARA, WHITE">
+              Colors do not exist separately and independently within nature; they are constantly shifting in response to subtle gradations of light. It is language that, magnificently, gives them clear shape.
+            </Accordion>
+            <Accordion defaultValue={true} title="KENYA HARA, WHITE">
+              White can be attained by blending all the colors of the spectrum together, or through the substraction of ink and all other pigments. In short, it is "all colors" and "no color" at the same time.
+            </Accordion>
+            <Accordion defaultValue={true} title="KENYA HARA, WHITE">
+              It is easy to think that beauty resides in the realm of creativity. Yet beauty hardly "appears" from nowhere. Recently, I have come to believe that we "discover" it through the cleaning and polishing we do to preserve things as they are. [...] The beauty of a temple garden rests not in the splendid features that were created by a talented designer; rather, its beauty is uncovered through the continual process of cleaning.
+            </Accordion>
+            <Accordion defaultValue={true} title="KENYA HARA, DESIGNING DESIGN">
+              I used to believe that design was information architecture, and also that this architecture was built in the brain of an information recipient. Recently I've come to think that, although the materials of that architecture's construction are indeed the information brought from the outside by the sensory organs, at the same time some very important building blocks are also the recollected experiences, the memories, awakened by these external stimuli. People imagine the world and interpret it when outside stimuli awaken the mountain of their internally stored memories.
+            </Accordion>
+            <Accordion defaultValue={true} title="KENYA HARA, DESIGNING DESIGN">
+              The human brain likes anything that entails a great amount of information. Its excessive capacity waits eagerly to perceive the world by completely exhausting its great receptive powers. That potential power, though, remains today in a state of extreme constriction and is a source of the information stress we're all under.
+            </Accordion>
+          </Card>
         </Accordion>
 
         <Accordion defaultValue={false} title="PAGE HEADER">
