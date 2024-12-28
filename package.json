@@ -19,6 +19,7 @@
     "sass": "1.83.0"
   },
   "devDependencies": {
+    "@flydotio/dockerfile": "^0.5.9",
     "@types/node": "^22.10.2",
     "@types/react": "^19.0.2",
     "ts-node": "^10.9.2",
