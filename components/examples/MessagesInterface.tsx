@@ -6,6 +6,7 @@ import Input from '@components/Input';
 import Message from '@components/Message';
 import MessageViewer from '@components/MessageViewer';
 import Navigation from '@components/Navigation';
+import RowEllipsis from '@components/RowEllipsis';
 import SidebarLayout from '@components/SidebarLayout';
 
 import * as React from 'react';
@@ -13,7 +14,7 @@ import * as React from 'react';
 interface MessagesInterfaceProps extends React.HTMLAttributes<HTMLSpanElement> {}
 
 const ChatPreviewInline = (props) => {
-  return <div style={{ opacity: 0.5, width: '100%', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', display: 'inline-block' }}>{props.children}</div>;
+  return <RowEllipsis style={{ opacity: 0.5, marginBottom: `10px` }}>{props.children}</RowEllipsis>;
 };
 
 const MessagesInterface: React.FC<MessagesInterfaceProps> = () => {

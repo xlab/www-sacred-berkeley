@@ -23,6 +23,7 @@ import Card from '@components/Card';
 import CardDouble from '@components/CardDouble';
 import Checkbox from '@components/Checkbox';
 import ContentFluid from '@components/ContentFluid';
+import ComboBox from '@components/ComboBox';
 import DataTable from '@components/DataTable';
 import DatePicker from '@components/DatePicker';
 import DebugGrid from '@components/DebugGrid';
@@ -150,6 +151,39 @@ const SAMPLE_TABLE_DATA_CHANGE_ME = [
   ['Zebra', 'ZBR', '$65.43', '60'],
 ];
 
+const LANDSCAPES = [
+  ['Sahara Desert', 'The Sahara stretches across North Africa with shifting dunes that tower above the horizon. Even in its harsh sunlight and cold nights, resilient life finds a way to endure.'],
+  ['Grand Canyon', 'Carved by the Colorado River, the Grand Canyon reveals layers of ancient rock. Its chasms echo with wind and the distant calls of raptors gliding through the afternoon sky.'],
+  ['Amazon Rainforest', 'The Amazon Rainforest teems with biodiversity under a dense green canopy. Rivers and flooded plains sustain countless species, while humid air hangs heavy with the promise of storms.'],
+  ['Rocky Mountains', 'The Rockies rise like rugged spines across the continent. Snowpack feeds rivers that carve valleys where elk graze, and fir trees cling to the slopes.'],
+  ['Gobi Desert', 'The Gobi Desert rolls out in arid sweeps across northern China and southern Mongolia. Sparse grasses and hardy camels testify to its unforgiving climate.'],
+  ['Andes Mountains', 'The Andes dominate western South America with ragged peaks and hidden valleys. Llamas graze on high plateaus, and glaciers feed the rivers far below.'],
+  ['Serengeti Plains', 'The Serengeti spreads under the African sun in rolling grasslands. Wildebeests and zebras migrate in vast herds, guided by the promise of water and fresh pasture.'],
+  ['Yosemite Valley', 'Glacial forces shaped this granite cradle in California. Towering waterfalls cascade from sheer cliffs, while giant sequoias stand in quiet strength.'],
+  ['Namib Desert', 'The Namib Desert clings to the Atlantic coast of southern Africa. Rust-red dunes shift above hidden water tables where desert elephants roam.'],
+  ['Patagonia', 'Patagonia’s windswept plains and jagged peaks stretch across Argentina and Chile. Glaciers calve into turquoise lakes, and guanacos graze on hardy grasses.'],
+  ['Swiss Alps', 'The Swiss Alps rise with sharp spires of snow and ice. Mountain chalets cling to slopes where wildflowers bloom each summer in vibrant displays.'],
+  ['Himalayas', 'The Himalayas hold the world’s highest summits beneath a freezing sky. From lush foothills to lofty glaciers, this range tests life’s resilience.'],
+  ['Icelandic Highlands', 'Iceland’s interior stands stark and raw with volcanic plains, steaming vents, and glacier-fed rivers. The wind sweeps across moss-coated lava fields in lonely gusts.'],
+  ['Atacama Desert', 'The Atacama is among the driest places on Earth. Its scorched soil and salt flats see rare blooms that burst into color after elusive rains.'],
+  ['Redwood Forest', 'Coastal redwoods tower in perpetual mist along the Pacific. Their trunks, thick and ancient, cradle a hidden world of fern and moss.'],
+  ['Scottish Highlands', 'The Highlands roll in rugged hills capped by heather and stone. Lochs reflect ever-shifting skies, and the wind carries the distant clang of sheep bells.'],
+  ['Great Rift Valley', 'This massive geological trench cleaves eastern Africa, where lakes shimmer at the bottom of steep escarpments. Flamingos gather in vast flocks to feed on algae.'],
+  ['Okavango Delta', 'The Okavango spreads like a bright labyrinth of channels and wetlands in Botswana. Seasonal floods create a green haven for elephants, lions, and hippos.'],
+  ['Appalachian Mountains', 'Old and eroded, the Appalachians meander through eastern North America. Their forests host black bears, rhododendrons, and the misty quiet of forest hollows.'],
+  ['Death Valley', 'Death Valley bakes under a relentless sun, reaching some of the hottest temperatures on record. Cracked salt flats testify to evaporated lakes and lost water.'],
+  ['Dolomites', 'Jagged limestone peaks define northern Italy’s Dolomites. Alpine meadows lie below sheer cliffs, where climbers test themselves against silent stone.'],
+  ['Torres del Paine', 'Chile’s Torres del Paine juts into the southern sky with glacier-fed lakes at its base. Guanacos roam windblown plains as ice cracks overhead.'],
+  ['Lofoten Islands', 'Lofoten’s dramatic peaks rise straight from Norway’s cold seas. Fishing villages huddle along rocky shores, while gulls circle overhead in crisp air.'],
+  ['Siberian Tundra', 'The Siberian tundra spans a realm of permafrost and low shrubs. Winters stretch long and bleak, yet migratory birds still find respite here each summer.'],
+  ['Norwegian Fjords', 'Deep fjords carve into Norway’s coast where dark waters mirror towering cliffs. Small farms cling to green patches between rock and sea.'],
+  ['Bungle Bungle Range', 'These striped sandstone domes rise from the Australian outback. Gorges cut deep under a harsh sun, hiding pockets of lush vegetation.'],
+  ['Zion Canyon', 'Zion Canyon glows red and orange under the Utah sky. The Virgin River sculpts sheer walls that watch over narrow trails and hidden pools.'],
+  ['Lake Baikal', 'Lake Baikal in Siberia is the world’s deepest lake. Its waters shimmer with unmatched clarity, home to species found nowhere else on Earth.'],
+  ['Banff National Park', 'Banff crowns the Canadian Rockies with turquoise lakes and towering peaks. Grizzlies roam pine forests while glacier-fed rivers reflect untouched wilderness.'],
+  ['Wadi Rum', 'Wadi Rum’s sandstone cliffs loom in Jordan’s desert, carved by millennia of wind and time. Nomadic tribes wander under a silent, star-filled sky.'],
+  ['Cappadocia', 'Cappadocia’s whimsical rock formations rise over central Turkey’s plains. Soft stone spires hold hidden chapels and the ghosts of ancient dwellers.'],
+];
 export default async function Page(props) {
   return (
     <DefaultLayout previewPixelSRC="https://intdev-global.s3.us-west-2.amazonaws.com/template-app-icon.png">
@@ -536,11 +570,13 @@ export default async function Page(props) {
           <Card title="EXAMPLE">WORK IN PROGRESS</Card>
         </Accordion>
 
-        <Accordion defaultValue={false} title="COMBOBOX">
-          Comboboxes combine a dropdown list with an editable textbox, allowing users to select from a list or input data manually. It offers flexibility and autocomplete features, improving usability in scenarios where users may not know all options. Combobox is useful in forms, filtering lists, or any context requiring selection or custom input.
+        <Accordion defaultValue={true} title="COMBOBOX">
+          Comboboxes combine a list with an editable textbox, allowing users to select from a list or input data manually. It offers flexibility and autocomplete features, improving usability in scenarios where users may not know all options.
           <br />
           <br />
-          <Card title="EXAMPLE">WORK IN PROGRESS</Card>
+          <Card title="COMBOBOX">
+            <ComboBox data={LANDSCAPES} label="SEARCH THE WORLD" />
+          </Card>
         </Accordion>
 
         <Accordion defaultValue={true} title="DATA TABLE">
