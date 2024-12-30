@@ -22,6 +22,7 @@ import CanvasSnake from '@components/CanvasSnake';
 import Card from '@components/Card';
 import CardDouble from '@components/CardDouble';
 import Checkbox from '@components/Checkbox';
+import CodeBlock from '@components/CodeBlock';
 import ContentFluid from '@components/ContentFluid';
 import ComboBox from '@components/ComboBox';
 import DataTable from '@components/DataTable';
@@ -563,11 +564,49 @@ export default async function Page(props) {
           <Card title="EXAMPLE">WORK IN PROGRESS</Card>
         </Accordion>
 
-        <Accordion defaultValue={false} title="CODE SNIPPET">
-          Code snippets display code examples clearly and concisely, making them easy to read, copy, and use. It is essential for technical documentation, user guides, or design handbooks, supporting code sharing and review.
+        <Accordion defaultValue={true} title="CODE BLOCKS">
+          Code blocks display code examples clearly and concisely, making them easy to read, copy, and use. This version has line numbers that are not user selectable.
           <br />
           <br />
-          <Card title="EXAMPLE">WORK IN PROGRESS</Card>
+          <Card title="CODE">
+            <CodeBlock>
+              {`#include <iostream>
+#include <string>
+#include <thread>
+#include <asio.hpp>
+
+using asio::ip::tcp;
+
+void handle_client(tcp::socket socket) {
+    try {
+        std::string message = 
+            "HTTP/1.1 200 OK\\r\\n"
+            "Content-Type: text/plain\\r\\n"
+            "Connection: close\\r\\n"
+            "\\r\\n"
+            "Hello, World!";
+        asio::write(socket, asio::buffer(message));
+    } catch (...) {}
+}
+
+int main() {
+    asio::io_context context;
+
+    tcp::acceptor acceptor(context, 
+        tcp::endpoint(tcp::v4(), 8080));
+
+    std::cout << "Server running on port 8080...\\n";
+              
+    while (true) {
+        tcp::socket socket(context);
+        acceptor.accept(socket);
+        std::thread(handle_client, std::move(socket)).detach();
+    }
+
+    return 0;
+}`}
+            </CodeBlock>
+          </Card>
         </Accordion>
 
         <Accordion defaultValue={true} title="COMBOBOX">

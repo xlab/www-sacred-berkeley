@@ -1,10 +1,12 @@
 import Avatar from '@components/Avatar';
 import ActionButton from '@components/ActionButton';
 import Divider from '@components/Divider';
+import DropdownMenuTrigger from '@components/DropdownMenuTrigger';
 import Indent from '@components/Indent';
 import Input from '@components/Input';
 import Message from '@components/Message';
 import MessageViewer from '@components/MessageViewer';
+import ModalError from '@components/modals/ModalError';
 import Navigation from '@components/Navigation';
 import RowEllipsis from '@components/RowEllipsis';
 import SidebarLayout from '@components/SidebarLayout';
@@ -24,7 +26,67 @@ const MessagesInterface: React.FC<MessagesInterfaceProps> = () => {
         logo="✶"
         left={
           <>
-            <ActionButton>FILE</ActionButton>
+            <DropdownMenuTrigger
+              items={[
+                {
+                  icon: '⊹',
+                  children: 'Open',
+                  modal: ModalError,
+                  modalProps: {
+                    message: <>Non-fatal error detected: error FOOLISH (Please contact Sacred Computer support.)</>,
+                    title: `MESSAGES`,
+                  },
+                },
+                {
+                  icon: '⊹',
+                  children: 'New Message',
+                  modal: ModalError,
+                  modalProps: {
+                    message: <>Non-fatal error detected: error FOOLISH (Please contact Sacred Computer support.)</>,
+                    title: `MESSAGES`,
+                  },
+                },
+                {
+                  icon: '⊹',
+                  children: 'Quick Look',
+                  modal: ModalError,
+                  modalProps: {
+                    message: <>Non-fatal error detected: error FOOLISH (Please contact Sacred Computer support.)</>,
+                    title: `MESSAGES`,
+                  },
+                },
+                {
+                  icon: '⊹',
+                  children: 'Close Messages',
+                  modal: ModalError,
+                  modalProps: {
+                    message: <>Non-fatal error detected: error FOOLISH (Please contact Sacred Computer support.)</>,
+                    title: `MESSAGES`,
+                  },
+                },
+                {
+                  icon: '⊹',
+                  children: 'Open Conversation in New Window',
+                  modal: ModalError,
+                  modalProps: {
+                    message: <>Non-fatal error detected: error FOOLISH (Please contact Sacred Computer support.)</>,
+                    title: `MESSAGES`,
+                  },
+                },
+                {
+                  icon: '⊹',
+                  children: 'Print...',
+                  modal: ModalError,
+                  modalProps: {
+                    message: <>Non-fatal error detected: error FOOLISH (Please contact Sacred Computer support.)</>,
+                    title: `MESSAGES`,
+                  },
+                },
+              ]}
+            >
+              <ActionButton>FILE</ActionButton>
+            </DropdownMenuTrigger>
+
             <ActionButton>EDIT</ActionButton>
             <ActionButton>VIEW</ActionButton>
           </>
