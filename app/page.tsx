@@ -30,6 +30,7 @@ import DatePicker from '@components/DatePicker';
 import DebugGrid from '@components/DebugGrid';
 import DefaultActionBar from '@components/page/DefaultActionBar';
 import DefaultLayout from '@components/page/DefaultLayout';
+import Dialog from '@components/Dialog';
 import Divider from '@components/Divider';
 import Drawer from '@components/Drawer';
 import DropdownMenuTrigger from '@components/DropdownMenuTrigger';
@@ -55,6 +56,7 @@ import RadioButtonGroup from '@components/RadioButtonGroup';
 import Row from '@components/Row';
 import RowSpaceBetween from '@components/RowSpaceBetween';
 import Script from 'next/script';
+import Select from '@components/Select';
 import SidebarLayout from '@components/SidebarLayout';
 import Text from '@components/Text';
 import TextArea from '@components/TextArea';
@@ -88,7 +90,7 @@ export async function generateMetadata({ params, searchParams }) {
       description,
       images: [
         {
-          url: 'https://next-s3-public.s3.us-west-2.amazonaws.com/social/social-sacred-computer.png',
+          url: 'https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/57a5715d-d332-47d0-8ec8-40cfa75bf36f.png',
           width: 1500,
           height: 785,
         },
@@ -102,7 +104,7 @@ export async function generateMetadata({ params, searchParams }) {
       card: 'summary_large_image',
       description,
       handle,
-      images: ['https://next-s3-public.s3.us-west-2.amazonaws.com/social/social-sacred-computer.png'],
+      images: ['https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/57a5715d-d332-47d0-8ec8-40cfa75bf36f.png'],
       title,
       url,
     },
@@ -557,13 +559,6 @@ export default async function Page(props) {
           </Card>
         </Accordion>
 
-        <Accordion defaultValue={false} title="CHIP">
-          Chips are compact, interactive elements that represent inputs, attributes, or actions. They are used for tasks like entering information, making selections, filtering content, or triggering actions. Chips help users scan and manage information efficiently.
-          <br />
-          <br />
-          <Card title="EXAMPLE">WORK IN PROGRESS</Card>
-        </Accordion>
-
         <Accordion defaultValue={true} title="CODE BLOCKS">
           Code blocks display code examples clearly and concisely, making them easy to read, copy, and use. This version has line numbers that are not user selectable.
           <br />
@@ -642,11 +637,28 @@ int main() {
           </Card>
         </Accordion>
 
-        <Accordion defaultValue={false} title="DIALOG">
-          Dialogs are modal window that overlays the main content, used for tasks requiring input or confirmation without leaving the current context. Commonly used for alerts, confirmations, or data entry, Dialog captures user attention and provides options to accept, reject, or dismiss the information.
+        <Accordion defaultValue={true} title="DIALOG">
+          Dialog components overlay the main content—reminiscent of early graphical interfaces—to capture a user’s focus for tasks requiring input, a choice, or confirmation without leaving the current context.
           <br />
           <br />
-          <Card title="EXAMPLE">WORK IN PROGRESS</Card>
+          <Card title="EXAMPLE">
+            <br />
+            <br />
+            <Dialog title="FAREWELL">
+              There are unsaved changes.
+              <br />
+              Are you sure you want to start the new year?
+            </Dialog>
+            <br />
+            <br />
+            <Dialog title="GOODBYE">
+              The 2024 session is nearly out of time.
+              <br />
+              Save progress and load 2025?
+            </Dialog>
+            <br />
+            <br />
+          </Card>
         </Accordion>
 
         <Accordion defaultValue={true} title="DIVIDER">
@@ -796,11 +808,13 @@ int main() {
           </Card>
         </Accordion>
 
-        <Accordion defaultValue={false} title="EMPTY STATE">
-          An empty state informs users when no content is available, such as for first-time users, empty searches, or errors. Instead of showing a blank screen, it provides guidance, feedback, or calls to action to engage users. Empty State turns confusing moments into opportunities for onboarding, education, or improved satisfaction.
+        <Accordion defaultValue={true} title="EMPTY STATE">
+          An empty state informs users when no content is available, such as for first-time users, empty searches, or errors.
           <br />
           <br />
-          <Card title="EXAMPLE">WORK IN PROGRESS</Card>
+          <Card title="EXAMPLE">
+            <Grid>WORK IN PROGRESS</Grid>
+          </Card>
         </Accordion>
 
         <Accordion defaultValue={true} title="INPUT">
@@ -847,27 +861,6 @@ int main() {
             <br />
             <Button>Create an account</Button>
           </CardDouble>
-        </Accordion>
-
-        <Accordion defaultValue={false} title="HELP TEXT">
-          Help text is a brief description that provides instructions, additional information, or context to assist users. It is often placed with form fields, complex elements, or new features where clarification is needed.
-          <br />
-          <br />
-          <Card title="EXAMPLE">WORK IN PROGRESS</Card>
-        </Accordion>
-
-        <Accordion defaultValue={false} title="INLINE MESSAGE">
-          An inline message is a small alert that provides contextual feedback or information during user interactions. It appears near specific elements, like form fields, to give immediate guidance or feedback.
-          <br />
-          <br />
-          <Card title="EXAMPLE">WORK IN PROGRESS</Card>
-        </Accordion>
-
-        <Accordion defaultValue={false} title="LABEL">
-          Labels are text elements that identifies input fields or interface objects, providing clear descriptions to guide users in entering appropriate data. Often paired with form controls like checkboxes or radio buttons, Labels enhance accessibility and may include supplementary instructions.
-          <br />
-          <br />
-          <Card title="EXAMPLE">WORK IN PROGRESS</Card>
         </Accordion>
 
         <Accordion defaultValue={true} title="LINK">
@@ -961,13 +954,6 @@ int main() {
               <ListItem>Six Secret Teachings</ListItem>
             </ul>
           </Card>
-        </Accordion>
-
-        <Accordion defaultValue={false} title="MENUS">
-          Menus are dynamic UI elements that combine action lists and overlay patterns to provide a roster of items representing commands, actions, or selections, supporting single or multi-select capabilities. They offer a space-efficient way to present choices, enabling users to execute actions, adjust settings, or make selections within a transient container.
-          <br />
-          <br />
-          <Card title="EXAMPLE">WORK IN PROGRESS</Card>
         </Accordion>
 
         <Accordion defaultValue={true} title="MESSAGES">
@@ -1144,20 +1130,6 @@ int main() {
           </Card>
         </Accordion>
 
-        <Accordion defaultValue={false} title="PAGE HEADER">
-          Page headers are key interface elements typically placed at the top of a page to provide context and indicate the current location within an application or website.
-          <br />
-          <br />
-          <Card title="EXAMPLE">WORK IN PROGRESS</Card>
-        </Accordion>
-
-        <Accordion defaultValue={false} title="PAGINATION">
-          Pagination is an interface control that enables navigation through large datasets spread across multiple pages. Commonly found at the bottom of tables or lists, it allows users to move to the next, previous, first, last, or specific pages.
-          <br />
-          <br />
-          <Card title="EXAMPLE">WORK IN PROGRESS</Card>
-        </Accordion>
-
         <Accordion defaultValue={true} title="POPOVER">
           Popovers are transient views that appear above content when users interact with an associated element, offering relevant information, details, or interactive content like actions or form elements.
           <br />
@@ -1266,11 +1238,21 @@ int main() {
           </CardDouble>
         </Accordion>
 
-        <Accordion defaultValue={false} title="SELECT">
+        <Accordion defaultValue={true} title="SELECT">
           Select components are user interface controls that let users choose an option from a dropdown list. They display a list of options and collapse to show the selected choice, making them ideal for scenarios with limited space and multiple options.
           <br />
           <br />
-          <Card title="EXAMPLE">WORK IN PROGRESS</Card>
+          <Card title="EXAMPLE">
+            What is your favorite dinosaur?
+            <br />
+            <br />
+            <Select name="favorite_dinosaur" options={['T-Rex', 'Triceratops', 'Velociraptor', 'Stegosaurus', 'Brachiosaurus', 'Diplodocus', 'Spinosaurus', 'Allosaurus', 'Ankylosaurus', 'Iguanodon', 'Parasaurolophus', 'Pachycephalosaurus', 'Pteranodon', 'Apatosaurus', 'Archaeopteryx', 'Oviraptor', 'Gallimimus', 'Ceratosaurus', 'Deinonychus', 'Megalosaurus']} defaultValue="T-Rex" placeholder="Select your favorite dinosaur..." />
+            <br />
+            What is your favorite deep sea animal?
+            <br />
+            <br />
+            <Select name="favorite_deepsea_animal" options={['Giant Squid', 'Vampire Squid', 'Anglerfish', 'Goblin Shark', 'Fangtooth Fish', 'Dumbo Octopus', 'Frilled Shark', 'Blobfish', 'Barreleye Fish', 'Lanternfish', 'Viperfish', 'Gulper Eel', 'Sea Spider', 'Dragonfish', 'Cookiecutter Shark', 'Hagfish', 'Chimaera', 'Deep Sea Octopus', 'Sea Pig', 'Sea Cucumber']} defaultValue="Giant Squid" placeholder="Select your favorite deep sea creature..." />
+          </Card>
         </Accordion>
 
         <Accordion defaultValue={true} title="SIDEBAR LAYOUT">
@@ -1305,34 +1287,6 @@ int main() {
             <NumberRangeSlider defaultValue={0} min={0} max={20000} step={1} />
             <NumberRangeSlider defaultValue={0} min={0} max={100000} step={1} />
           </Card>
-        </Accordion>
-
-        <Accordion defaultValue={false} title="SNACKBAR">
-          Snackbars are brief messages that appear at the bottom of the screen to provide feedback on operations, such as task completion or new data arrival. They are transient, disappearing automatically after a few seconds, but may include a dismiss option or action button.
-          <br />
-          <br />
-          <Card title="EXAMPLE">WORK IN PROGRESS</Card>
-        </Accordion>
-
-        <Accordion defaultValue={false} title="SWITCH">
-          Switches are toggle controls that let users turn a single option on or off, commonly used for binary settings like enabling or disabling features. They provide immediate visual feedback, making them intuitive and efficient.
-          <br />
-          <br />
-          <Card title="EXAMPLE">WORK IN PROGRESS</Card>
-        </Accordion>
-
-        <Accordion defaultValue={false} title="TABS">
-          Tabs are interactive UI elements that allow users to switch between different views or subsections within the same context. Each tab corresponds to distinct content, with only one active at a time, typically positioned at the top of the content area.
-          <br />
-          <br />
-          <Card title="EXAMPLE">WORK IN PROGRESS</Card>
-        </Accordion>
-
-        <Accordion defaultValue={false} title="TAG">
-          Tags are interactive UI elements that represent information as keywords or attributes, commonly used for labeling, categorizing, or adding metadata to items. They often include text labels and may feature icons for removal, especially in input fields.
-          <br />
-          <br />
-          <Card title="EXAMPLE">WORK IN PROGRESS</Card>
         </Accordion>
 
         <Accordion defaultValue={true} title="TEXT AREA">

@@ -2,7 +2,7 @@
 
 **[Live Demo](https://sacred.computer)**
 
-A open source monospace component library crafted for React interfaces built with variable fonts, React applications, and React websites that prioritize simplicity.
+SRCL is an open-source React component and style repository that helps you build web applications, desktop applications, and static websites with terminal aesthetics. Its modular, easy-to-use components emphasize precise monospace character spacing and line heights, enabling you to quickly copy and paste implementations while maintaining a clean, efficient codebase.
 
 ```sh
 npm install
