@@ -6,10 +6,11 @@ import * as Utilities from '@common/utilities';
 import ButtonGroup from '@components/ButtonGroup';
 
 interface ActionBarItem {
-  hotkey: string;
+  hotkey?: string;
   onClick?: () => void;
   selected?: boolean;
   body: React.ReactNode;
+  items?: any;
 }
 
 interface ActionBarProps {

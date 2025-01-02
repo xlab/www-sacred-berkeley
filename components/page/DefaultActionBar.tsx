@@ -1,6 +1,7 @@
 'use client';
 
 import styles from '@components/page/DefaultActionBar.module.scss';
+
 import * as React from 'react';
 import * as Utilities from '@common/utilities';
 
@@ -109,6 +110,7 @@ interface DefaultActionBarProps {
     hotkey: string;
     onClick: () => void;
     body: React.ReactNode;
+    items?: any;
   }[];
 }
 
@@ -123,6 +125,26 @@ const DefaultActionBar: React.FC<DefaultActionBarProps> = ({ items = [] }) => {
     <div className={styles.root}>
       <ActionBar
         items={[
+          {
+            body: 'Fonts',
+            items: [
+              {
+                icon: '⊹',
+                children: 'Geist Mono Variable',
+                onClick: () => Utilities.onHandleFontChange(''),
+              },
+              {
+                icon: '⊹',
+                children: 'Jet Brains Mono',
+                onClick: () => Utilities.onHandleFontChange('font-use-jet-brains-mono'),
+              },
+              {
+                icon: '⊹',
+                children: 'Server Mono 0.0.6',
+                onClick: () => Utilities.onHandleFontChange('font-use-server-mono'),
+              },
+            ],
+          },
           {
             hotkey: '⌃+T',
             onClick: () => Utilities.onHandleThemeChange(),

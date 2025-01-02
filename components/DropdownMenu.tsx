@@ -44,7 +44,24 @@ const DropdownMenu = React.forwardRef<HTMLDivElement, DropdownMenuProps>((props,
             );
           }
 
-          return <ActionListItem key={`action-items-${index}`} children={each.children} icon={each.icon} href={each.href} target={each.target} onClick={each.onClick} />;
+          return (
+            <ActionListItem
+              key={`action-items-${index}`}
+              children={each.children}
+              icon={each.icon}
+              href={each.href}
+              target={each.target}
+              onClick={() => {
+                if (each.onClick) {
+                  each.onClick();
+                }
+
+                if (onClose) {
+                  onClose();
+                }
+              }}
+            />
+          );
         })}
 
       <footer className={styles.footer}>

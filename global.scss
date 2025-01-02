@@ -3,6 +3,16 @@
   src: url('https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/996b00fb-4b7a-403d-8da2-ce2225450681.woff2') format('woff2');
 }
 
+@font-face {
+  font-family: 'ServerMono-Regular';
+  src: url('https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/6c8ad1f3-2ad9-44a9-88db-46ff3f19c4f3.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'JetBrainsMono-Regular';
+  src: url('https://next-s3-public.s3.us-west-2.amazonaws.com/JetBrainsMono-Regular.woff2') format('woff');
+}
+
 a,
 abbr,
 acronym,
@@ -228,6 +238,14 @@ body.theme-dark {
   --theme-button-background: var(--color-gray-80);
   --theme-focused-foreground: var(--color-daybreak-10);
   --theme-focused-foreground-subdued: var(--color-daybreak-10-5);
+}
+
+body.font-use-server-mono {
+  --font-family-mono: 'Server Mono', Consolas, monaco, monospace;
+}
+
+body.font-use-jet-brains-mono {
+  --font-family-mono: 'JetBrainsMono-Regular', Consolas, monaco, monospace;
 }
 
 #__next {

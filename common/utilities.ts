@@ -64,6 +64,27 @@ export function onHandleThemeChange() {
   }
 }
 
+export function onHandleFontChange(className?: string) {
+  const body = document.body;
+
+  if (className) {
+    body.classList.forEach((existingClass) => {
+      if (existingClass.startsWith('font-')) {
+        body.classList.remove(existingClass);
+      }
+    });
+
+    body.classList.add(className);
+    return;
+  }
+
+  body.classList.forEach((existingClass) => {
+    if (existingClass.startsWith('font-')) {
+      body.classList.remove(existingClass);
+    }
+  });
+}
+
 export function formatDollars(value: number): string {
   return new Intl.NumberFormat('en-US', {
     style: 'currency',

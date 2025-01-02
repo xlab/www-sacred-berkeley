@@ -35,6 +35,7 @@ import Divider from '@components/Divider';
 import Drawer from '@components/Drawer';
 import DropdownMenuTrigger from '@components/DropdownMenuTrigger';
 import Grid from '@components/Grid';
+import HoverComponentTrigger from '@components/HoverComponentTrigger';
 import Indent from '@components/Indent';
 import Input from '@components/Input';
 import IntDevLogo from '@components/svg/IntDevLogo';
@@ -51,7 +52,6 @@ import ModalTrigger from '@components/ModalTrigger';
 import Navigation from '@components/Navigation';
 import NumberRangeSlider from '@components/NumberRangeSlider';
 import Package from '@root/package.json';
-import PopoverTrigger from '@components/PopoverTrigger';
 import RadioButtonGroup from '@components/RadioButtonGroup';
 import Row from '@components/Row';
 import RowSpaceBetween from '@components/RowSpaceBetween';
@@ -60,7 +60,6 @@ import Select from '@components/Select';
 import SidebarLayout from '@components/SidebarLayout';
 import Text from '@components/Text';
 import TextArea from '@components/TextArea';
-import TooltipTrigger from '@components/TooltipTrigger';
 import TreeView from '@components/TreeView';
 import UpdatingDataTable from '@components/examples/UpdatingDataTable';
 
@@ -487,7 +486,7 @@ export default async function Page(props) {
           </Card>
         </Accordion>
 
-        <Accordion defaultValue={true} title="CANVAS PLATFORMER">
+        <Accordion defaultValue={false} title="CANVAS PLATFORMER">
           This canvas component provides a basic starting point for building a 2D platform game directly on a canvas element. It currently supports simple character jumping and rudimentary collision detection, making it easy to set up a foundational scene.
           <br />
           <br />
@@ -496,7 +495,7 @@ export default async function Page(props) {
           </Card>
         </Accordion>
 
-        <Accordion defaultValue={true} title="CANVAS SNAKE">
+        <Accordion defaultValue={false} title="CANVAS SNAKE">
           This canvas component provides a simple demo of the classic Snake game. It includes basic mechanics like movement and growth, while also demonstrating how to freeze the game state when the canvas loses focus, ensuring a smooth user experience.
           <br />
           <br />
@@ -979,7 +978,7 @@ int main() {
           </Card>
         </Accordion>
 
-        <Accordion defaultValue={true} title="MATRIX LOADER">
+        <Accordion defaultValue={false} title="MATRIX LOADER">
           A Matrix Loader (screen) is a visual element that simulates the iconic green, cascading code streams featured in the Matrix films. These screens often serve as dynamic backdrops, thematic treatments, or stylized representations of complex digital data. This version fits SRCL's theming and monospace font usage.
           <br />
           <br />
@@ -1136,12 +1135,12 @@ int main() {
           <br />
           <Card title="EXAMPLE">
             <RowSpaceBetween>
-              <PopoverTrigger text="An old silent pond">
+              <HoverComponentTrigger component="popover" text="An old silent pond">
                 <ActionButton>TOP LEFT</ActionButton>
-              </PopoverTrigger>
-              <PopoverTrigger text="A world of dew">
+              </HoverComponentTrigger>
+              <HoverComponentTrigger component="popover" text="A world of dew">
                 <ActionButton>TOP RIGHT</ActionButton>
-              </PopoverTrigger>
+              </HoverComponentTrigger>
             </RowSpaceBetween>
             <br />
             <br />
@@ -1152,12 +1151,12 @@ int main() {
             <br />
             <br />
             <RowSpaceBetween>
-              <PopoverTrigger text="The light of a candle">
+              <HoverComponentTrigger component="popover" text="The light of a candle">
                 <ActionButton>BOTTOM LEFT</ActionButton>
-              </PopoverTrigger>
-              <PopoverTrigger text="I write, erase, rewrite">
+              </HoverComponentTrigger>
+              <HoverComponentTrigger component="popover" text="I write, erase, rewrite">
                 <ActionButton>BOTTOM RIGHT</ActionButton>
-              </PopoverTrigger>
+              </HoverComponentTrigger>
             </RowSpaceBetween>
           </Card>
         </Accordion>
@@ -1316,12 +1315,12 @@ int main() {
           <br />
           <Card title="EXAMPLE">
             <RowSpaceBetween>
-              <TooltipTrigger text="The future depends on what we do in the present.">
+              <HoverComponentTrigger component="tooltip" text="The future depends on what we do in the present.">
                 <ActionButton>TOP LEFT</ActionButton>
-              </TooltipTrigger>
-              <TooltipTrigger text="An eye for an eye only ends up making the whole world blind.">
+              </HoverComponentTrigger>
+              <HoverComponentTrigger component="tooltip" text="An eye for an eye only ends up making the whole world blind.">
                 <ActionButton>TOP RIGHT</ActionButton>
-              </TooltipTrigger>
+              </HoverComponentTrigger>
             </RowSpaceBetween>
             <br />
             <br />
@@ -1332,12 +1331,12 @@ int main() {
             <br />
             <br />
             <RowSpaceBetween>
-              <TooltipTrigger text="Live as if you were to die tomorrow">
+              <HoverComponentTrigger component="tooltip" text="Live as if you were to die tomorrow">
                 <ActionButton>BOTTOM LEFT</ActionButton>
-              </TooltipTrigger>
-              <TooltipTrigger text="The best way to find yourself is to lose yourself in the service of others.">
+              </HoverComponentTrigger>
+              <HoverComponentTrigger component="tooltip" text="The best way to find yourself is to lose yourself in the service of others.">
                 <ActionButton>BOTTOM RIGHT</ActionButton>
-              </TooltipTrigger>
+              </HoverComponentTrigger>
             </RowSpaceBetween>
           </Card>
         </Accordion>

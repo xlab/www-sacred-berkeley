@@ -6,6 +6,7 @@ import * as React from 'react';
 import * as Utilities from '@common/utilities';
 
 import ActionButton from '@components/ActionButton';
+import DropdownMenuTrigger from '@components/DropdownMenuTrigger';
 
 const ButtonGroup = (props) => {
   if (!props.items) {
@@ -15,6 +16,16 @@ const ButtonGroup = (props) => {
   return (
     <div className={Utilities.classNames(styles.root, props.isFull ? styles.full : null)}>
       {props.items.map((each) => {
+        if (each.items) {
+          return (
+            <DropdownMenuTrigger key={each.body} items={each.items}>
+              <ActionButton hotkey={each.hotkey} isSelected={each.selected}>
+                {each.body}
+              </ActionButton>
+            </DropdownMenuTrigger>
+          );
+        }
+
         return (
           <ActionButton key={each.body} onClick={each.onClick} hotkey={each.hotkey} isSelected={each.selected}>
             {each.body}

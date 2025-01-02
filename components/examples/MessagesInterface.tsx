@@ -87,13 +87,343 @@ const MessagesInterface: React.FC<MessagesInterfaceProps> = () => {
               <ActionButton>FILE</ActionButton>
             </DropdownMenuTrigger>
 
-            <ActionButton>EDIT</ActionButton>
-            <ActionButton>VIEW</ActionButton>
+            <DropdownMenuTrigger
+              items={[
+                {
+                  icon: '⊹',
+                  children: 'Undo',
+                  modal: ModalError,
+                  modalProps: {
+                    message: <>Non-fatal error detected: error FOOLISH (Please contact Sacred Computer support.)</>,
+                    title: `MESSAGES`,
+                  },
+                },
+                {
+                  icon: '⊹',
+                  children: 'Redo',
+                  modal: ModalError,
+                  modalProps: {
+                    message: <>Non-fatal error detected: error FOOLISH (Please contact Sacred Computer support.)</>,
+                    title: `MESSAGES`,
+                  },
+                },
+                {
+                  icon: '⊹',
+                  children: 'Cut',
+                  modal: ModalError,
+                  modalProps: {
+                    message: <>Non-fatal error detected: error FOOLISH (Please contact Sacred Computer support.)</>,
+                    title: `MESSAGES`,
+                  },
+                },
+                {
+                  icon: '⊹',
+                  children: 'Copy',
+                  modal: ModalError,
+                  modalProps: {
+                    message: <>Non-fatal error detected: error FOOLISH (Please contact Sacred Computer support.)</>,
+                    title: `MESSAGES`,
+                  },
+                },
+                {
+                  icon: '⊹',
+                  children: 'Paste',
+                  modal: ModalError,
+                  modalProps: {
+                    message: <>Non-fatal error detected: error FOOLISH (Please contact Sacred Computer support.)</>,
+                    title: `MESSAGES`,
+                  },
+                },
+                {
+                  icon: '⊹',
+                  children: 'Paste and Match Style',
+                  modal: ModalError,
+                  modalProps: {
+                    message: <>Non-fatal error detected: error FOOLISH (Please contact Sacred Computer support.)</>,
+                    title: `MESSAGES`,
+                  },
+                },
+                {
+                  icon: '⊹',
+                  children: 'Delete',
+                  modal: ModalError,
+                  modalProps: {
+                    message: <>Non-fatal error detected: error FOOLISH (Please contact Sacred Computer support.)</>,
+                    title: `MESSAGES`,
+                  },
+                },
+                {
+                  icon: '⊹',
+                  children: 'Select All',
+                  modal: ModalError,
+                  modalProps: {
+                    message: <>Non-fatal error detected: error FOOLISH (Please contact Sacred Computer support.)</>,
+                    title: `MESSAGES`,
+                  },
+                },
+                {
+                  icon: '⊹',
+                  children: 'Find...',
+                  modal: ModalError,
+                  modalProps: {
+                    message: <>Non-fatal error detected: error FOOLISH (Please contact Sacred Computer support.)</>,
+                    title: `MESSAGES`,
+                  },
+                },
+                {
+                  icon: '⊹',
+                  children: 'Find Next',
+                  modal: ModalError,
+                  modalProps: {
+                    message: <>Non-fatal error detected: error FOOLISH (Please contact Sacred Computer support.)</>,
+                    title: `MESSAGES`,
+                  },
+                },
+                {
+                  icon: '⊹',
+                  children: 'Find Previous',
+                  modal: ModalError,
+                  modalProps: {
+                    message: <>Non-fatal error detected: error FOOLISH (Please contact Sacred Computer support.)</>,
+                    title: `MESSAGES`,
+                  },
+                },
+                {
+                  icon: '⊹',
+                  children: 'Spelling and Grammar',
+                  modal: ModalError,
+                  modalProps: {
+                    message: <>Non-fatal error detected: error FOOLISH (Please contact Sacred Computer support.)</>,
+                    title: `MESSAGES`,
+                  },
+                },
+                {
+                  icon: '⊹',
+                  children: 'Substitutions',
+                  modal: ModalError,
+                  modalProps: {
+                    message: <>Non-fatal error detected: error FOOLISH (Please contact Sacred Computer support.)</>,
+                    title: `MESSAGES`,
+                  },
+                },
+                {
+                  icon: '⊹',
+                  children: 'Speech',
+                  modal: ModalError,
+                  modalProps: {
+                    message: <>Non-fatal error detected: error FOOLISH (Please contact Sacred Computer support.)</>,
+                    title: `MESSAGES`,
+                  },
+                },
+                {
+                  icon: '⊹',
+                  children: 'Send Message',
+                  modal: ModalError,
+                  modalProps: {
+                    message: <>Non-fatal error detected: error FOOLISH (Please contact Sacred Computer support.)</>,
+                    title: `MESSAGES`,
+                  },
+                },
+                {
+                  icon: '⊹',
+                  children: 'Reply to Last Message',
+                  modal: ModalError,
+                  modalProps: {
+                    message: <>Non-fatal error detected: error FOOLISH (Please contact Sacred Computer support.)</>,
+                    title: `MESSAGES`,
+                  },
+                },
+                {
+                  icon: '⊹',
+                  children: 'Tapback Last Message',
+                  modal: ModalError,
+                  modalProps: {
+                    message: <>Non-fatal error detected: error FOOLISH (Please contact Sacred Computer support.)</>,
+                    title: `MESSAGES`,
+                  },
+                },
+                {
+                  icon: '⊹',
+                  children: 'Edit Last Message',
+                  modal: ModalError,
+                  modalProps: {
+                    message: <>Non-fatal error detected: error FOOLISH (Please contact Sacred Computer support.)</>,
+                    title: `MESSAGES`,
+                  },
+                },
+                {
+                  icon: '⊹',
+                  children: 'Autofill',
+                  modal: ModalError,
+                  modalProps: {
+                    message: <>Non-fatal error detected: error FOOLISH (Please contact Sacred Computer support.)</>,
+                    title: `MESSAGES`,
+                  },
+                },
+                {
+                  icon: '⊹',
+                  children: 'Start Dictation',
+                  modal: ModalError,
+                  modalProps: {
+                    message: <>Non-fatal error detected: error FOOLISH (Please contact Sacred Computer support.)</>,
+                    title: `MESSAGES`,
+                  },
+                },
+                {
+                  icon: '⊹',
+                  children: 'Emoji & Symbols',
+                  modal: ModalError,
+                  modalProps: {
+                    message: <>Non-fatal error detected: error FOOLISH (Please contact Sacred Computer support.)</>,
+                    title: `MESSAGES`,
+                  },
+                },
+              ]}
+            >
+              <ActionButton>EDIT</ActionButton>
+            </DropdownMenuTrigger>
+            <DropdownMenuTrigger
+              items={[
+                {
+                  icon: '⊹',
+                  children: 'Show Tab Bar',
+                  modal: ModalError,
+                  modalProps: {
+                    message: <>Non-fatal error detected: error FOOLISH (Please contact Sacred Computer support.)</>,
+                    title: `MESSAGES`,
+                  },
+                },
+                {
+                  icon: '⊹',
+                  children: 'Show All Tabs',
+                  modal: ModalError,
+                  modalProps: {
+                    message: <>Non-fatal error detected: error FOOLISH (Please contact Sacred Computer support.)</>,
+                    title: `MESSAGES`,
+                  },
+                },
+                {
+                  icon: '⊹',
+                  children: 'Make Text Bigger',
+                  modal: ModalError,
+                  modalProps: {
+                    message: <>Non-fatal error detected: error FOOLISH (Please contact Sacred Computer support.)</>,
+                    title: `MESSAGES`,
+                  },
+                },
+                {
+                  icon: '⊹',
+                  children: 'Make Text Normal Size',
+                  modal: ModalError,
+                  modalProps: {
+                    message: <>Non-fatal error detected: error FOOLISH (Please contact Sacred Computer support.)</>,
+                    title: `MESSAGES`,
+                  },
+                },
+                {
+                  icon: '⊹',
+                  children: 'Make Text Smaller',
+                  modal: ModalError,
+                  modalProps: {
+                    message: <>Non-fatal error detected: error FOOLISH (Please contact Sacred Computer support.)</>,
+                    title: `MESSAGES`,
+                  },
+                },
+                {
+                  icon: '⊹',
+                  children: 'All Messages',
+                  modal: ModalError,
+                  modalProps: {
+                    message: <>Non-fatal error detected: error FOOLISH (Please contact Sacred Computer support.)</>,
+                    title: `MESSAGES`,
+                  },
+                },
+                {
+                  icon: '⊹',
+                  children: 'Known Senders',
+                  modal: ModalError,
+                  modalProps: {
+                    message: <>Non-fatal error detected: error FOOLISH (Please contact Sacred Computer support.)</>,
+                    title: `MESSAGES`,
+                  },
+                },
+                {
+                  icon: '⊹',
+                  children: 'Unknown Senders',
+                  modal: ModalError,
+                  modalProps: {
+                    message: <>Non-fatal error detected: error FOOLISH (Please contact Sacred Computer support.)</>,
+                    title: `MESSAGES`,
+                  },
+                },
+                {
+                  icon: '⊹',
+                  children: 'Unread Messages',
+                  modal: ModalError,
+                  modalProps: {
+                    message: <>Non-fatal error detected: error FOOLISH (Please contact Sacred Computer support.)</>,
+                    title: `MESSAGES`,
+                  },
+                },
+                {
+                  icon: '⊹',
+                  children: 'Recently Delete',
+                  modal: ModalError,
+                  modalProps: {
+                    message: <>Non-fatal error detected: error FOOLISH (Please contact Sacred Computer support.)</>,
+                    title: `MESSAGES`,
+                  },
+                },
+                {
+                  icon: '⊹',
+                  children: 'Show Sidebar',
+                  modal: ModalError,
+                  modalProps: {
+                    message: <>Non-fatal error detected: error FOOLISH (Please contact Sacred Computer support.)</>,
+                    title: `MESSAGES`,
+                  },
+                },
+                {
+                  icon: '⊹',
+                  children: 'Enter Full Screen',
+                  modal: ModalError,
+                  modalProps: {
+                    message: <>Non-fatal error detected: error FOOLISH (Please contact Sacred Computer support.)</>,
+                    title: `MESSAGES`,
+                  },
+                },
+              ]}
+            >
+              <ActionButton>VIEW</ActionButton>
+            </DropdownMenuTrigger>
           </>
         }
         right={
           <>
-            <ActionButton>HELP</ActionButton>
+            <DropdownMenuTrigger
+              items={[
+                {
+                  icon: '⊹',
+                  children: 'Search',
+                  modal: ModalError,
+                  modalProps: {
+                    message: <>Non-fatal error detected: error FOOLISH (Please contact Sacred Computer support.)</>,
+                    title: `MESSAGES`,
+                  },
+                },
+                {
+                  icon: '⊹',
+                  children: 'Messages Help',
+                  modal: ModalError,
+                  modalProps: {
+                    message: <>Non-fatal error detected: error FOOLISH (Please contact Sacred Computer support.)</>,
+                    title: `MESSAGES`,
+                  },
+                },
+              ]}
+            >
+              <ActionButton>HELP</ActionButton>
+            </DropdownMenuTrigger>
           </>
         }
       ></Navigation>
