@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'Geist-Mono-Regular';
+  font-family: 'GeistMono-Regular';
   src: url('https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/996b00fb-4b7a-403d-8da2-ce2225450681.woff2') format('woff2');
 }
 
@@ -246,7 +246,7 @@ body.theme-dark {
 }
 
 body.font-use-server-mono {
-  --font-family-mono: 'Server Mono', Consolas, monaco, monospace;
+  --font-family-mono: 'ServerMono-Regular', Consolas, monaco, monospace;
 }
 
 body.font-use-jet-brains-mono {
@@ -347,7 +347,7 @@ body {
   --color-white-4: rgba(255, 255, 255, 0.4);
 
   --font-family: -apple-system, BlinkMacSystemFont, helvetica neue, helvetica, sans-serif;
-  --font-family-mono: 'Geist-Mono-Regular', Consolas, monaco, monospace;
+  --font-family-mono: 'GeistMono-Regular', Consolas, monaco, monospace;
   --font-family-serif: Georgia, Times New Roman, serif;
 
   --theme-text: var(--color-black-100);
