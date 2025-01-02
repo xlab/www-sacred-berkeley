@@ -2,7 +2,14 @@
   display: block;
   font-weight: 400;
   overflow: auto;
+  font-family: inherit;
   background: var(--theme-border-subdued);
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  scrollbar-width: none;
 }
 
 .line {

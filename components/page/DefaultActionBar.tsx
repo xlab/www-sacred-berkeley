@@ -130,18 +130,23 @@ const DefaultActionBar: React.FC<DefaultActionBarProps> = ({ items = [] }) => {
             items: [
               {
                 icon: '⊹',
-                children: 'Geist Mono Variable',
+                children: 'Geist Mono',
                 onClick: () => Utilities.onHandleFontChange(''),
               },
               {
                 icon: '⊹',
-                children: 'Jet Brains Mono',
+                children: 'JetBrains Mono',
                 onClick: () => Utilities.onHandleFontChange('font-use-jet-brains-mono'),
               },
               {
                 icon: '⊹',
                 children: 'Server Mono 0.0.6',
                 onClick: () => Utilities.onHandleFontChange('font-use-server-mono'),
+              },
+              {
+                icon: '⊹',
+                children: 'SFMono Square',
+                onClick: () => Utilities.onHandleFontChange('font-use-sfmono-square'),
               },
             ],
           },

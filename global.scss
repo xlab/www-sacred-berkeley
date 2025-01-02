@@ -13,6 +13,11 @@
   src: url('https://next-s3-public.s3.us-west-2.amazonaws.com/JetBrainsMono-Regular.woff2') format('woff');
 }
 
+@font-face {
+  font-family: 'SFMonoSquare-Regular';
+  src: url('https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/d94a73b5-d1c5-4a97-9b2d-18e5941833f6.woff') format('woff');
+}
+
 a,
 abbr,
 acronym,
@@ -246,6 +251,10 @@ body.font-use-server-mono {
 
 body.font-use-jet-brains-mono {
   --font-family-mono: 'JetBrainsMono-Regular', Consolas, monaco, monospace;
+}
+
+body.font-use-sfmono-square {
+  --font-family-mono: 'SFMonoSquare-Regular', Consolas, monaco, nonospace;
 }
 
 #__next {
