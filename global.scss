@@ -1,11 +1,21 @@
 @font-face {
-  font-family: 'GeistMono-Regular';
-  src: url('https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/996b00fb-4b7a-403d-8da2-ce2225450681.woff2') format('woff2');
+  font-family: 'DepartureMono-Regular';
+  src: url('https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/2ed59eb2-a4a6-490c-8d70-757b68af681d.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'ServerMono-Regular';
-  src: url('https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/6c8ad1f3-2ad9-44a9-88db-46ff3f19c4f3.woff') format('woff');
+  font-family: 'FiraCode-Regular';
+  src: url('https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/6cf7752d-f7c3-48b2-8149-2d0d39bc008a.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'FragmentMono-Regular';
+  src: url('https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/102755cd-b36a-4db8-907e-c915b322107a.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'GeistMono-Regular';
+  src: url('https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/996b00fb-4b7a-403d-8da2-ce2225450681.woff2') format('woff2');
 }
 
 @font-face {
@@ -16,6 +26,16 @@
 @font-face {
   font-family: 'SFMonoSquare-Regular';
   src: url('https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/d94a73b5-d1c5-4a97-9b2d-18e5941833f6.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'ServerMono-Regular';
+  src: url('https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/6c8ad1f3-2ad9-44a9-88db-46ff3f19c4f3.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'TX02Mono-Regular';
+  src: url('https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/e049dfb6-9c5d-4ac4-97c2-eb6e95c61d09.woff2') format('woff2');
 }
 
 a,
@@ -245,16 +265,32 @@ body.theme-dark {
   --theme-focused-foreground-subdued: var(--color-daybreak-10-5);
 }
 
-body.font-use-server-mono {
-  --font-family-mono: 'ServerMono-Regular', Consolas, monaco, monospace;
+body.font-use-berkeley-mono {
+  --font-family-mono: 'TX02Mono-Regular', sans-serif;
+}
+
+body.font-use-departure-mono {
+  --font-family-mono: 'DepartureMono-Regular', sans-serif;
+}
+
+body.font-use-fira-code {
+  --font-family-mono: 'FiraCode-Regular', sans-serif;
+}
+
+body.font-use-fragment-mono {
+  --font-family-mono: 'FragmentMono-Regular', sans-serif;
 }
 
 body.font-use-jet-brains-mono {
-  --font-family-mono: 'JetBrainsMono-Regular', Consolas, monaco, monospace;
+  --font-family-mono: 'JetBrainsMono-Regular', sans-serif;
+}
+
+body.font-use-server-mono {
+  --font-family-mono: 'ServerMono-Regular', sans-serif;
 }
 
 body.font-use-sfmono-square {
-  --font-family-mono: 'SFMonoSquare-Regular', Consolas, monaco, nonospace;
+  --font-family-mono: 'SFMonoSquare-Regular', sans-serif;
 }
 
 #__next {
