@@ -1,4 +1,9 @@
 @font-face {
+  font-family: 'CommitMono-Regular';
+  src: url('https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/3fecb478-80cf-41c5-b834-8562ab0baae0.woff2') format('woff2');
+}
+
+@font-face {
   font-family: 'DepartureMono-Regular';
   src: url('https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/2ed59eb2-a4a6-490c-8d70-757b68af681d.woff') format('woff');
 }
@@ -16,6 +21,11 @@
 @font-face {
   font-family: 'GeistMono-Regular';
   src: url('https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/996b00fb-4b7a-403d-8da2-ce2225450681.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'IosevkaTerm-Regular';
+  src: url('https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/6397be61-3ea4-459d-8a3e-fd95168cb214.woff2') format('woff2');
 }
 
 @font-face {
@@ -269,6 +279,10 @@ body.font-use-berkeley-mono {
   --font-family-mono: 'TX02Mono-Regular', sans-serif;
 }
 
+body.font-use-commit-mono {
+  --font-family-mono: 'CommitMono-Regular', sans-serif;
+}
+
 body.font-use-departure-mono {
   --font-family-mono: 'DepartureMono-Regular', sans-serif;
 }
@@ -279,6 +293,10 @@ body.font-use-fira-code {
 
 body.font-use-fragment-mono {
   --font-family-mono: 'FragmentMono-Regular', sans-serif;
+}
+
+body.font-use-iosevka-term {
+  --font-family-mono: 'IosevkaTerm-Regular', sans-serif;
 }
 
 body.font-use-jet-brains-mono {

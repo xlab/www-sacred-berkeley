@@ -130,6 +130,11 @@ const DefaultActionBar: React.FC<DefaultActionBarProps> = ({ items = [] }) => {
             items: [
               {
                 icon: '⊹',
+                children: 'Commit Mono V143 [OFL]',
+                onClick: () => Utilities.onHandleFontChange('font-use-commit-mono'),
+              },
+              {
+                icon: '⊹',
                 children: 'Departure Mono [MIT]',
                 onClick: () => Utilities.onHandleFontChange('font-use-departure-mono'),
               },
@@ -147,6 +152,11 @@ const DefaultActionBar: React.FC<DefaultActionBarProps> = ({ items = [] }) => {
                 icon: '⊹',
                 children: 'Geist Mono [OFL] [DEFAULT]',
                 onClick: () => Utilities.onHandleFontChange(''),
+              },
+              {
+                icon: '⊹',
+                children: 'Iosevka Term [OFL]',
+                onClick: () => Utilities.onHandleFontChange('font-use-iosevka-term'),
               },
               {
                 icon: '⊹',
