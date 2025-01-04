@@ -116,7 +116,6 @@ interface DefaultActionBarProps {
 
 const DefaultActionBar: React.FC<DefaultActionBarProps> = ({ items = [] }) => {
   const [isGrid, setGrid] = React.useState(false);
-  useHotkeys('ctrl+t', () => Utilities.onHandleThemeChange());
   useHotkeys('ctrl+g', () => toggleDebugGrid());
 
   useGlobalNavigationHotkeys();
@@ -126,7 +125,9 @@ const DefaultActionBar: React.FC<DefaultActionBarProps> = ({ items = [] }) => {
       <ActionBar
         items={[
           {
+            hotkey: '⌃+O',
             body: 'Fonts',
+            openHotkey: 'ctrl+o',
             items: [
               {
                 icon: '⊹',
@@ -182,9 +183,30 @@ const DefaultActionBar: React.FC<DefaultActionBarProps> = ({ items = [] }) => {
           },
           {
             hotkey: '⌃+T',
-            onClick: () => Utilities.onHandleThemeChange(),
             body: 'Theme',
-            selected: false,
+            openHotkey: 'ctrl+t',
+            items: [
+              {
+                icon: '⊹',
+                children: 'Refined White [DEFAULT]',
+                onClick: () => Utilities.onHandleThemeChange(''),
+              },
+              {
+                icon: '⊹',
+                children: 'Black Midnight Vapor',
+                onClick: () => Utilities.onHandleThemeChange('theme-dark'),
+              },
+              {
+                icon: '⊹',
+                children: 'Operation Safe Blue',
+                onClick: () => Utilities.onHandleThemeChange('theme-blue'),
+              },
+              {
+                icon: '⊹',
+                children: 'Neon Green Garden',
+                onClick: () => Utilities.onHandleThemeChange('theme-green'),
+              },
+            ],
           },
           {
             hotkey: '⌃+G',

@@ -18,7 +18,7 @@ const ButtonGroup = (props) => {
       {props.items.map((each) => {
         if (each.items) {
           return (
-            <DropdownMenuTrigger key={each.body} items={each.items}>
+            <DropdownMenuTrigger key={each.body} items={each.items} hotkey={each.openHotkey}>
               <ActionButton hotkey={each.hotkey} isSelected={each.selected}>
                 {each.body}
               </ActionButton>

@@ -43,24 +43,19 @@ export function getDomainFromEmailWithoutAnySubdomain(email: string): string {
   return mainDomain;
 }
 
-// TODO(jimmylee)
-// Obviously delete this once we implement a theme picker modal.
-export function onHandleThemeChange() {
+export function onHandleThemeChange(className?: string) {
   const body = document.body;
 
-  if (body.classList.contains('theme-light')) {
-    body.classList.replace('theme-light', 'theme-dark');
-    return;
-  }
+  body.classList.forEach((existingClass) => {
+    if (existingClass.startsWith('theme-')) {
+      body.classList.remove(existingClass);
+    }
+  });
 
-  if (body.classList.contains('theme-dark')) {
-    body.classList.replace('theme-dark', 'theme-blue');
-    return;
-  }
-
-  if (body.classList.contains('theme-blue')) {
-    body.classList.replace('theme-blue', 'theme-light');
-    return;
+  if (className) {
+    body.classList.add(className);
+  } else {
+    body.classList.add('theme-light');
   }
 }
 

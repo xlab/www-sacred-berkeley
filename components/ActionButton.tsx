@@ -11,15 +11,17 @@ interface ActionButtonProps {
   isSelected?: boolean;
 }
 
-const ActionButton: React.FC<ActionButtonProps> = ({ onClick, hotkey, children, style, isSelected }) => {
+const ActionButton = React.forwardRef<HTMLDivElement, ActionButtonProps>(({ onClick, hotkey, children, style, isSelected }, ref) => {
   return (
-    <div className={Utilities.classNames(styles.root, isSelected ? styles.selected : null)} onClick={onClick} tabIndex={0} role="button">
+    <div className={Utilities.classNames(styles.root, isSelected ? styles.selected : null)} onClick={onClick} tabIndex={0} ref={ref} role="button">
       {Utilities.isEmpty(hotkey) ? null : <span className={styles.hotkey}>{hotkey}</span>}
       <span className={styles.content} style={style}>
         {children}
       </span>
     </div>
   );
-};
+});
+
+ActionButton.displayName = 'ActionButton';
 
 export default ActionButton;

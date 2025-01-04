@@ -8,6 +8,7 @@ import ButtonGroup from '@components/ButtonGroup';
 interface ActionBarItem {
   hotkey?: string;
   onClick?: () => void;
+  openHotkey?: string;
   selected?: boolean;
   body: React.ReactNode;
   items?: any;
