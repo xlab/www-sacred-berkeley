@@ -58,6 +58,9 @@ import RowSpaceBetween from '@components/RowSpaceBetween';
 import Script from 'next/script';
 import Select from '@components/Select';
 import SidebarLayout from '@components/SidebarLayout';
+import Table from '@components/Table';
+import TableRow from '@components/TableRow';
+import TableColumn from '@components/TableColumn';
 import Text from '@components/Text';
 import TextArea from '@components/TextArea';
 import TreeView from '@components/TreeView';
@@ -1286,6 +1289,76 @@ int main() {
             <NumberRangeSlider defaultValue={0} min={0} max={20000} step={1} />
             <NumberRangeSlider defaultValue={0} min={0} max={100000} step={1} />
           </Card>
+        </Accordion>
+
+        <Accordion defaultValue={true} title="Table">
+          A simple, declarative table component designed to streamline the creation of tables in JSX. It provides greater control over the structure and layout while evoking the aesthetics of old terminal interfaces (like MS-DOS).
+          <br />
+          <br />
+          <CardDouble title="STARTUPS">
+            <Table>
+              <TableRow>
+                <TableColumn style={{ width: `16ch` }}>
+                  COMPANY
+                  <br />
+                  <Divider />
+                </TableColumn>
+                <TableColumn>
+                  DESCRIPTION
+                  <br />
+                  <Divider />
+                </TableColumn>
+              </TableRow>
+              <TableRow>
+                <TableColumn>⍓ Bluesky</TableColumn>
+                <TableColumn>Building a social internet.</TableColumn>
+              </TableRow>
+              <TableRow>
+                <TableColumn>⍓ Coordination Network</TableColumn>
+                <TableColumn>Collaborative tools for solving complex problems together.</TableColumn>
+              </TableRow>
+              <TableRow>
+                <TableColumn>⍓ Doola</TableColumn>
+                <TableColumn>Tools to start your US business from anywhere and keep it compliant.</TableColumn>
+              </TableRow>
+              <TableRow>
+                <TableColumn>⍓ General Fabrication</TableColumn>
+                <TableColumn>Machine tools to enable permanent industrial revolution.</TableColumn>
+              </TableRow>
+              <TableRow>
+                <TableColumn>⍓ Glif</TableColumn>
+                <TableColumn>Building foundational tools for the Filecoin Ecosystem.</TableColumn>
+              </TableRow>
+              <TableRow>
+                <TableColumn>⍓ LigandAI®</TableColumn>
+                <TableColumn>Combines cutting-edge predictive interactomics® with predictive targeting & delivery technology to enable diagnostically-responsive therapeutics.</TableColumn>
+              </TableRow>
+              <TableRow>
+                <TableColumn>⍓ Lightcell</TableColumn>
+                <TableColumn>An engine that uses light to make electricity.</TableColumn>
+              </TableRow>
+              <TableRow>
+                <TableColumn>⍓ Orchid</TableColumn>
+                <TableColumn>Mitigate risks with the world’s most advanced whole genome screening for embryos.</TableColumn>
+              </TableRow>
+              <TableRow>
+                <TableColumn>⍓ Ordinary Objects</TableColumn>
+                <TableColumn>Next-gen design tools for AR.</TableColumn>
+              </TableRow>
+              <TableRow>
+                <TableColumn>⍓ Volantis Semiconductors</TableColumn>
+                <TableColumn>Developing semiconductor chips for AI applications.</TableColumn>
+              </TableRow>
+              <TableRow>
+                <TableColumn>⍓ Wilderness Labs</TableColumn>
+                <TableColumn>Enables mainstream businesses and .NET developers to create sophisticated embedded-IoT solutions.</TableColumn>
+              </TableRow>
+              <TableRow>
+                <TableColumn>⍓ YellowHeart</TableColumn>
+                <TableColumn>Ticketing to empower fans, artists, and sports teams.</TableColumn>
+              </TableRow>
+            </Table>
+          </CardDouble>
         </Accordion>
 
         <Accordion defaultValue={true} title="TEXT AREA">

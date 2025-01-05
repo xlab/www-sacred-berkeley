@@ -5,7 +5,7 @@
   justify-content: space-between;
   outline: none;
   position: relative;
-  z-index: var(--z-index-select);
+  z-index: var(--z-index-page-select);
 }
 
 .control {
@@ -55,7 +55,7 @@
   list-style-type: none;
   padding: 0;
   right: 0;
-  z-index: var(--z-index-select);
+  z-index: var(--z-index-page-select);
 }
 
 .item {

@@ -436,11 +436,11 @@ body {
   --font-size: 16px;
 
   --z-index-page: 1;
-  --z-index-select: 3;
+  --z-index-page-select: 3;
   --z-index-page-tooltips: 4;
   --z-index-page-popover: 5;
   --z-index-page-dropdown-menus: 6;
-  --z-index-modals: 10;
+  --z-index-page-modals: 10;
 
   background: var(--theme-background);
   color: var(--theme-text);
