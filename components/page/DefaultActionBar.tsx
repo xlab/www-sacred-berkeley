@@ -151,8 +151,8 @@ const DefaultActionBar: React.FC<DefaultActionBarProps> = ({ items = [] }) => {
               },
               {
                 icon: '⊹',
-                children: 'Geist Mono [OFL] [DEFAULT]',
-                onClick: () => Utilities.onHandleFontChange(''),
+                children: 'Geist Mono [OFL]',
+                onClick: () => Utilities.onHandleFontChange('font-use-geist-mono'),
               },
               {
                 icon: '⊹',
@@ -176,8 +176,8 @@ const DefaultActionBar: React.FC<DefaultActionBarProps> = ({ items = [] }) => {
               },
               {
                 icon: '⊹',
-                children: 'TX-02 Berkeley Mono™',
-                onClick: () => Utilities.onHandleFontChange('font-use-berkeley-mono'),
+                children: 'TX-02 Berkeley Mono™ [DEFAULT]',
+                onClick: () => Utilities.onHandleFontChange(''),
               },
             ],
           },
