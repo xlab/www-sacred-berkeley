@@ -3,7 +3,7 @@ import styles from '@components/BreadCrumbs.module.scss';
 import * as React from 'react';
 
 interface BreadCrumbsItem {
-  url: string;
+  url?: string;
   name: string;
 }
 

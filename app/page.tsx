@@ -398,6 +398,63 @@ export default async function Page(props) {
           </Card>
         </Accordion>
 
+        <Accordion defaultValue={true} title="BLOG POST">
+          A blog post can be composed of various components from our component repository. Typically, blog posts include breadcrumbs, an avatar, the author’s name, the publication date, and the blog post content.
+          <br />
+          <br />
+          <CardDouble title="POST">
+            <Breadcrumbs
+              items={[
+                {
+                  name: `Christopher Alexander`,
+                  url: 'https://www.youtube.com/watch?v=98LdFA-_zfA',
+                },
+                {
+                  name: `The Nature of Order`,
+                  url: 'http://www.natureoforder.com/overview.htm',
+                },
+                {
+                  name: `Book 1: The Phenomenon of Life`,
+                },
+                {
+                  name: `A World Picture`,
+                },
+              ]}
+            />
+            <br />
+            <br />
+            <Avatar src="https://upload.wikimedia.org/wikipedia/commons/0/0f/ChristopherAlexander2012_cropped.jpg" href="https://internet.dev" target="_blank">
+              <Indent>
+                CHRISTOPHER ALEXANDER
+                <br />
+                1-1-2002
+              </Indent>
+            </Avatar>
+            <br />
+            <Divider type="DOUBLE" />
+            <br />
+            <br />
+            <br />
+            <br />
+            I believe that we have in us a residue of a world-picture which is essentially mechanical in nature – what we might call the mechanist-rationalist world picture ... Like an infection it has entered us, it affects our actions, it affects our morals, it affects our sense of beauty.
+            <br />
+            <br />
+            This is a picture of a world made of atoms which whirl around in a mechanical fashion: a world in which it is assumed that all the universe is a blind mechanism, whirling on its way, under the impact of the ‘laws of nature.’ These laws are, essentially, those mechanistic laws which explain how the atoms and the structures made of these atoms proceed on their way ... Even though we would admit that the precise laws and mechanisms may not be known, we assume that underlying our ignorance there are some laws, not quite formulated, which do account for how things work ...
+            <br />
+            <br />
+            I have reached the conclusion that the strange fantasies, the private in-house language about architecture, the strange nature of 20th-century gallery art, deconstructionism, postmodernism, modernism and a host of other ‘isms’, all of which affect our physical world hugely, are created because of an entanglement between the nature of architecture, the practice of architecture, and the mechanical conception of the universe.
+            <br />
+            <br />
+            More precisely, I believe that the mistake and confusion in our picture of the the art of building has come from our conception of what matter is.
+            <br />
+            <br />
+            The present conception of matter, and the opposing one which I shall try to put in its place, may both be summarized by the nature of order. Our idea of matter is essentially governed by our idea of order ... So it is the nature of order which lies at the root of the problem of architecture ...
+            <br />
+            <br />
+            When we understand what order is, I believe we shall better understand what matter is and then what the universe itself is.
+          </CardDouble>
+        </Accordion>
+
         <Accordion defaultValue={true} title="BREADCRUMBS">
           Breadcrumbs display the current page or context within a website or application. They show the hierarchy and navigation path, helping users understand their location. Breadcrumbs allow users to navigate back through levels or categories and are especially useful for deeply nested pages.
           <br />

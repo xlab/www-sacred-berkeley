@@ -8,13 +8,13 @@ type TableColumnProps = React.HTMLAttributes<HTMLElement> & {
   children?: React.ReactNode;
 };
 
-const TableColumn = React.forwardRef<HTMLElement, TableColumnProps>(({ children, ...rest }) => {
+const TableColumn = ({ children, ...rest }) => {
   return (
     <td className={styles.root} {...rest}>
       {children}
     </td>
   );
-});
+};
 
 TableColumn.displayName = 'TableColumn';
 

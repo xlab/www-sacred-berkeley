@@ -457,12 +457,15 @@ body {
     height: calc(var(--theme-line-height-base) * 1rem);
     width: 1ch;
   }
+
   &::-webkit-scrollbar-track {
     background: var(--theme-background);
   }
+
   &::-webkit-scrollbar-thumb {
     background: var(--theme-border);
   }
+
   &::-webkit-scrollbar-thumb:hover {
     background: var(--theme-border);
   }

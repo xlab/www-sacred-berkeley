@@ -8,13 +8,13 @@ type TableProps = React.HTMLAttributes<HTMLElement> & {
   children?: React.ReactNode;
 };
 
-const Table = React.forwardRef<HTMLElement, TableProps>(({ children, ...rest }) => {
+const Table = ({ children, ...rest }) => {
   return (
     <table className={styles.root} {...rest}>
       <tbody className={styles.body}>{children}</tbody>
     </table>
   );
-});
+};
 
 Table.displayName = 'Table';
 
